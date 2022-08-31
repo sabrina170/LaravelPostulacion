@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 /*
@@ -31,3 +32,6 @@ Route::post('/inicia-sesion',[LoginController::class,'login'])->name('inicia-ses
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 
+//rutas ejemplos
+
+Route::get('tareas/registrar',[InfoController::class, "create"])->name('tarea-create');
