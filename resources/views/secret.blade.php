@@ -20,7 +20,7 @@
         <div class="mobile-menu md:hidden">
             <div class="mobile-menu-bar">
                 <a href="" class="flex mr-auto">
-                    <img alt="Midone - HTML Admin Template" class="w-6" src="../resources/images/logo.svg">
+                    <img alt="Midone - HTML Admin Template" class="w-6" src="{{asset('images/logo.svg')}}">
                 </a>
                 <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             </div>
@@ -32,7 +32,7 @@
             <div class="h-full flex items-center">
                 <!-- BEGIN: Logo -->
                 <a href="" class="logo -intro-x hidden md:flex xl:w-[180px] block">
-                    <img alt="Midone - HTML Admin Template" class="logo__image w-6" src="../resources/images/logo.svg">
+                    <img alt="Midone - HTML Admin Template" class="logo__image w-6" src="{{asset('images/logo.svg')}}">
                     <span class="logo__text text-white text-lg ml-3"> Enigma </span>
                 </a>
                 <!-- END: Logo -->
@@ -49,7 +49,7 @@
                 <!-- BEGIN: Account Menu -->
                 <div class="intro-x dropdown w-8 h-8">
                     <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in scale-110" role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                        <img alt="Midone - HTML Admin Template" src="../resources/images/profile-13.jpg">
+                        <img alt="Midone - HTML Admin Template" src="{{asset('images/profile-13.jpg')}}">
                     </div>
                     <div class="dropdown-menu w-56">
                         <ul class="dropdown-content bg-primary/80 before:block before:absolute before:bg-black before:inset-0 before:rounded-md before:z-[-1] text-white">
