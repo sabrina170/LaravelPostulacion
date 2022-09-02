@@ -12,11 +12,12 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN: Head -->
     <head>
         <meta charset="utf-8">
-        <link href="../resources/images/logo.svg" rel="shortcut icon">
+        <link href="{{asset('images/logo.svg')}}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login</title>
         <!-- BEGIN: CSS Assets-->
-        <link rel="stylesheet" href="../resources/css/app.css" />
+        {{-- <link rel="stylesheet" href="{{asset('css/app.css" /> --}}
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
         <!-- END: CSS Assets-->
     </head>
     <!-- END: Head -->
@@ -26,11 +27,11 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN: Login Info -->
                 <div class="hidden xl:flex flex-col min-h-screen">
                     <a href="" class="-intro-x flex items-center pt-5">
-                        <img alt="Midone - HTML Admin Template" class="w-6" src="../resources/images/logo.svg">
+                        <img alt="Midone - HTML Admin Template" class="w-6" src="{{asset('images/logo.svg')}}">
                         <span class="text-white text-lg ml-3"> Enigma </span>
                     </a>
                     <div class="my-auto">
-                        <img alt="Midone - HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="../resources/images/illustration.svg">
+                        <img alt="Midone - HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="{{asset('images/illustration.svg')}}">
                         <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
                             A few more clicks to
                             <br>
@@ -76,7 +77,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
         <!-- BEGIN: JS Assets-->
-        <script src="../resources/js/app.js"></script>
+        <script src="{{asset('js/app.js')}}"></script>
         <!-- END: JS Assets-->
     </body>
 </html>

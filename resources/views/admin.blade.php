@@ -3,11 +3,11 @@
     <!-- BEGIN: Head -->
     <head>
         <meta charset="utf-8">
-        <link href="../resources/images/logo.svg" rel="shortcut icon">
+        <link href="{{asset('images/logo.svg')}}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Administrador</title>
         <!-- BEGIN: CSS Assets-->
-        <link rel="stylesheet" href="../resources/css/app.css" />
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
         <!-- END: CSS Assets-->
     </head>
     <!-- END: Head -->
@@ -16,7 +16,7 @@
         <div class="mobile-menu md:hidden">
             <div class="mobile-menu-bar">
                 <a href="" class="flex mr-auto">
-                    <img alt="Midone - HTML Admin Template" class="w-6" src="../resources/images/logo.svg">
+                    <img alt="Midone - HTML Admin Template" class="w-6" src="{{asset('images/logo.svg')}}">
                 </a>
                 <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             </div>
@@ -658,7 +658,7 @@
             <div class="h-full flex items-center">
                 <!-- BEGIN: Logo -->
                 <a href="" class="logo -intro-x hidden md:flex xl:w-[180px] block">
-                    <img alt="Midone - HTML Admin Template" class="logo__image w-6" src="../resources/images/logo.svg">
+                    <img alt="Midone - HTML Admin Template" class="logo__image w-6" src="{{asset('images/logo.svg')}}">
                     <span class="logo__text text-white text-lg ml-3"> Postulación </span>
                 </a>
                 <!-- END: Logo -->
@@ -683,7 +683,7 @@
                 <!-- BEGIN: Account Menu -->
                 <div class="intro-x dropdown w-8 h-8">
                     <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in scale-110" role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                        <img alt="Midone - HTML Admin Template" src="../resources/images/profile-5.jpg">
+                        <img alt="Midone - HTML Admin Template" src="{{asset('images/profile-5.jpg')}}">
                     </div>
                     <div class="dropdown-menu w-56">
                         <ul class="dropdown-content bg-primary/80 before:block before:absolute before:bg-black before:inset-0 before:rounded-md before:z-[-1] text-white">
@@ -825,13 +825,13 @@
                                                 <td class="w-40">
                                                     <div class="flex">
                                                         <div class="w-10 h-10 image-fit zoom-in">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-10.jpg" title="Uploaded at 18 June 2022">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-10.jpg" title="Uploaded at 18 June 2022')}}">
                                                         </div>
                                                         <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-2.jpg" title="Uploaded at 10 August 2022">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-2.jpg" title="Uploaded at 10 August 2022')}}">
                                                         </div>
                                                         <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-13.jpg" title="Uploaded at 7 October 2020">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-13.jpg" title="Uploaded at 7 October 2020')}}">
                                                         </div>
                                                     </div>
                                                 </td>
@@ -854,13 +854,13 @@
                                                 <td class="w-40">
                                                     <div class="flex">
                                                         <div class="w-10 h-10 image-fit zoom-in">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-3.jpg" title="Uploaded at 16 November 2021">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-3.jpg" title="Uploaded at 16 November 2021')}}">
                                                         </div>
                                                         <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-4.jpg" title="Uploaded at 22 April 2021">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-4.jpg" title="Uploaded at 22 April 2021')}}">
                                                         </div>
                                                         <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-15.jpg" title="Uploaded at 28 October 2022">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-15.jpg" title="Uploaded at 28 October 2022')}}">
                                                         </div>
                                                     </div>
                                                 </td>
@@ -883,13 +883,13 @@
                                                 <td class="w-40">
                                                     <div class="flex">
                                                         <div class="w-10 h-10 image-fit zoom-in">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-1.jpg" title="Uploaded at 28 May 2020">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-1.jpg" title="Uploaded at 28 May 2020')}}">
                                                         </div>
                                                         <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-1.jpg" title="Uploaded at 15 May 2021">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-1.jpg" title="Uploaded at 15 May 2021')}}">
                                                         </div>
                                                         <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-15.jpg" title="Uploaded at 16 September 2021">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-15.jpg" title="Uploaded at 16 September 2021')}}">
                                                         </div>
                                                     </div>
                                                 </td>
@@ -912,13 +912,13 @@
                                                 <td class="w-40">
                                                     <div class="flex">
                                                         <div class="w-10 h-10 image-fit zoom-in">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-13.jpg" title="Uploaded at 30 March 2022">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-13.jpg" title="Uploaded at 30 March 2022')}}">
                                                         </div>
                                                         <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-1.jpg" title="Uploaded at 16 September 2020">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-1.jpg" title="Uploaded at 16 September 2020')}}">
                                                         </div>
                                                         <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="../resources/images/preview-15.jpg" title="Uploaded at 24 May 2022">
+                                                            <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="{{asset('images/preview-15.jpg" title="Uploaded at 24 May 2022')}}">
                                                         </div>
                                                     </div>
                                                 </td>
@@ -983,7 +983,7 @@
         <!-- BEGIN: JS Assets-->
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         {{-- <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script> --}}
-        <script src="../resources/js/app.js"></script>
+        <script src="{{asset('js/app.js')}}"></script>
         <!-- END: JS Assets-->
     </body>
 </html>
