@@ -38,6 +38,12 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('tareas/registrar', [InfoController::class, "create"])->name('tarea-create');
 
+//rutas pra los cruds de INFO USER
+
+Route::get('secret', [InfoController::class, "create"])->name('info-create');
+Route::post('info/guardar', [InfoController::class, "store"])->name('info-store');
+
+
 //para los emails
 
 Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contactanos.index');

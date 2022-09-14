@@ -35,7 +35,24 @@ class InfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $datos = $request->validate(
+            [
+        'nombre' =>'required',
+        'telefono'=>'required',
+        'apellido'=>'required',
+        'numero_documento'=>'required',
+        'fecha_nacimiento'=>'required',
+        'sexo'=>'required',
+        'pais'=>'required',
+        'departamento'=>'required',
+        'email'=>'required',
+        'provincia'=>'required',
+        'distrito'=>'required',
+        'direccion'=>'required'
+            ]
+            );
+        dd($request);
     }
 
     /**

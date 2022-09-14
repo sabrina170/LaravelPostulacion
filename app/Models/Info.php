@@ -12,7 +12,7 @@ class Info extends Model
     protected $fillable = [
         'nombre',
         'telefono',
-        'dni',
+        // 'dni',
         'ku',
         'apellido',
         'tipo_documento',

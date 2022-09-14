@@ -151,39 +151,41 @@
                     <div class="px-5 sm:px-20 mt-10 pt-10 border-t border-slate-200/60 dark:border-darkmode-400">
                         <div class="font-medium text-base">Profile Settings</div>
                         <div>
+                            <form action="{{route('info-store')}}" method="post">
+                                @csrf
                         <div class="grid grid-cols-12 gap-4 gap-y-5 mt-5">
                             <div class="intro-y col-span-12 sm:col-span-3">
-                                <label for="input-wizard-1" class="form-label">Nombre</label>
-                                <input id="input-wizard-1" type="text" class="form-control" placeholder="nombres">
+                                <label for="input-wizard-1" class="form-label">Nombres</label>
+                                <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombres" name="nombre">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
-                                <label for="input-wizard-2" class="form-label">Apellido</label>
-                                <input id="input-wizard-2" type="text" class="form-control" placeholder="apellidos">
+                                <label for="input-wizard-2" class="form-label">Apellidos</label>
+                                <input id="input-wizard-2" type="text" class="form-control" placeholder="apellidos" name="apellido">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Tipo Documento</label>
-                                <select id="input-wizard-6" class="form-select">
+                                <select id="input-wizard-6" class="form-select" name="tipo_documento">
                                     <option value="dni">DNI</option>
                                     <option value="carnet_extranjeria">Carnet de extrangeria</option>
                                 </select> </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-3" class="form-label">Numero</label>
-                                <input id="input-wizard-4" type="text" class="form-control" placeholder="">
+                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="numero_documento">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-6" class="form-label">Fecha Nacimiento</label>
-                                <input id="input-wizard-5" type="date" class="form-control" placeholder="Job, Work, Documentation">
+                                <input id="input-wizard-5" type="date" class="form-control" name="fecha_nacimiento">
 
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-4" class="form-label">Pais</label>
-                                <select id="input-wizard-6" class="form-select">
+                                <select id="input-wizard-6" class="form-select" name="pais">
                                     <option value="Perú">Perú</option>
                                     <option value="España">España</option>
                                 </select> </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-5" class="form-label">Departamento</label>
-                                <select id="input-wizard-6" class="form-select">
+                                <select id="input-wizard-6" class="form-select" name="departamento">
                                     <option value="Lima">Lima</option>
                                     <option value="Piura">Piura</option>
                                     <option value="Chiclayo">Chiclayo</option>
@@ -192,40 +194,48 @@
                              </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-6" class="form-label">Provincia</label>
-                                <select id="input-wizard-6" class="form-select">
+                                <select id="input-wizard-6" class="form-select" name="provincia">
                                     <option value="Lima 1">Lima 1</option>
                                     <option value="Lima 2">Lima 2</option>
                                     <option value="Lima 3">Lima 3</option>
                                 </select>
                             </div>
-                            
+
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-1" class="form-label">Sexo</label>
-                                <select id="input-wizard-6" class="form-select">
+                                <select id="input-wizard-6" class="form-select" name="sexo">
                                     <option value="Femenino">Femenino</option>
                                     <option value="Masculino">Masculino</option>
                                 </select>
                              </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Email</label>
-                                <input id="input-wizard-2" type="email" class="form-control" placeholder="apellidos">
+                                <input id="input-wizard-2" type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Distrito</label>
-                                <select id="input-wizard-6" class="form-select">
+                                <select id="input-wizard-6" class="form-select" name="distrito">
                                     <option value="Distrito 1">Distrito 1</option>
                                     <option value="Distrito 2">Distrito 2</option>
                                 </select>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
-                                <label for="input-wizard-3" class="form-label">Numero</label>
-                                <input id="input-wizard-4" type="text" class="form-control" placeholder="">
+                                <label for="input-wizard-3" class="form-label">Dirección</label>
+                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="direccion">
                             </div>
+                            <div class="intro-y col-span-12 sm:col-span-3">
+                                <label for="input-wizard-2" class="form-label">Telefono</label>
+                                <input id="input-wizard-2" type="number" class="form-control"  name="telefono">
+                            </div>
+                            {{-- input que vendran por defecto --}}
+                            <input id="input-wizard-2" type="hidden" class="form-control"  name="ku" value="123">
+                            {{-- fin de los inputs ocultos --}}
                             <div class="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
                                 {{-- <button class="btn btn-secondary w-24">Previous</button> --}}
                                 <button type="submit" class="btn btn-primary w-24 ml-2">Enviar</button>
                             </div>
                         </div>
+                    </form>
                         </div>
                     </div>
                 </div>
@@ -233,5 +243,14 @@
             </div>
             <!-- END: Content -->
         </div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
  @extends('layouts.footer')
