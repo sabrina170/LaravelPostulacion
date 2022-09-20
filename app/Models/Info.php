@@ -27,4 +27,16 @@ class Info extends Model
         'direccion'
     ];
 
+    // public const ESTADOS = ['activo', 'inactivo', 'terminado'];
+
+    // public function estado()
+    // {
+    //     return self::ESTADOS[$this->estado];
+    // }
+
+    // ---------------------
+    // public function estado2()
+    // {
+    //     return $this->estado == 1 ? 'Si' : 'No';
+    // }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Info;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class InfoController extends Controller
 {
@@ -14,7 +15,8 @@ class InfoController extends Controller
      */
     public function index()
     {
-        //
+        $infos = Info::orderByDesc('id')->get();
+        return view('info.index', compact('infos'));
     }
 
     /**
@@ -38,21 +40,26 @@ class InfoController extends Controller
 
         $datos = $request->validate(
             [
-        'nombre' =>'required',
-        'telefono'=>'required',
-        'apellido'=>'required',
-        'numero_documento'=>'required',
-        'fecha_nacimiento'=>'required',
-        'sexo'=>'required',
-        'pais'=>'required',
-        'departamento'=>'required',
-        'email'=>'required',
-        'provincia'=>'required',
-        'distrito'=>'required',
-        'direccion'=>'required'
+                'nombre' => 'required',
+                'telefono' => 'required',
+                'apellido' => 'required',
+                'numero_documento' => 'required',
+                'fecha_nacimiento' => 'required',
+                'sexo' => 'required',
+                'pais' => 'required',
+                'departamento' => 'required',
+                'email' => 'required',
+                'provincia' => 'required',
+                'distrito' => 'required',
+                'direccion' => 'required',
+                'tipo_documento' => 'required',
+                'ku' => 'required'
             ]
-            );
-        dd($request);
+        );
+
+        $info = Info::create($datos);
+        return redirect()->route('info.index');
+        // dd($datos);
     }
 
     /**

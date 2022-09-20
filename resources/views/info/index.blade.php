@@ -1,3 +1,4 @@
+{{-- @extends('layouts.head'); --}}
 <!DOCTYPE html>
 <html lang="en" class="light">
     <!-- BEGIN: Head -->
@@ -82,3 +83,108 @@
 
 
       
+  <!-- END: Top Bar -->
+  <div class="flex overflow-hidden">
+    <!-- BEGIN: Side Menu -->
+    <nav class="side-nav">
+        <ul>
+            <li>
+                <a href="javascript:;" class="side-menu">
+                    <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
+                    <div class="side-menu__title">
+                        Dashboard
+                        <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                    </div>
+                </a>
+                <ul class="">
+                    <li>
+                        <a href="side-menu-light-dashboard-overview-1.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                            <div class="side-menu__title"> Overview 1 </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="side-menu-light-dashboard-overview-2.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                            <div class="side-menu__title"> Overview 2 </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="side-menu-light-dashboard-overview-3.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                            <div class="side-menu__title"> Overview 3 </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                            <div class="side-menu__title"> Overview 4 </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+<!-- BEGIN: Content -->
+<div class="content">
+    <div class="flex items-center mt-8">
+        <h2 class="intro-y text-lg font-medium mr-auto">
+           Imformación Personal de Usuarios
+        </h2>
+    </div>
+    <!-- BEGIN: Wizard Layout -->
+    <div class="intro-y box py-10 sm:py-20 mt-5">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Tipo Doc</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">País</th>
+                <th scope="col">Departamento</th>
+                <th scope="col">Email</th>
+                <th scope="col">Provincia</th>
+                <th scope="col">Distrito</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Fecha Registro</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach($infos as $info)
+                <tr>
+                    <th scope="row">{{$info->id}}</th>
+                    <td>{{$info->nombre}}</td>
+                    <td>{{$info->apellido}}</td>
+                    <td>{{$info->tipo_documento}}</td>
+                    <td>{{$info->numero_documento}}</td>
+                    <td>{{$info->fecha_nacimiento}}</td>
+                    <td>{{$info->sexo}}</td>
+                    <td>{{$info->pais}}</td>
+                    <td>{{$info->departamento}}</td>
+                    <td>{{$info->email}}</td>
+                    <td>{{$info->provincia}}</td>
+                    <td>{{$info->distrito}}</td>
+                    <td>{{$info->direccion}}</td>
+                    <td>{{$info->created_at}}</td>
+                    <td><a href="{{route('info.edit')}}">Editar</a></td>
+                  </tr>
+                @endforeach
+            
+            </tbody>
+          </table>
+       
+    </div>
+    <!-- END: Wizard Layout -->
+</div>
+<!-- END: Content -->
+</div>
+
+
+@extends('layouts.footer')
+<!-- END: Content -->

@@ -40,8 +40,14 @@ Route::get('tareas/registrar', [InfoController::class, "create"])->name('tarea-c
 
 //rutas pra los cruds de INFO USER
 
+//REGISTRAR
 Route::get('secret', [InfoController::class, "create"])->name('info-create');
+//RUTA PARA GUARDAR
 Route::post('info/guardar', [InfoController::class, "store"])->name('info-store');
+//RUTA PARA LISTAR
+Route::get('info/listar', [InfoController::class, "index"])->name('info.index');
+//ruta para editar
+Route::get('info/{info}/editar', [InfoController::class, "edit"])->name('info.edit');
 
 
 //para los emails

@@ -84,8 +84,6 @@
                 <!-- END: Account Menu -->
             </div>
         </div>
-
-
         <!-- END: Top Bar -->
         <div class="flex overflow-hidden">
             <!-- BEGIN: Side Menu -->
@@ -133,8 +131,8 @@
             <!-- BEGIN: Content -->
             <div class="content">
                 <div class="flex items-center mt-8">
-                    <h2 class="intro-y text-lg font-medium mr-auto">
-                       Imformación
+                    <h2 class="intro-y text-lg font-medium mr-auto"> 
+                       Editar Información
                     </h2>
                 </div>
                 <!-- BEGIN: Wizard Layout -->
