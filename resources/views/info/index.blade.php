@@ -82,7 +82,7 @@
         </div>
 
 
-      
+
   <!-- END: Top Bar -->
   <div class="flex overflow-hidden">
     <!-- BEGIN: Side Menu -->
@@ -133,33 +133,38 @@
            Imformación Personal de Usuarios
         </h2>
     </div>
+    {{-- mensajes --}}
+@include('msj')
+    {{-- fin de mensajes --}}
     <!-- BEGIN: Wizard Layout -->
-    <div class="intro-y box py-10 sm:py-20 mt-5">
+    <div class="intro-y box mt-5">
+    <div class="overflow-x-auto">
         <table class="table">
             <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Tipo Doc</th>
-                <th scope="col">Numero</th>
-                <th scope="col">Fecha de Nacimiento</th>
-                <th scope="col">Sexo</th>
-                <th scope="col">País</th>
-                <th scope="col">Departamento</th>
-                <th scope="col">Email</th>
-                <th scope="col">Provincia</th>
-                <th scope="col">Distrito</th>
-                <th scope="col">Dirección</th>
-                <th scope="col">Fecha Registro</th>
-                <th scope="col">Acciones</th>
-              </tr>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Tipo Doc</th>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Fecha de Nacimiento</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">País</th>
+                    <th scope="col">Departamento</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Provincia</th>
+                    <th scope="col">Distrito</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Fecha Registro</th>
+                    <th class="text-center whitespace-nowrap">Acciones</th>
+                    {{-- <th>dsadas</th> --}}
+                </tr>
             </thead>
             <tbody>
                 @foreach($infos as $info)
-                <tr>
+                <tr class="intro-x">
                     <th scope="row">{{$info->id}}</th>
-                    <td>{{$info->nombre}}</td>
+                    <td> <a class="flex items-center mr-3" href="{{route('info.show', $info->id)}}"><strong>{{$info->nombre}}</strong></a></td>
                     <td>{{$info->apellido}}</td>
                     <td>{{$info->tipo_documento}}</td>
                     <td>{{$info->numero_documento}}</td>
@@ -172,14 +177,32 @@
                     <td>{{$info->distrito}}</td>
                     <td>{{$info->direccion}}</td>
                     <td>{{$info->created_at}}</td>
-                    <td><a href="{{route('info.edit')}}">Editar</a></td>
-                  </tr>
+                    <td class="table-report__action w-56">
+                        <div class="flex justify-center items-center">
+                            <a class="flex items-center mr-3"  href="{{route('info.edit', $info->id)}}"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                            <a class="flex items-center text-danger" href="#"
+                            data-tw-toggle="modal"
+                        data-tw-target="#modeleliminar{{$info->id}}">
+                         <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                        </div>
+                    </td>
+
+                    {{-- <td>
+                        <div class="flex justify-center items-center">
+
+                        </div>
+                    </td> --}}
+                </tr>
+
+                @include("modals.ModalEditarInfo")
+                @include("modals.ModalEliminarInfo")
+
                 @endforeach
-            
             </tbody>
-          </table>
-       
+        </table>
     </div>
+    </div>
+
     <!-- END: Wizard Layout -->
 </div>
 <!-- END: Content -->

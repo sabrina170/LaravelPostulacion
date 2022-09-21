@@ -42,12 +42,13 @@ Route::get('tareas/registrar', [InfoController::class, "create"])->name('tarea-c
 
 //REGISTRAR
 Route::get('secret', [InfoController::class, "create"])->name('info-create');
-//RUTA PARA GUARDAR
+Route::get('info/{info}/ver', [InfoController::class, "show"])->name('info.show');
 Route::post('info/guardar', [InfoController::class, "store"])->name('info-store');
-//RUTA PARA LISTAR
 Route::get('info/listar', [InfoController::class, "index"])->name('info.index');
-//ruta para editar
 Route::get('info/{info}/editar', [InfoController::class, "edit"])->name('info.edit');
+Route::put('info/{info}/actualizar', [InfoController::class, "update"])->name('info.update');
+Route::delete('info/{info}/eliminar', [InfoController::class, "destroy"])->name('info.delete');
+
 
 
 //para los emails

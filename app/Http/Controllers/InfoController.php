@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InfoRequest;
+use App\Http\Requests\TareaRequest;
 use App\Models\Info;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -35,27 +38,10 @@ class InfoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InfoRequest $request)
     {
 
-        $datos = $request->validate(
-            [
-                'nombre' => 'required',
-                'telefono' => 'required',
-                'apellido' => 'required',
-                'numero_documento' => 'required',
-                'fecha_nacimiento' => 'required',
-                'sexo' => 'required',
-                'pais' => 'required',
-                'departamento' => 'required',
-                'email' => 'required',
-                'provincia' => 'required',
-                'distrito' => 'required',
-                'direccion' => 'required',
-                'tipo_documento' => 'required',
-                'ku' => 'required'
-            ]
-        );
+        $datos = $request->validated();
 
         $info = Info::create($datos);
         return redirect()->route('info.index');
@@ -70,7 +56,7 @@ class InfoController extends Controller
      */
     public function show(Info $info)
     {
-        //
+        return view('info.show',['info'=>$info]);
     }
 
     /**
@@ -81,7 +67,8 @@ class InfoController extends Controller
      */
     public function edit(Info $info)
     {
-        //
+        // dd($info);
+        return view('info/edit',compact('info'));
     }
 
     /**
@@ -91,9 +78,12 @@ class InfoController extends Controller
      * @param  \App\Models\Info  $info
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Info $info)
+    public function update(InfoRequest $request, Info $info)
     {
-        //
+        $datos = $request->validated();
+        // dd($datos);
+        $info->update($datos);
+        return redirect()->route('info.index');
     }
 
     /**
@@ -104,6 +94,8 @@ class InfoController extends Controller
      */
     public function destroy(Info $info)
     {
-        //
+        $info->delete();
+        $nombre = $info->nombre;
+        return redirect()->route('info.index')->with('msjdelete','Postulante ('.$nombre.') eliminado');
     }
 }

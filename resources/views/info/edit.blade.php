@@ -131,34 +131,30 @@
             <!-- BEGIN: Content -->
             <div class="content">
                 <div class="flex items-center mt-8">
-                    <h2 class="intro-y text-lg font-medium mr-auto"> 
+                    <h2 class="intro-y text-lg font-medium mr-auto">
                        Editar Información
                     </h2>
+                    <a href="{{route('info.index')}}" class="btn btn-rounded-primary w-24 mr-1 mb-2">Volver</a>
                 </div>
+
                 <!-- BEGIN: Wizard Layout -->
-                <div class="intro-y box py-10 sm:py-20 mt-5">
-                    <div class="flex justify-center">
-                        <button class="intro-y w-10 h-10 rounded-full btn btn-primary mx-2">1</button>
-                        {{-- <button class="intro-y w-10 h-10 rounded-full btn bg-slate-100 dark:bg-darkmode-400 dark:border-darkmode-400 text-slate-500 mx-2">2</button>
-                        <button class="intro-y w-10 h-10 rounded-full btn bg-slate-100 dark:bg-darkmode-400 dark:border-darkmode-400 text-slate-500 mx-2">3</button> --}}
-                    </div>
-                    <div class="px-5 mt-10">
-                        <div class="font-medium text-center text-lg">Setup Your Account</div>
-                        <div class="text-slate-500 text-center mt-2">To start off, please enter your username, email address and password.</div>
-                    </div>
-                    <div class="px-5 sm:px-20 mt-10 pt-10 border-t border-slate-200/60 dark:border-darkmode-400">
-                        <div class="font-medium text-base">Profile Settings</div>
+                <div class="intro-y box sm:py-10 mt-5">
+
+                    <div class="px-5 sm:px-10  pt-10 pb-10 border-t border-slate-200/60 dark:border-darkmode-400">
+
+                        <div class="font-medium text-base">Editar registro {{$info->id}}</div>
                         <div>
-                            <form action="{{route('info-store')}}" method="post">
+                            <form action="{{route('info.update',$info)}}" method="post">
+                                @method('put')
                                 @csrf
                         <div class="grid grid-cols-12 gap-4 gap-y-5 mt-5">
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-1" class="form-label">Nombres</label>
-                                <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombres" name="nombre" value="{{ old('nombre')}}">
+                                <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombres" name="nombre" value="{{ $info->nombre}}">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Apellidos</label>
-                                <input id="input-wizard-2" type="text" class="form-control" placeholder="apellidos" name="apellido" value="{{ old('apellido')}}">
+                                <input id="input-wizard-2" type="text" class="form-control" placeholder="apellidos" name="apellido" value="{{ $info->apellido}}">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Tipo Documento</label>
@@ -168,23 +164,23 @@
                                 </select> </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-3" class="form-label">Numero</label>
-                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="numero_documento" value="{{ old('numero_documento')}}">
+                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="numero_documento" value="{{ $info->numero_documento}}">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-6" class="form-label">Fecha Nacimiento</label>
-                                <input id="input-wizard-5" type="date" class="form-control" name="fecha_nacimiento" value="{{ old('fecha_nacimiento')}}">
+                                <input id="input-wizard-5" type="date" class="form-control" name="fecha_nacimiento" value="{{ $info->fecha_nacimiento}}">
 
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-4" class="form-label">Pais</label>
-                                <select id="selectUrgencia" class="form-select" name="pais" @selected(old('pais'))>
+                                <select id="selectUrgencia" class="form-select" name="pais" >
                                     <option value="Perú">Perú</option>
                                     <option value="España">España</option>
-                                </select> 
+                                </select>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-5" class="form-label">Departamento</label>
-                                <select id="input-wizard-6" class="form-select" name="departamento" @selected(old('departamento'))>
+                                <select id="input-wizard-6" class="form-select" name="departamento" >
                                     <option value="Lima">Lima</option>
                                     <option value="Piura">Piura</option>
                                     <option value="Chiclayo">Chiclayo</option>
@@ -193,7 +189,7 @@
                              </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-6" class="form-label">Provincia</label>
-                                <select id="input-wizard-6" class="form-select" name="provincia" @selected(old('provincia'))>
+                                <select id="input-wizard-6" class="form-select" name="provincia" >
                                     <option value="Lima 1">Lima 1</option>
                                     <option value="Lima 2">Lima 2</option>
                                     <option value="Lima 3">Lima 3</option>
@@ -202,36 +198,36 @@
 
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-1" class="form-label">Sexo</label>
-                                <select id="input-wizard-6" class="form-select" name="sexo" @selected(old('sexo'))>
+                                <select id="input-wizard-6" class="form-select" name="sexo" >
                                     <option value="Femenino">Femenino</option>
                                     <option value="Masculino">Masculino</option>
                                 </select>
                              </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Email</label>
-                                <input id="input-wizard-2" type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="{{ old('email')}}">
+                                <input id="input-wizard-2" type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="{{ $info->email}}">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Distrito</label>
-                                <select id="input-wizard-6" class="form-select" name="distrito" @selected(old('distrito'))>
+                                <select id="input-wizard-6" class="form-select" name="distrito" >
                                     <option value="Distrito 1">Distrito 1</option>
                                     <option value="Distrito 2">Distrito 2</option>
                                 </select>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-3" class="form-label">Dirección</label>
-                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="direccion" value="{{ old('direccion')}}">
+                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="direccion" value="{{ $info->direccion}}">
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Telefono</label>
-                                <input id="input-wizard-2" type="number" class="form-control"  name="telefono">
+                                <input id="input-wizard-2" type="number" class="form-control"  name="telefono" value="{{$info->telefono}}">
                             </div>
                             {{-- input que vendran por defecto --}}
                             <input id="input-wizard-2" type="hidden" class="form-control"  name="ku" value="123">
                             {{-- fin de los inputs ocultos --}}
                             <div class="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
                                 {{-- <button class="btn btn-secondary w-24">Previous</button> --}}
-                                <button type="submit" class="btn btn-primary w-24 ml-2">Enviar</button>
+                                <button type="submit" class="btn btn-secondary  w-24 ml-2">Actualizar</button>
                             </div>
                         </div>
                     </form>

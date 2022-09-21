@@ -54,8 +54,8 @@
                     <div class="dropdown-menu w-56">
                         <ul class="dropdown-content bg-primary/80 before:block before:absolute before:bg-black before:inset-0 before:rounded-md before:z-[-1] text-white">
                             <li class="p-2">
-                                <div class="font-medium">{{ Auth::user()->name }} </div>
-                                <div class="text-xs text-white/60 mt-0.5 dark:text-slate-500">{{ Auth::user()->email }}</div>
+                                <div class="font-medium">Kevin Spacey</div>
+                                <div class="text-xs text-white/60 mt-0.5 dark:text-slate-500">DevOps Engineer</div>
                             </li>
                             <li>
                                 <hr class="dropdown-divider border-white/[0.08]">
@@ -84,8 +84,6 @@
                 <!-- END: Account Menu -->
             </div>
         </div>
-
-
         <!-- END: Top Bar -->
         <div class="flex overflow-hidden">
             <!-- BEGIN: Side Menu -->
@@ -134,59 +132,51 @@
             <div class="content">
                 <div class="flex items-center mt-8">
                     <h2 class="intro-y text-lg font-medium mr-auto">
-                       Imformación
+                       Ver Información de {{$info->nombre}} {{$info->apellido}}
                     </h2>
                 </div>
                 <!-- BEGIN: Wizard Layout -->
-                <div class="intro-y box py-10 sm:py-20 mt-5">
-                    <div class="flex justify-center">
-                        <button class="intro-y w-10 h-10 rounded-full btn btn-primary mx-2">1</button>
-                        {{-- <button class="intro-y w-10 h-10 rounded-full btn bg-slate-100 dark:bg-darkmode-400 dark:border-darkmode-400 text-slate-500 mx-2">2</button>
-                        <button class="intro-y w-10 h-10 rounded-full btn bg-slate-100 dark:bg-darkmode-400 dark:border-darkmode-400 text-slate-500 mx-2">3</button> --}}
-                    </div>
-                    <div class="px-5 mt-10">
-                        <div class="font-medium text-center text-lg">Setup Your Account</div>
-                        <div class="text-slate-500 text-center mt-2">To start off, please enter your username, email address and password.</div>
-                    </div>
-                    <div class="px-5 sm:px-20 mt-10 pt-10 border-t border-slate-200/60 dark:border-darkmode-400">
-                        <div class="font-medium text-base">Profile Settings</div>
+                <div class="intro-y box sm:py-20 mt-5">
+                    <div class="px-5 sm:px-10  pt-10 border-t border-slate-200/60 dark:border-darkmode-400">
+                        <div class="font-medium text-base">Editar registro {{$info->id}}</div>
                         <div>
-                            <form action="{{route('info-store')}}" method="post">
+                            <form action="{{route('info.update',$info)}}" method="post">
+                                @method('put')
                                 @csrf
                         <div class="grid grid-cols-12 gap-4 gap-y-5 mt-5">
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-1" class="form-label">Nombres</label>
-                                <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombres" name="nombre" value="{{ old('nombre')}}">
+                                <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombres" name="nombre" value="{{ $info->nombre}}" disabled>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Apellidos</label>
-                                <input id="input-wizard-2" type="text" class="form-control" placeholder="apellidos" name="apellido" value="{{ old('apellido')}}">
+                                <input id="input-wizard-2" type="text" class="form-control" placeholder="apellidos" name="apellido" value="{{ $info->apellido}}" disabled>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Tipo Documento</label>
-                                <select id="input-wizard-6" class="form-select" name="tipo_documento">
+                                <select id="input-wizard-6" class="form-select" name="tipo_documento" disabled>
                                     <option value="DNI">DNI</option>
                                     <option value="CE">Carnet de extrangeria</option>
                                 </select> </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-3" class="form-label">Numero</label>
-                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="numero_documento" value="{{ old('numero_documento')}}">
+                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="numero_documento" value="{{ $info->numero_documento}}" disabled>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-6" class="form-label">Fecha Nacimiento</label>
-                                <input id="input-wizard-5" type="date" class="form-control" name="fecha_nacimiento" value="{{ old('fecha_nacimiento')}}">
+                                <input id="input-wizard-5" type="date" class="form-control" name="fecha_nacimiento" value="{{ $info->fecha_nacimiento}}" disabled>
 
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-4" class="form-label">Pais</label>
-                                <select id="selectUrgencia" class="form-select" name="pais" @selected(old('pais'))>
+                                <select id="selectUrgencia" class="form-select" name="pais"disabled >
                                     <option value="Perú">Perú</option>
                                     <option value="España">España</option>
                                 </select>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-5" class="form-label">Departamento</label>
-                                <select id="input-wizard-6" class="form-select" name="departamento" @selected(old('departamento'))>
+                                <select id="input-wizard-6" class="form-select" name="departamento"  disabled>
                                     <option value="Lima">Lima</option>
                                     <option value="Piura">Piura</option>
                                     <option value="Chiclayo">Chiclayo</option>
@@ -195,7 +185,7 @@
                              </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-6" class="form-label">Provincia</label>
-                                <select id="input-wizard-6" class="form-select" name="provincia" @selected(old('provincia'))>
+                                <select id="input-wizard-6" class="form-select" name="provincia" disabled>
                                     <option value="Lima 1">Lima 1</option>
                                     <option value="Lima 2">Lima 2</option>
                                     <option value="Lima 3">Lima 3</option>
@@ -204,39 +194,36 @@
 
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-1" class="form-label">Sexo</label>
-                                <select id="input-wizard-6" class="form-select" name="sexo" @selected(old('sexo'))>
+                                <select id="input-wizard-6" class="form-select" name="sexo" disabled>
                                     <option value="Femenino">Femenino</option>
                                     <option value="Masculino">Masculino</option>
                                 </select>
                              </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Email</label>
-                                <input id="input-wizard-2" type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="{{ old('email')}}">
+                                <input id="input-wizard-2" type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="{{ $info->email}}" disabled>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Distrito</label>
-                                <select id="input-wizard-6" class="form-select" name="distrito" @selected(old('distrito'))>
+                                <select id="input-wizard-6" class="form-select" name="distrito" disabled>
                                     <option value="Distrito 1">Distrito 1</option>
                                     <option value="Distrito 2">Distrito 2</option>
                                 </select>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-3" class="form-label">Dirección</label>
-                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="direccion" value="{{ old('direccion')}}">
+                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="direccion" value="{{ $info->direccion}}" disabled>
                             </div>
                             <div class="intro-y col-span-12 sm:col-span-3">
                                 <label for="input-wizard-2" class="form-label">Telefono</label>
-                                <input id="input-wizard-2" type="number" class="form-control"  name="telefono">
+                                <input id="input-wizard-2" type="number" class="form-control"  name="telefono" value="{{$info->telefono}}" disabled>
                             </div>
-                            <div class="intro-y col-span-12 sm:col-span-3">
                             {{-- input que vendran por defecto --}}
-                            <label for="input-wizard-2" class="form-label">ku</label>
-                            <input id="input-wizard-2" type="text" class="form-control"  name="ku" value="{{ Auth::user()->ku }}" readonly>
-                            </div>
+                            <input id="input-wizard-2" type="hidden" class="form-control"  name="ku" value="123">
                             {{-- fin de los inputs ocultos --}}
                             <div class="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
                                 {{-- <button class="btn btn-secondary w-24">Previous</button> --}}
-                                <button type="submit" class="btn btn-primary w-24 ml-2">Enviar</button>
+                                <button type="submit" class="btn btn-secondary  w-24 ml-2">Actualizar</button>
                             </div>
                         </div>
                     </form>
