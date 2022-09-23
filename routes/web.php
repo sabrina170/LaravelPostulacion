@@ -49,8 +49,6 @@ Route::get('info/{info}/editar', [InfoController::class, "edit"])->name('info.ed
 Route::put('info/{info}/actualizar', [InfoController::class, "update"])->name('info.update');
 Route::delete('info/{info}/eliminar', [InfoController::class, "destroy"])->name('info.delete');
 
-
-
 //para los emails
 
 Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contactanos.index');
