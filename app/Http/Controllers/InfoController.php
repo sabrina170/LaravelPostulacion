@@ -8,6 +8,7 @@ use App\Models\Info;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
+use Illuminate\Support\Facades\DB;
 
 class InfoController extends Controller
 {
@@ -44,8 +45,18 @@ class InfoController extends Controller
         $datos = $request->validated();
 
         $info = Info::create($datos);
-        return redirect()->route('info.index');
+        $ku = $request->ku;
+        // $ku->update($datos);
+
+        DB::table('users')->where('ku', $ku)->limit(1)->update(['estado' => '2']);
+
+        // return redirect()->route('info.index');
+        return redirect()->route('privada');
+
         // dd($datos);
+        //cambiar de estado cuando se crea
+
+        dd($ku);
     }
 
     /**
@@ -56,7 +67,7 @@ class InfoController extends Controller
      */
     public function show(Info $info)
     {
-        return view('info.show',['info'=>$info]);
+        return view('info.show', ['info' => $info]);
     }
 
     /**
@@ -68,7 +79,7 @@ class InfoController extends Controller
     public function edit(Info $info)
     {
         // dd($info);
-        return view('info/edit',compact('info'));
+        return view('info/edit', compact('info'));
     }
 
     /**
@@ -96,6 +107,6 @@ class InfoController extends Controller
     {
         $info->delete();
         $nombre = $info->nombre;
-        return redirect()->route('info.index')->with('msjdelete','Postulante ('.$nombre.') eliminado');
+        return redirect()->route('info.index')->with('msjdelete', 'Postulante (' . $nombre . ') eliminado');
     }
 }

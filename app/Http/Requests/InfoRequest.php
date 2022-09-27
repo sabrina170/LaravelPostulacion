@@ -38,6 +38,7 @@ class InfoRequest extends FormRequest
             'direccion' => 'required',
             'tipo_documento' => 'required',
             'ku' => 'required'
-    ];
+
+        ];
     }
 }
