@@ -1,7 +1,7 @@
 
  @extends('layouts.head')
 <style type="text/css">
-	
+
 	#startStopBtn{
 		display:inline-block;
 		margin:0 auto;
@@ -113,46 +113,72 @@
 
  @section('content')
 
- 
+
                 <div class="flex items-center mt-8">
                     <h2 class="intro-y text-lg font-medium mr-auto">
                        Imformación
                     </h2>
                 </div>
+                {{-- veificar estados --}}
+
+
+                {{-- Fin de verificar estados --}}
                 <!-- BEGIN: Wizard Layout -->
                 <div class="intro-y box py-10 sm:py-10 mt-5">
                     <div id="boxed-tab" class="p-5">
                         <div class="preview">
                             <ul class="nav nav-boxed-tabs" role="tablist">
                                 <li id="example-3-tab" class="nav-item flex-1" role="presentation">
+
                                     <button
-                                        class="nav-link w-full py-2 active"
+
                                         data-tw-toggle="pill"
                                         data-tw-target="#example-tab-3"
                                         type="button"
                                         role="tab"
                                         aria-controls="example-tab-3"
                                         aria-selected="true"
-                                    >
-                                    Datos personales
+                                        {{$estado=Auth::user()->estado}}
+                                        @if ($estado==1)
+                                        class="nav-link w-full py-2 active"
+
+                                        @else
+                                        class="nav-link w-full py-2"
+                                        disabled
+                                        @endif
+                                        >
+                                    Datos personales {{Auth::user()->estado}}
                                     </button>
                                 </li>
                                 <li id="example-4-tab" class="nav-item flex-1" role="presentation">
+
                                     <button
-                                        class="nav-link w-full py-2"
+
                                         data-tw-toggle="pill"
                                         data-tw-target="#example-tab-4"
                                         type="button"
                                         role="tab"
                                         aria-controls="example-tab-4"
                                         aria-selected="false"
+                                        @if ($estado==2)
+                                        class="nav-link w-full py-2 active"
+                                        @else
+                                        class="nav-link w-full py-2"
+                                        disabled
+                                        @endif
                                     >
                                     Test de velocidad
                                     </button>
                                 </li>
                             </ul>
                             <div class="tab-content mt-5">
-                                <div id="example-tab-3" class="tab-pane leading-relaxed active" role="tabpanel" aria-labelledby="example-3-tab">
+                                <div id="example-tab-3"
+                                @if ($estado==1)
+                                class="tab-pane leading-relaxed active"
+                                        @else
+                                        class="tab-pane leading-relaxed"
+                                        @endif
+                                 role="tabpanel" aria-labelledby="example-3-tab">
                                     <div class="px-5 sm:px-10  pt-10 border-t border-slate-200/60 dark:border-darkmode-400">
                                         <div class="font-medium text-base">Profile Settings</div>
                                         <div>
@@ -180,7 +206,7 @@
                                             <div class="intro-y col-span-12 sm:col-span-3">
                                                 <label for="input-wizard-6" class="form-label">Fecha Nacimiento</label>
                                                 <input id="input-wizard-5" type="date" class="form-control" name="fecha_nacimiento" value="{{ old('fecha_nacimiento')}}">
-                
+
                                             </div>
                                             <div class="intro-y col-span-12 sm:col-span-3">
                                                 <label for="input-wizard-4" class="form-label">Pais</label>
@@ -206,7 +232,7 @@
                                                     <option value="Lima 3">Lima 3</option>
                                                 </select>
                                             </div>
-                
+
                                             <div class="intro-y col-span-12 sm:col-span-3">
                                                 <label for="input-wizard-1" class="form-label">Sexo</label>
                                                 <select id="input-wizard-6" class="form-select" name="sexo" @selected(old('sexo'))>
@@ -238,7 +264,7 @@
                                             <label for="input-wizard-2" class="form-label">ku</label>
                                             <input id="input-wizard-2" type="text" class="form-control"  name="ku" value="{{ Auth::user()->ku }}" readonly>
                                             </div>
-                                            
+
                                             {{-- fin de los inputs ocultos --}}
                                             <div class="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
                                                 {{-- <button class="btn btn-secondary w-24">Previous</button> --}}
@@ -258,8 +284,14 @@
                                 </div>
                                 </div>
                                 </div>
-                                <div id="example-tab-4" class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="example-4-tab">
-                                 
+                                <div id="example-tab-4"
+                                @if ($estado==2)
+                                class="tab-pane leading-relaxed active"
+                                        @else
+                                        class="tab-pane leading-relaxed"
+                                        @endif
+                                class="tab-pane leading-relaxed" role="tabpanel" aria-labelledby="example-4-tab">
+
                                     {{-- comioinzo del plugin de speed test
                                          --}}
                                          <!--OST Widget code start--><div style="text-align:right;">
@@ -273,16 +305,13 @@
                                                 Provided by <a href="https://openspeedtest.com">OpenSpeedtest.com</a></div><!-- OST Widget code end -->
                                          {{-- fin del plugin tets --}}
                                 </div>
-                           
                         </div>
                     </div>
-                    
                         </div>
                     </div>
                 </div>
-                
-                     
+
+
  @endsection
 
- 
- 
+
