@@ -180,7 +180,7 @@
                                         @endif
                                  role="tabpanel" aria-labelledby="example-3-tab">
                                     <div class="px-5 sm:px-10  pt-10 border-t border-slate-200/60 dark:border-darkmode-400">
-                                        <div class="font-medium text-base">Profile Settings</div>
+                                        <div class="font-medium text-base">INFORMACIÓN PERSONAL</div>
                                         <div>
                                             <form action="{{route('info-store')}}" method="post">
                                                 @csrf
