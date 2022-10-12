@@ -44,6 +44,14 @@ Route::get('tareas/registrar', [InfoController::class, "create"])->name('tarea-c
 Route::get('secret', [InfoController::class, "create"])->name('info-create');
 Route::get('info/{info}/ver', [InfoController::class, "show"])->name('info.show');
 Route::post('info/guardar', [InfoController::class, "store"])->name('info-store');
+
+//ENTREVISTA PERSONAL
+Route::view('entrevista', "entrevista.index")->name('entrevista.index');
+
+//LLENADO DE DOCUMENTOS
+Route::view('docuemnto', "documentos.index")->name('documentos.index');
+
+//ADMINISTRADOR
 Route::get('info/listar', [InfoController::class, "index"])->name('info.index');
 Route::get('info/{info}/editar', [InfoController::class, "edit"])->name('info.edit');
 Route::put('info/{info}/actualizar', [InfoController::class, "update"])->name('info.update');

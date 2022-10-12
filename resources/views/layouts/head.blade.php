@@ -97,8 +97,8 @@
                             <div class="ml-4 mr-auto">
                                 <div class="text-slate-500 text-xs mt-0.5">Bienvenido(a)</div>
                                 <div class="font-medium">{{ Auth::user()->name }}</div>
-                             
-                            </div> 
+
+                            </div>
                         </div>
                     </li>
                     <li> <h1 class="text-lg font-medium truncate mr-5">
@@ -112,33 +112,33 @@
                             <div class="ml-4 mr-auto">
                                 <div class="font-medium"> <strong> Datos personales </strong></div>
                                 <div class="font-medium"><strong>y Test de velocidad </strong></div>
-                            </div> 
+                            </div>
                         </a>
                     </li>
                     <li>
-                        <a href="side-menu-light-file-manager.html" class="side-menu">
+                        <a href="{{route('entrevista.index')}}" class="side-menu" >
                             <div class="side-menu__icon"> <i class="fa-solid fa-2 fa-2x"></i> </div>
-                            <div class="ml-4 mr-auto"> 
+                            <div class="ml-4 mr-auto">
                                 <div class="font-medium"> <strong> Entrevista </strong></div>
                                 <div class="font-medium"><strong>Personal</strong></div>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="side-menu-light-point-of-sale.html" class="side-menu">
+                        <a href="{{route('documentos.index')}}" class="side-menu">
                             <div class="side-menu__icon">  <i class="fa-solid fa-3 fa-2x"></i> </div>
                             <div class="ml-4 mr-auto">
                                 <div class="font-medium"> <strong>Llenado de  </strong></div>
-                                <div class="font-medium"><strong>documentos </strong></div>    
+                                <div class="font-medium"><strong>documentos </strong></div>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="side-menu-light-chat.html" class="side-menu">
                             <div class="side-menu__icon">  <i class="fa-solid fa-4 fa-2x"></i> </div>
-                            <div class="ml-4 mr-auto"> 
+                            <div class="ml-4 mr-auto">
                                 <div class="font-medium"> <strong>Proceso </strong></div>
-                                <div class="font-medium"><strong>Finalizado </strong></div>    
+                                <div class="font-medium"><strong>Finalizado </strong></div>
                             </div>
                         </a>
                     </li>
@@ -160,6 +160,6 @@
     {{-- <script  src="{{asset('js/speedtest.js')}}"></script> --}}
     {{-- <script  src="{{asset('js/speedtest_worker.js')}}"></script> --}}
 
-   
+
    </body>
    </html>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\InfoRequest;
 use App\Http\Requests\TareaRequest;
+use App\Models\Estudio;
 use App\Models\Info;
+use App\Models\Laboral;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
@@ -39,24 +41,59 @@ class InfoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(InfoRequest $request)
+    public function store(InfoRequest $inforequest)
     {
-
-        $datos = $request->validated();
-
+//valida los datos de INfo
+        $datos = $inforequest->validated();
+//crea un registro en la tabla info con el ku
         $info = Info::create($datos);
-        $ku = $request->ku;
+        $ku = $inforequest->ku;
+        $grado = $inforequest->grado;
+        $nombreie = $inforequest->nombreie;
+        $estudia = $inforequest->estudia;
+        $horario = $inforequest->horario;
+        $disponibilidad = $inforequest->disponibilidad;
+
+
+        $callcenter = $inforequest->callcenter;
+        $empresa = $inforequest->empresa;
+        $puesto = $inforequest->puesto;
+        $tiempo = $inforequest->tiempo;
+        $tipo = $inforequest->tipo;
+        $konecta = $inforequest->konecta;
+
+
+//CREAR REGISTRO EN TABLA ESTUDIOS
+        DB::table('estudios')->insert(
+            [ 'grado' => $grado,
+            'nombreie'  => $nombreie,
+            'estudia'  => $estudia,
+             'horario'  =>  $horario,
+             'disponibilidad'  =>  $disponibilidad,
+              'ku'  => $ku
+              ]
+        );
+
+//CREAR REGISTRO EN TABLA ESTUDIOS
+        DB::table('laborales')->insert(
+            [
+            'callcenter' => $callcenter,
+             'empresa' => $empresa,
+             'puesto'=> $puesto,
+              'tiempo' => $tiempo,
+               'tipo' => $tipo,
+               'konecta' => $konecta,
+              'ku'  => $ku
+              ]
+        );
+
         // $ku->update($datos);
+//ACTUALIZA LA TABLA USER EN EL ESTADO 2
 
         DB::table('users')->where('ku', $ku)->limit(1)->update(['estado' => '2']);
-
         // return redirect()->route('info.index');
         return redirect()->route('privada');
-
-        // dd($datos);
-        //cambiar de estado cuando se crea
-
-        dd($ku);
+        dd($datos);
     }
 
     /**
