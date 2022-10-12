@@ -24,6 +24,7 @@ class InfoRequest extends FormRequest
     public function rules()
     {
         return [
+            // Datos Info Personal
             'nombre' => 'required',
             'telefono' => 'required',
             'apellido' => 'required',
@@ -37,8 +38,21 @@ class InfoRequest extends FormRequest
             'distrito' => 'required',
             'direccion' => 'required',
             'tipo_documento' => 'required',
-            'ku' => 'required'
+            'ku' => 'required',
 
+            // Datos de Estudios
+            'grado' => 'required',
+            'nombre' => 'required',
+            'estudia' => 'required',
+            'horario' => 'required',
+            'disponibilidad' => 'required',
+            // Datos de Experiencia Laboral
+            'callcenter' => 'required',
+            'empresa' => 'required',
+            'puesto' => 'required',
+            'tiempo' => 'required',
+            'tipo' => 'required',
+            'konecta' => 'required'
         ];
     }
 }

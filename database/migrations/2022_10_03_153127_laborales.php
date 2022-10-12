@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('estudios', function (Blueprint $table) {
+        Schema::create('laborales', function (Blueprint $table) {
             $table->id();
-            $table->string('grado', 60);
-            $table->string('nombreie', 70);
-            $table->string('estudia', 70);
-            $table->string('horario', 70);
-            $table->string('disponibilidad', 70);
-            $table->string('ku', 145);
+            $table->string('callcenter', 150);
+            $table->string('empresa', 150);
+            $table->string('puesto', 70);
+            $table->string('tiempo', 70);
+            $table->string('tipo', 70);
+            $table->string('konecta', 10);
+            $table->string('ku', 75);
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estudios');
+        Schema::dropIfExists('laborales');
     }
 };

@@ -265,12 +265,81 @@
                                             <input id="input-wizard-2" type="text" class="form-control"  name="ku" value="{{ Auth::user()->ku }}" readonly>
                                             </div>
 
+                                            {{-- DATOS DE ESTUDIOS --}}
+
+                                            <div class="intro-y col-span-12 sm:col-span-12"><strong>ESTUDIOS</strong></div>
+                                        
+                                            <div class="intro-y col-span-12 sm:col-span-3">
+                                                <label for="input-wizard-2" class="form-label">Grado de Instrucción</label>
+                                                <select id="input-wizard-6" class="form-select" name="grado">
+                                                    <option value="Titulado">Titulado</option>
+                                                    <option value="Egresado">Egresado</option>
+                                                </select> 
+                                            </div>
+                                            <div class="intro-y col-span-12 sm:col-span-3">
+                                                <label for="input-wizard-1" class="form-label">Nombre de Institución Educativa</label>
+                                                <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombreie" name="nombreie" value="{{ old('nombreie')}}">
+                                            </div>
+                                            <div class="intro-y col-span-12 sm:col-span-3">
+                                                <label for="input-wizard-2" class="form-label">¿Estudia actualmente?</label>
+                                                <input id="input-wizard-2" type="text" class="form-control" placeholder="estudia" name="estudia" value="{{ old('estudia')}}">
+                                            </div>
+                                           
+                                            <div class="intro-y col-span-12 sm:col-span-3">
+                                                <label for="input-wizard-3" class="form-label">Horario de estudios</label>
+                                                <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="horario" value="{{ old('horario')}}">
+                                            </div>
+                                            <div class="intro-y col-span-12 sm:col-span-3">
+                                                <label for="input-wizard-6" class="form-label">Disponibilidad</label>
+                                                <input id="input-wizard-5" type="text" class="form-control" name="disponibilidad" value="{{ old('disponibilidad')}}">
+
+                                            </div>
+                                         {{-- DATOS DE ESTUDIOS --}}
+
+                                         <div class="intro-y col-span-12 sm:col-span-12"><strong>EXPERIENCIA LABORAL</strong></div>
+                                        
+                                         <div class="intro-y col-span-12 sm:col-span-3">
+                                             <label for="input-wizard-2" class="form-label">¿Has laborado en call center?</label>
+                                             <select id="input-wizard-6" class="form-select" name="callcenter">
+                                                 <option value="Si">Si</option>
+                                                 <option value="No">No</option>
+                                             </select> 
+                                         </div>
+                                         <div class="intro-y col-span-12 sm:col-span-3">
+                                             <label for="input-wizard-1" class="form-label">Nombre de empresa</label>
+                                             <input id="input-wizard-1" type="text" class="form-control"  placeholder="empresa" name="empresa" value="{{ old('empresa')}}">
+                                         </div>
+                                         <div class="intro-y col-span-12 sm:col-span-3">
+                                             <label for="input-wizard-2" class="form-label">Puesto experiencia</label>
+                                             <input id="input-wizard-2" type="text" class="form-control" placeholder="puesto" name="puesto" value="{{ old('puesto')}}">
+                                         </div>
+                                        
+                                         <div class="intro-y col-span-12 sm:col-span-3">
+                                             <label for="input-wizard-3" class="form-label">Tiempo (meses)</label>
+                                             <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="tiempo" value="{{ old('tiempo')}}">
+                                         </div>
+                                         <div class="intro-y col-span-12 sm:col-span-3">
+                                            <label for="input-wizard-2" class="form-label">Tipo experiencia</label>
+                                            <select id="input-wizard-6" class="form-select" name="tipo">
+                                                <option value="Ventas call center">Ventas call center</option>
+                                                <option value="No">No</option>
+                                            </select> 
+                                        </div>
+                                         <div class="intro-y col-span-12 sm:col-span-3">
+                                             <label for="input-wizard-6" class="form-label">Trabajó en Konecta</label>
+                                             <select id="input-wizard-6" class="form-select" name="konecta">
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select> 
+                                         </div>
+                                        
                                             {{-- fin de los inputs ocultos --}}
                                             <div class="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
                                                 {{-- <button class="btn btn-secondary w-24">Previous</button> --}}
                                                 <button type="submit" class="btn btn-primary w-24 ml-2">Enviar</button>
                                             </div>
                                         </div>
+                                        
                                     </form>
                                     @if ($errors->any())
                                         <div class="alert alert-danger">
