@@ -106,7 +106,7 @@
                     </h1>
                 </li>
                     <li>
-                        <a href="side-menu-light-inbox.html" class="side-menu">
+                        <a href="{{route('privada')}}" class="side-menu">
                             <div class="side-menu__icon"> <i class="fa-solid fa-1 fa-2x"></i></div>
                             {{-- <div class="side-menu__title"> Inbox </div> --}}
                             <div class="ml-4 mr-auto">
@@ -142,6 +142,14 @@
                             </div>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{route('documentos.docs')}}" class="side-menu">
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium"> <strong>Documentos </strong></div>
+                                <div class="font-medium"><strong>Extras </strong></div>
+                            </div>
+                        </a>
+                    </li>s
                 </ul>
             </nav>
             <!-- END: Side Menu -->

@@ -3,6 +3,7 @@
 use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PdfController;
 use App\Mail\ContactanosMailable;
 
 /*
@@ -49,7 +50,7 @@ Route::post('info/guardar', [InfoController::class, "store"])->name('info-store'
 Route::view('entrevista', "entrevista.index")->name('entrevista.index');
 
 //LLENADO DE DOCUMENTOS
-Route::view('docuemnto', "documentos.index")->name('documentos.index');
+Route::view('documento', "documentos.index")->name('documentos.index');
 
 //ADMINISTRADOR
 Route::get('info/listar', [InfoController::class, "index"])->name('info.index');
@@ -60,3 +61,8 @@ Route::delete('info/{info}/eliminar', [InfoController::class, "destroy"])->name(
 //para los emails
 
 Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contactanos.index');
+
+// REGISTROS DE MIS DOCUEMNTOS
+Route::view('misdocuemtos', "documentos.docs")->name('documentos.docs');
+
+Route::get('/misdocuemtos', [PdfController::class, "mform"])->name('documentos.docs');
