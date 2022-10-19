@@ -43,7 +43,12 @@
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('fontawesome/css/font-awesome.min.css')}}">
     <!-- END: Custom CSS-->
 
 </head>
 <!-- END: Head-->
+@yield('menu')
+
+@extends('layouts.footer')
+
