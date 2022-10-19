@@ -14,10 +14,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/ico/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
-{{-- mis estilos --}}
-<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/boot-dev.css')}}">
-
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/vendors.min.css')}}">
@@ -42,9 +38,17 @@
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
+<<<<<<< Updated upstream
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('fontawesome/css/font-awesome.min.css')}}">
+=======
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/style.css')}}">
+>>>>>>> Stashed changes
     <!-- END: Custom CSS-->
+
+    <!-- mis estilos -->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/boot-dev.css')}}">
 
 </head>
 <!-- END: Head-->

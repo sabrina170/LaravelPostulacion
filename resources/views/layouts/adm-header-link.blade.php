@@ -42,7 +42,7 @@
     <!-- END: Custom CSS-->
 
     <!-- mis estilos -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/adm-style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/boot-dev.css')}}">
 
 </head>
