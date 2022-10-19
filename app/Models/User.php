@@ -41,4 +41,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // para el Administrador
+
+    public function role()
+    {
+        return $this->belongsToMany(Role::class, 'role_user')->withPivot('role_id','user_id');
+    }
 }

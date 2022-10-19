@@ -28,6 +28,8 @@ Route::get('/admin', function () {
 Route::view('/login', "login")->name('login');
 Route::view('/registro', "register")->name('registro');
 Route::view('/privada', "secret")->middleware('auth')->name('privada');
+// Route::view('/admin', "admin.index")->middleware('auth')->name('admin.index');
+
 //protegida para el ususario no accedea sesion
 
 Route::post('/validar-registro', [LoginController::class, 'register'])->name('validar-registro');

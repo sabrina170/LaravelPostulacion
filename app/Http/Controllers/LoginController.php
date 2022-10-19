@@ -37,10 +37,13 @@ class LoginController extends Controller
             // "active" =>true
         ];
 
+        // $tipo = $request->tipo;
+
         $remember = ($request->has('remenber')? true: false);
         if (Auth::attempt($credentials,$remember)) {
             $request->session()->regenerate();
-            return redirect()->intended('privada');
+                    return redirect()->intended('privada');
+
         }else{
             return redirect('login');
         }
