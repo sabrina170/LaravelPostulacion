@@ -1,0 +1,13 @@
+.texts-prim{
+color: #051c2c;
+}
+.buts-prim{
+    border-color: #00b3e6 !important;
+    background-color: #00b3e6 !important;
+    color: #fff !important;
+}
+.buts-sec{
+    border-color: #051c2c !important;
+    background-color: #051c2c !important;
+    color: #fff !important;
+}

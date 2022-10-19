@@ -15,75 +15,149 @@
             <div class="content-header row">
             </div>
             <div class="content-body">
-                <div class="auth-wrapper auth-cover">
-                    <div class="auth-inner row m-0">
-                        <!-- Brand logo--><a class="brand-logo" href="index.html">
-                            <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
-                                <defs>
-                                    <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
-                                        <stop stop-color="#000000" offset="0%"></stop>
-                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
-                                    </lineargradient>
-                                    <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%" y2="100%">
-                                        <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
-                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
-                                    </lineargradient>
-                                </defs>
-                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Artboard" transform="translate(-400.000000, -178.000000)">
-                                        <g id="Group" transform="translate(400.000000, 178.000000)">
-                                            <path class="text-primary" id="Path" d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z" style="fill: currentColor"></path>
-                                            <path id="Path1" d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z" fill="url(#linearGradient-1)" opacity="0.2"></path>
-                                            <polygon id="Path-2" fill="#000000" opacity="0.049999997" points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"></polygon>
-                                            <polygon id="Path-21" fill="#000000" opacity="0.099999994" points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"></polygon>
-                                            <polygon id="Path-3" fill="url(#linearGradient-2)" opacity="0.099999994" points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"></polygon>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                            <h2 class="brand-text text-primary ms-1">Vuexy</h2>
-                        </a>
-                        <!-- /Brand logo-->
-                        <!-- Left Text-->
-                        <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{asset('app-assets/images/pages/login-v2.svg')}}" alt="Login V2" /></div>
-                        </div>
-                        <!-- /Left Text-->
-                        <!-- Login-->
-                        <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
-                            <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                <h2 class="card-title fw-bold mb-1">Welcome to Vuexy! 👋</h2>
-                                <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
-                                <form class="auth-login-form mt-2" action="{{route('inicia-sesion')}}" method="POST">
-                                        @csrf
-                                    <div class="mb-1">
-                                        <label class="form-label" for="login-email">Email</label>
-                                        <input class="form-control" id="login-email" type="text"  name="email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" />
-                                    </div>
-                                    <div class="mb-1">
-                                        <div class="d-flex justify-content-between">
-                                            <label class="form-label" for="login-password">Password</label><a href="auth-forgot-password-cover.html"><small>Forgot Password?</small></a>
+
+                {{-- <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                    Vertically Centered
+                </button> --}}
+                <div class="modal fade show" id="exampleModalCenter" style="display: block;" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+
+                            <div class="modal-body p-0">
+
+                                <div class="">
+                                    <div class="row ">
+                                        <div class="col-lg-6 align-items-center p-3">
+                                            <h1 class="text-center texts-prim"><strong>Deseas registrarte?</strong></h1>
+                                            <h5 class="text-center">Ingrese sus datos a continuación para completar
+                                                el registro :</h5>
+                                            <form class="form form-vertical" method="POST" action="{{route('validar-registro')}}">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="basicSelect">Tipo de doc.</label>
+                                                            <select class="form-select" id="basicSelect">
+                                                                <option>Dni</option>
+                                                                <option>CE</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="basicSelect">Nº de documento</label>
+                                                            <div class="input-group input-group-merge">
+                                                            <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                                                            <input type="number" id="first-name-icon" class="form-control" name="fname-icon" placeholder="85214528">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-icon">Apellido Materno</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                                                                <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Apellido Materno">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-icon">Nombres completos</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                                                                <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese su nombre">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="email-id-icon">Email</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+                                                                <input type="email" id="email-id-icon" class="form-control" name="email-id-icon" placeholder="Email">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="contact-info-icon">Número Teléfono</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></span>
+                                                                <input type="number" id="contact-info-icon" class="form-control" name="contact-icon" placeholder="Número Teléfono">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{-- <div class="col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="password-icon">Password</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                                                                <input type="password" id="password-icon" class="form-control" name="contact-icon" placeholder="Password">
+                                                            </div>
+                                                        </div>
+                                                    </div> --}}
+                                                    <div class="col-12">
+                                                        <div class="mb-1">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input" id="customCheck4">
+                                                                <label class="form-check-label" for="customCheck4">Remember me</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-grid col-lg-12 col-md-12 mb-1">
+                                                        <button type="submit" class="buts-prim btn waves-effect waves-float waves-light">Registrarse</button>
+                                                    </div>
+                                                    <div class="d-grid col-lg-12 col-md-12 mb-1">
+                                                        <a href="{{ route('login')}}" type="button" class="buts-sec btn waves-effect waves-float waves-light">Ingresar</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                          </div>
+                                        {{-- <div class="d-flex col-lg-6 align-items-center auth-bg px-2 p-lg-5">
+                                            <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+                                                <h2 class="card-title fw-bold mb-1">Welcome to Vuexy! 👋</h2>
+                                                <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
+                                                <form class="auth-login-form mt-2" action="{{route('inicia-sesion')}}" method="POST">
+                                                        @csrf
+                                                    <div class="mb-1">
+                                                        <label class="form-label" for="login-email">Email</label>
+                                                        <input class="form-control" id="login-email" type="text"  name="email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" />
+                                                    </div>
+                                                    <div class="mb-1">
+                                                        <div class="d-flex justify-content-between">
+                                                            <label class="form-label" for="login-password">Password</label><a href="auth-forgot-password-cover.html"><small>Forgot Password?</small></a>
+                                                        </div>
+                                                        <div class="input-group input-group-merge form-password-toggle">
+                                                            <input class="form-control form-control-merge" id="login-password" type="password" name="password" placeholder="············" aria-describedby="login-password" tabindex="2" /><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" id="remember-me" type="checkbox" tabindex="3" />
+                                                            <label class="form-check-label" for="remember-me"> Remember Me</label>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
+                                                </form>
+                                                <p class="text-center mt-2"><span>New on our platform?</span><a href="{{route('registro')}}"><span>&nbsp;Create an account</span></a></p>
+                                                <div class="divider my-2">
+                                                    <div class="divider-text">or</div>
+                                                </div>
+                                                <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook" href="#"><i data-feather="facebook"></i></a><a class="btn btn-twitter white" href="#"><i data-feather="twitter"></i></a><a class="btn btn-google" href="#"><i data-feather="mail"></i></a><a class="btn btn-github" href="#"><i data-feather="github"></i></a></div>
+                                            </div>
+                                        </div> --}}
+                                        <div class="col-6 align-items-center">
+                                            <div class="w-100 h-100 d-lg-flex align-items-center justify-content-center px-0" >
+                                                <img class="img-fluid"  src="{{asset('app-assets/images/fotologin.jpg')}}" alt="Login V2"/>
+                                            </div>
+                                            </div>
                                         </div>
-                                        <div class="input-group input-group-merge form-password-toggle">
-                                            <input class="form-control form-control-merge" id="login-password" type="password" name="password" placeholder="············" aria-describedby="login-password" tabindex="2" /><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
-                                        </div>
                                     </div>
-                                    <div class="mb-1">
-                                        <div class="form-check">
-                                            <input class="form-check-input" id="remember-me" type="checkbox" tabindex="3" />
-                                            <label class="form-check-label" for="remember-me"> Remember Me</label>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
-                                </form>
-                                <p class="text-center mt-2"><span>New on our platform?</span><a href="{{route('registro')}}"><span>&nbsp;Create an account</span></a></p>
-                                <div class="divider my-2">
-                                    <div class="divider-text">or</div>
                                 </div>
-                                <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook" href="#"><i data-feather="facebook"></i></a><a class="btn btn-twitter white" href="#"><i data-feather="twitter"></i></a><a class="btn btn-google" href="#"><i data-feather="mail"></i></a><a class="btn btn-github" href="#"><i data-feather="github"></i></a></div>
                             </div>
+
                         </div>
-                        <!-- /Login-->
                     </div>
                 </div>
             </div>
