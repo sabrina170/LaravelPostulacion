@@ -1,3 +1,5 @@
+@extends('layouts.header-link')
+
 <!DOCTYPE html>
 <html lang="en" class="light">
     <!-- BEGIN: Head -->

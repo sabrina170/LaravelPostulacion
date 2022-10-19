@@ -34,7 +34,7 @@
                                             <form class="form form-vertical" method="POST" action="{{route('validar-registro')}}">
                                                 @csrf
                                                 <div class="row">
-                                                    <div class="col-4">
+                                                    <div class="col-6">
                                                         <div class="mb-1">
                                                             <label class="form-label" for="basicSelect">Tipo de doc.</label>
                                                             <select class="form-select" id="basicSelect">
@@ -43,7 +43,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-8">
+                                                    <div class="col-6">
                                                         <div class="mb-1">
                                                             <label class="form-label" for="basicSelect">Nº de documento</label>
                                                             <div class="input-group input-group-merge">
@@ -72,10 +72,10 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="mb-1">
-                                                            <label class="form-label" for="email-id-icon">Email</label>
+                                                            <label class="form-label" for="email-id-icon">Correo</label>
                                                             <div class="input-group input-group-merge">
                                                                 <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
-                                                                <input type="email" id="email-id-icon" class="form-control" name="email" placeholder="Email">
+                                                                <input type="email" id="email-id-icon" class="form-control" name="email" placeholder="Correo">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -88,20 +88,20 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    {{-- <div class="col-12">
+                                                     <div class="col-12">
                                                         <div class="mb-1">
                                                             <label class="form-label" for="password-icon">Password</label>
-                                                            <div class="input-group input-group-merge"> --}}
-                                                                {{-- <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span> --}}
-                                                                <input type="hidden" id="password-icon" value="{{ date("Ymd-His")}}" class="form-control" name="password" placeholder="Password">
-                                                            {{-- </div>
+                                                            <div class="input-group input-group-merge">
+                                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                                                                <input type="password" id="password-icon" value="{{ date("Ymd-His")}}" class="form-control" name="password" placeholder="Password">
+                                                            </div>
                                                         </div>
-                                                    </div> --}}
+                                                    </div>
                                                     <div class="col-12">
                                                         <div class="mb-1">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="customCheck4">
-                                                                <label class="form-check-label" for="customCheck4">Remember me</label>
+                                                                <label class="form-check-label" for="customCheck4">Recordarme</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -147,10 +147,10 @@
                                                 <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook" href="#"><i data-feather="facebook"></i></a><a class="btn btn-twitter white" href="#"><i data-feather="twitter"></i></a><a class="btn btn-google" href="#"><i data-feather="mail"></i></a><a class="btn btn-github" href="#"><i data-feather="github"></i></a></div>
                                             </div>
                                         </div> --}}
-                                        <div class="col-6 align-items-center">
-                                            <div class="w-100 h-100 d-lg-flex align-items-center justify-content-center px-0" >
+                                        <div class="col-6 align-items-center" id="panel-img-registro">
+                                            <!--<div class="w-100 h-100 d-lg-flex align-items-center justify-content-center px-0" >
                                                 <img class="img-fluid"  src="{{asset('app-assets/images/fotologin.jpg')}}" alt="Login V2"/>
-                                            </div>
+                                            </div>-->
                                             </div>
                                         </div>
                                     </div>
