@@ -1,6 +1,9 @@
 .texts-prim{
-color: #051c2c;
+color: #051c2c !important;
 }
+.texts-sec{
+    color: #00b3e6 !important;
+    }
 .buts-prim{
     border-color: #00b3e6 !important;
     background-color: #00b3e6 !important;
