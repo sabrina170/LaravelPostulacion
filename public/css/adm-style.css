@@ -1,0 +1,19 @@
+.text-pri{ -color: #051c2c !important; }
+.bg-pri{ background-color: #051c2c !important; }
+.text-sec{color: #00b3e6 !important;}
+.bg-sec{background-color: #00b3e6 !important;}
+
+
+#main-menu-navigation a{
+    color:white;
+}
+
+#main-menu-navigation a:hover{
+    color:#00b3e6 !important;
+}
+
+#tarjeta-bienvenida{
+    background: linear-gradient(118deg, #00b3e6, #35d2ff) !important;
+}
+
+

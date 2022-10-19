@@ -38,9 +38,16 @@
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
+<<<<<<< Updated upstream
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('fontawesome/css/font-awesome.min.css')}}">
+<<<<<<< HEAD
 
+=======
+=======
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/style.css')}}">
+>>>>>>> Stashed changes
+>>>>>>> origin/main
     <!-- END: Custom CSS-->
 
     <!-- mis estilos -->
