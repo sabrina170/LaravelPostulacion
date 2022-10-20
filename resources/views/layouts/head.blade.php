@@ -5,10 +5,10 @@
 <body class="bg-body vertical-layout vertical-menu-modern  navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="" >
 
 <!-- BEGIN: Header-->
-<nav class="header-navbar navbar-expand-lg navbar  align-items-center navbar-shadow navbar-brand-center bgs-nav border-0 sticky-top" data-nav="brand-center">
+<nav class="header-navbar navbar-expand-lg navbar  align-items-center navbar-shadow navbar-brand-center bgs-nav border-0 sticky-top" id="header-superior" data-nav="brand-center">
     <div class="navbar-header d-xl-block d-none">
         <ul class="nav navbar-nav">
-            <li class="nav-item">
+            <li class="nav-item pl-24">
                 <a class="navbar-brand" href="../../../html/ltr/horizontal-menu-template/index.html">
                 <img class="img-fluid" src="{{asset('app-assets/images/logo/logo.png')}}" alt="avatar" height="60%" width="60%">
                 </a>
@@ -20,21 +20,13 @@
             <ul class="nav navbar-nav d-xl-none">
                 <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
             </ul>
+            <!--
             <ul class="nav navbar-nav bookmark-icons">
                 <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
                 <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
                 <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
                 <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
-                    <div class="bookmark-input search-input">
-                        <div class="bookmark-input-icon"><i data-feather="search"></i></div>
-                        <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
-                        <ul class="search-list search-list-bookmark"></ul>
-                    </div>
-                </li>
-            </ul>
+            </ul>-->
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
 
@@ -58,7 +50,7 @@
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-                <li class=" navigation-header"><h1 class="texts-prim"><strong>ETAPAS</strong></h1><i data-feather="more-horizontal"></i>
+                <li class=" navigation-header"><h1 class="text-pri"><strong>ETAPAS</strong></h1><i data-feather="more-horizontal"></i>
                 </li>
                 <li class=" nav-item">
                     <a class="d-flex align-items-center" href="{{route('privada')}}">

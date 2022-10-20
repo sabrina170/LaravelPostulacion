@@ -12,9 +12,9 @@
                         <p class="card-text m-auto mb-0">
                             Bienvenido(a) al panel principal , las postulaciones de hoy son:
                         </p>
-                        <p class="text-pri font-28 font-weight-bold mt-20 mb-0">26 <span class="font-20">Postulantes</span></p>
+                        <p class="text-pri font-28 font-weight-bold mt-20 mb-20">26 <span class="font-20">Postulantes</span></p>
                     </div>
-                    <div class="col-lg-4 text-right">
+                    <div class="col-lg-4 text-right d-flex align-items-end justify-content-center">
                         <img src="{{asset('app-assets/images/konecta/avatar.png')}}" width="80">
                     </div>
                 </div>
