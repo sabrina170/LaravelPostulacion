@@ -54,6 +54,10 @@ Route::view('entrevista', "entrevista.index")->name('entrevista.index');
 //LLENADO DE DOCUMENTOS
 Route::view('documento', "documentos.index")->name('documentos.index');
 
+//FINALIZADO
+Route::view('finalizado', "finalizado")->name('finalizado');
+
+
 //ADMINISTRADOR
 Route::get('info/listar', [InfoController::class, "index"])->name('info.index');
 Route::get('info/{info}/editar', [InfoController::class, "edit"])->name('info.edit');
