@@ -45,6 +45,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/adm-style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/boot-dev.css')}}">
 
+
 </head>
 <!-- END: Head-->
 @yield('menu')

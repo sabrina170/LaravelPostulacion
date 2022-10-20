@@ -113,14 +113,14 @@
 
  @section('content')
 
- <div class="card">
+ <div class="card br-16">
     <div class="meetup-img-wrapper rounded-top text-center">
-    <img class="card-img-top" src="{{asset('app-assets/images/portada2.jpg')}}" alt="Card image cap" height="270">
+    <img class="card-img-top br-16" src="{{asset('app-assets/images/portada2.jpg')}}" alt="Card image cap" style="object-fit:cover;" height="270">
 </div>
 </div>
                 <div class="flex items-center">
                     <h2 class="intro-y text-lg font-medium mr-auto">
-                       Imformación
+                       Información
                     </h2>
                 </div>
                 {{-- veificar estados --}}
