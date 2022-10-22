@@ -19,7 +19,6 @@ class LoginController extends Controller
         $user->password= Hash::make($request->password);
         $user->estado= '1';
         $user->ku= date("Ymd-His");
-        $user->tipo= 1;
 
         $user->save();
         Auth::login($user);
@@ -40,10 +39,14 @@ class LoginController extends Controller
         // $tipo = $request->tipo;
 
         $remember = ($request->has('remenber')? true: false);
+
         if (Auth::attempt($credentials,$remember)) {
             $request->session()->regenerate();
-                    return redirect()->intended('privada');
-
+            if (Auth::user()->hasRole('admin')) {
+                    return redirect()->intended('admin.index');
+            }else {
+                return redirect()->intended('privada');
+            }
         }else{
             return redirect('login');
         }

@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('password');
             $table->integer('estado');
             $table->string('ku', 20);
-            $table->integer('tipo');
             $table->rememberToken();
             $table->timestamps();
         });
