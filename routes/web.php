@@ -64,7 +64,7 @@ Route::get('info/{info}/editar', [InfoController::class, "edit"])->name('info.ed
 Route::put('info/{info}/actualizar', [InfoController::class, "update"])->name('info.update');
 Route::delete('info/{info}/eliminar', [InfoController::class, "destroy"])->name('info.delete');
 
-Route::view('/dashboard', "admin.index")->name('admin-index');
+Route::view('/dashboard', "admin.index")->name('dashboard');
 
 //para los emails
 
