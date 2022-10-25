@@ -43,9 +43,9 @@ class InfoController extends Controller
      */
     public function store(InfoRequest $inforequest)
     {
-//valida los datos de INfo
+        //valida los datos de INfo
         $datos = $inforequest->validated();
-//crea un registro en la tabla info con el ku
+        //crea un registro en la tabla info con el ku
         $info = Info::create($datos);
         $ku = $inforequest->ku;
         $grado = $inforequest->grado;
@@ -63,32 +63,33 @@ class InfoController extends Controller
         $konecta = $inforequest->konecta;
 
 
-//CREAR REGISTRO EN TABLA ESTUDIOS
+        //CREAR REGISTRO EN TABLA ESTUDIOS
         DB::table('estudios')->insert(
-            [ 'grado' => $grado,
-            'nombreie'  => $nombreie,
-            'estudia'  => $estudia,
-             'horario'  =>  $horario,
-             'disponibilidad'  =>  $disponibilidad,
-              'ku'  => $ku
-              ]
+            [
+                'grado' => $grado,
+                'nombreie'  => $nombreie,
+                'estudia'  => $estudia,
+                'horario'  =>  $horario,
+                'disponibilidad'  =>  $disponibilidad,
+                'ku'  => $ku
+            ]
         );
 
-//CREAR REGISTRO EN TABLA ESTUDIOS
+        //CREAR REGISTRO EN TABLA ESTUDIOS
         DB::table('laborales')->insert(
             [
-            'callcenter' => $callcenter,
-             'empresa' => $empresa,
-             'puesto'=> $puesto,
-              'tiempo' => $tiempo,
-               'tipo' => $tipo,
-               'konecta' => $konecta,
-              'ku'  => $ku
-              ]
+                'callcenter' => $callcenter,
+                'empresa' => $empresa,
+                'puesto' => $puesto,
+                'tiempo' => $tiempo,
+                'tipo' => $tipo,
+                'konecta' => $konecta,
+                'ku'  => $ku
+            ]
         );
 
         // $ku->update($datos);
-//ACTUALIZA LA TABLA USER EN EL ESTADO 2
+        //ACTUALIZA LA TABLA USER EN EL ESTADO 2
 
         DB::table('users')->where('ku', $ku)->limit(1)->update(['estado' => '2']);
         // return redirect()->route('info.index');
