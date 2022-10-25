@@ -1,7 +1,7 @@
-.texts-prim{
+.text-pri{
 color: #051c2c !important;
 }
-.texts-sec{
+.text-sec{
     color: #00b3e6 !important;
     }
 .buts-prim{
@@ -19,4 +19,8 @@ color: #051c2c !important;
 }
 .bg-body{
     background-color: #f3f5f9 !important;
+}
+
+#header-superior{
+    border-bottom: 3px solid #00cfe8 !important;
 }
