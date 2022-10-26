@@ -28,3 +28,42 @@ color: #051c2c !important;
 .item-documento:hover{
 background-color: #00cfe8;
 }
+
+.main-menu.menu-light .navigation > li.active > a {
+    background: linear-gradient(118deg, #051c2c, rgb(5 28 44 / 75%));
+    box-shadow: 0 0 10px 1px rgb(5 28 44 / 25%);
+    color: #fff;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    border-color: #051c2c !important;
+    background-color: #051c2c !important;
+    color: #fff !important;
+}
+
+.btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    color: #fff;
+    background-color: #051c2cdb !important;
+}
+
+.btn-primary:hover:not(.disabled):not(:disabled) {
+    box-shadow: 0 8px 25px -8px #051c2c;
+}
+
+.btn-outline-primary {
+    border: 1px solid #051c2c !important;
+    background-color: transparent;
+    color: #051c2c;
+}
+
+.btn-outline-primary:hover:not(.disabled):not(:disabled) {
+    background-color: rgba(115, 103, 240, 0.04);
+    color: #051c2c;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #051c2c;
+    background-color: rgb(73 80 145 / 6%);
+}
