@@ -33,6 +33,19 @@
 
 <!-- BEGIN: Page JS-->
 <script src="{{asset('app-assets/js/scripts/pages/auth-login.js')}}"></script>
+
+
+
+  <!-- BEGIN: Page Vendor JS-->
+  <script src="{{asset('app-assets/vendors/js/charts/chart.min.js')}}"></script>
+  <script src="{{asset('app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js')}}"></script>
+  <!-- END: Page Vendor JS-->
+
+  <!-- BEGIN: Page JS-->
+  <script src="{{asset('app-assets/js/scripts/charts/chart-chartjs.js')}}"></script>
+  <!-- END: Page JS-->
+
+
 <script>
     $(window).on('load', function() {
         if (feather) {

@@ -133,9 +133,9 @@
         <div class="main-menu-content">
             <ul class="navigation navigation-main bg-pri" id="main-menu-navigation" data-menu="menu-navigation">
 
-                <li class=" nav-item"><a class="d-flex align-items-center text-white" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">dasboard</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center text-white" href="{{route('dashboard')}}"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">dasboard</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center text-white" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Postulantes</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center text-white" href="{{route('postulantes')}}"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Postulantes</span></a>
                 </li>
             </ul>
         </div>

@@ -303,9 +303,7 @@
 </div>
 </div>
 
-<!-- BEGIN: Page JS-->
-<script src="{{asset('app-assets/js/scripts/charts/chart-chartjs.js')}}"></script>
-<!-- END: Page JS-->
+
 
 @endsection
 

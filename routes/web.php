@@ -58,13 +58,15 @@ Route::view('documento', "documentos.index")->name('documentos.index');
 Route::view('finalizado', "finalizado")->name('finalizado');
 
 
-//ADMINISTRADOR
+//ADMINISTRADOR-------------------------------------
 Route::get('info/listar', [InfoController::class, "index"])->name('info.index');
 Route::get('info/{info}/editar', [InfoController::class, "edit"])->name('info.edit');
 Route::put('info/{info}/actualizar', [InfoController::class, "update"])->name('info.update');
 Route::delete('info/{info}/eliminar', [InfoController::class, "destroy"])->name('info.delete');
 
 Route::view('/dashboard', "admin.index")->name('dashboard');
+Route::view('/postulantes', "admin.postulantes")->name('postulantes');
+
 
 //para los emails
 
