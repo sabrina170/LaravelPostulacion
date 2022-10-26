@@ -5,108 +5,57 @@
  @section('content')
 
 
-                <div class="flex items-center mt-8">
-                    <h2 class="intro-y text-lg font-medium mr-auto">
-                        LLENADO DE DOCUMENTOS
-                    </h2>
-                    <br>
-                  
-                </div>
-                <h5 class="intro-y mr-auto">
-                    Por favor, llene todos los documentos a continuación, luego darle click a enviar para proceder con la postulación:
-                </h5>
-                <div class="mt-5">
-                    {{-- 1 --}}
-                    <div class="intro-y container">
-                        <div class="box px-4 py-4 mb-3 flex items-center">
-                            <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                <i class="fa-sharp fa-solid fa-file-invoice fa-2x"></i> 
-                             </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium"> <strong>Ficha del trabajador</strong></div>
-                              </div>
-                            <div class="py-1 px-2 rounded-full text-xs zoom-in
-                         cursor-pointer font-medium">
-                          <a href="">  
-                            <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
-                        </a></div>
+ <div class="card br-16">
+    <div class="meetup-img-wrapper rounded-top text-center">
+        <img class="card-img-top br-16" src="{{asset('app-assets/images/portada2.jpg')}}" alt="Card image cap" style="object-fit:cover;" height="270">
+    </div>
+</div>
 
-                        </div>
-                    </div>
-                    {{-- 2  --}}
-                    <div class="intro-y container">
-                        <div class="box px-4 py-4 mb-3 flex items-center">
-                            <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                <i class="fa-sharp fa-solid fa-file-invoice fa-2x"></i> 
-                             </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium"> <strong>Documento 2</strong></div>
-                              </div>
-                            <div class="py-1 px-2 rounded-full text-xs zoom-in
-                         cursor-pointer font-medium">
-                          <a href="">  
-                            <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
-                        </a></div>
-                        
-                        </div>
-                    </div>
-                    {{-- 3 --}}
-                    <div class="intro-y container">
-                        <div class="box px-4 py-4 mb-3 flex items-center">
-                            <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                <i class="fa-sharp fa-solid fa-file-invoice fa-2x"></i> 
-                             </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium"> <strong>Documento 3</strong></div>
-                              </div>
-                            <div class="py-1 px-2 rounded-full text-xs zoom-in
-                         cursor-pointer font-medium">
-                          <a href="">  
-                            <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
-                        </a></div>
-                        
-                        </div>
-                    </div>
-                    {{-- 4 --}}
-                    <div class="intro-y container">
-                        <div class="box px-4 py-4 mb-3 flex items-center">
-                            <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                <i class="fa-sharp fa-solid fa-file-invoice fa-2x"></i> 
-                             </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium"> <strong>Documento 4</strong></div>
-                              </div>
-                            <div class="py-1 px-2 rounded-full text-xs zoom-in
-                         cursor-pointer font-medium">
-                          <a href="">  
-                            <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
-                        </a></div>
-                        
-                        </div>
-                    </div>
+<div class="card br-16 p-36">
+    <div class="card-body">
+        <h2 class="intro-y text-lg font-medium mr-auto">
+            LLENADO DE DOCUMENTOS
+        </h2>
+        <h5 class="intro-y mr-auto">
+            Por favor, llene todos los documentos a continuación, luego darle click a enviar para proceder con la postulación:
+        </h5>
 
-                    {{-- 5 --}}
-                    <div class="intro-y container">
-                        <div class="box px-4 py-4 mb-3 flex items-center">
-                            <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                <i class="fa-sharp fa-solid fa-file-invoice fa-2x"></i> 
-                             </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium"> <strong>Documento 5</strong></div>
-                              </div>
-                            <div class="py-1 px-2 rounded-full text-xs zoom-in
-                         cursor-pointer font-medium">
-                          <a href="">  
-                            <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
-                        </a></div>
-                        
-                        </div>
-                    </div>
-                </div>
+        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-24 item-documento">
+            <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
+            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
+            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+        </div>
 
+        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
+            <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
+            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
+            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+        </div>
 
-                </div>
+        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
+            <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
+            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
+            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+        </div>
 
+        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
+            <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
+            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
+            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+        </div>
+
+        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
+            <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
+            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
+            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+        </div>
+    </div>
+</div>
 
  @endsection
 

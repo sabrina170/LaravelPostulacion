@@ -24,3 +24,7 @@ color: #051c2c !important;
 #header-superior{
     border-bottom: 3px solid #00cfe8 !important;
 }
+
+.item-documento:hover{
+background-color: #00cfe8;
+}
