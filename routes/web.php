@@ -66,6 +66,7 @@ Route::delete('info/{info}/eliminar', [InfoController::class, "destroy"])->name(
 
 Route::view('/dashboard', "admin.index")->name('dashboard');
 Route::view('/postulantes', "admin.postulantes")->name('postulantes');
+Route::view('/misdocumentos', "admin.mis-documentos")->name('mis-documentos');
 
 
 //para los emails

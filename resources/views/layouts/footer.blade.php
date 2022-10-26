@@ -44,7 +44,7 @@
   <!-- BEGIN: Page JS-->
   <script src="{{asset('app-assets/js/scripts/charts/chart-chartjs.js')}}"></script>
   <!-- END: Page JS-->
-
+  <script src="{{asset('app-assets/js/scripts/pages/app-file-manager.js')}}"></script>
 
 <script>
     $(window).on('load', function() {

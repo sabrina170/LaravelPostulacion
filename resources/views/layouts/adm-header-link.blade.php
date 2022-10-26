@@ -44,6 +44,11 @@
     <!-- mis estilos -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/adm-style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/boot-dev.css')}}">
+    <!-- BEGIN: Page docs CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/plugins/extensions/ext-component-tree.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/app-file-manager.css')}}">
+    <!-- END: Page CSS-->
 
 
 </head>
