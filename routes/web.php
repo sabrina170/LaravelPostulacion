@@ -75,4 +75,14 @@ Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contact
 // REGISTROS DE MIS DOCUEMNTOS
 Route::view('misdocuemtos', "documentos.docs")->name('documentos.docs');
 
+Route::view('doc1', "documentos.doc1")->name('doc1');
+Route::view('doc2', "documentos.doc2")->name('doc2');
+Route::view('doc3', "documentos.doc3")->name('doc3');
+Route::view('doc4', "documentos.doc4")->name('doc4');
+Route::view('doc5', "documentos.doc5")->name('doc5');
+Route::view('doc6', "documentos.doc6")->name('doc6');
+
+
+
+
 Route::get('/misdocuemtos', [PdfController::class, "mform"])->name('documentos.docs');

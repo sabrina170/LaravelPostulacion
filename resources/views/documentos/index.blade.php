@@ -24,35 +24,41 @@
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
             <p class="col-lg-4 mb-0">Ficha del trabajador</p>
             <p class="col-lg-4 mb-0">Pendiente</p>
-            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc1')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
             <p class="col-lg-4 mb-0">Ficha del trabajador</p>
             <p class="col-lg-4 mb-0">Pendiente</p>
-            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc2')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
             <p class="col-lg-4 mb-0">Ficha del trabajador</p>
             <p class="col-lg-4 mb-0">Pendiente</p>
-            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc3')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
             <p class="col-lg-4 mb-0">Ficha del trabajador</p>
             <p class="col-lg-4 mb-0">Pendiente</p>
-            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc4')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
             <p class="col-lg-4 mb-0">Ficha del trabajador</p>
             <p class="col-lg-4 mb-0">Pendiente</p>
-            <p class="col-lg-2 mb-0 text-center"><a href="#"><i data-feather='arrow-right'></i></a></p>
+            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc5')}}"><i data-feather='arrow-right'></i></a></p>
+        </div>
+        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
+            <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
+            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
+            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc6')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
     </div>
 </div>

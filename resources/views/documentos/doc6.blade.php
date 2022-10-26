@@ -7,7 +7,7 @@
 
                 <div class="flex items-center mt-8">
                     <h2 class="intro-y text-lg font-medium mr-auto">
-                       doc 2
+                       doc 6
                     </h2>
                 </div>
 
