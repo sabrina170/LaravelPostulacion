@@ -29,7 +29,7 @@
 
                                 <div class="">
                                     <div class="row ">
-                                        <div class="col-6 align-items-center">
+                                        <div class="col-lg-6 align-items-center">
                                             <div class="w-100 h-100 d-lg-flex align-items-center justify-content-center px-0" >
                                                 <img class="img-fluid"  src="{{asset('app-assets/images/fotologin2.jpg')}}" alt="Login V2"/>
                                             </div>
@@ -57,8 +57,8 @@
                                                         <div class="mb-1">
                                                             <label class="form-label" for="first-name-icon">Contraseña</label>
                                                             <div class="input-group input-group-merge">
-                                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
-                                                                <input type="text" id="first-name-icon" class="form-control" name="password" placeholder="Ingrese su contraseña">
+                                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                                                                <input type="password" id="first-name-icon" class="form-control" name="password" placeholder="Ingrese su contraseña">
                                                             </div>
                                                         </div>
                                                     </div>

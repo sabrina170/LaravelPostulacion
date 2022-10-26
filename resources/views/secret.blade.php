@@ -115,8 +115,8 @@
 
  <div class="card br-16">
     <div class="meetup-img-wrapper rounded-top text-center">
-    <img class="card-img-top br-16" src="{{asset('app-assets/images/portada2.jpg')}}" alt="Card image cap" style="object-fit:cover;" height="270">
-</div>
+        <img class="card-img-top br-16" src="{{asset('app-assets/images/portada2.jpg')}}" alt="Card image cap" style="object-fit:cover;" height="270">
+    </div>
 </div>
                 {{-- veificar estados --}}
                 {{-- Fin de verificar estados --}}
@@ -126,7 +126,7 @@
 
                 <div class="card-body p-0">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
+                        <li class="nav-item mt-8">
                             <button type="button"
                             class="btn btn-lg btn-outline-info waves-effect"
                             id="homeIcon-tab"
@@ -144,7 +144,7 @@
                                 <span>Datos personales {{Auth::user()->estado}}</span>
                             </button>
                         </li>
-                        <li class="nav-item pl-16">
+                        <li class="nav-item pl-16 pl-sm-0 mt-8">
                             <button type="button"
                             id="homeIcon-tab"
                             id="profileIcon-tab"

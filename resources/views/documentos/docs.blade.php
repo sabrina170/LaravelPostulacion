@@ -18,63 +18,64 @@
         <h5 class="intro-y mr-auto">
             Por favor, llene todos los documentos a continuación, luego darle click a enviar para proceder con la postulación:
         </h5>
-
-        <table class="table  table-bordered mt-24">
-            <thead>
-                <tr>
-                    <th>DOCUMENTO</th>
-                    <th>SUBIR ARCHIVO</th>
-                    <th>ARCHIVOS SUBIDOS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="text-pri font-weight-bold">CERTIFICADO DE ESTUDIOS</td>
-                    <td>
-                        <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
-                </button>
-            </td>
-                    <td>certificado.jpg</td>
-                </tr>
-                <tr>
-                    <td class="text-pri font-weight-bold">CONSTANCIAS DE TRABAJOS</td>
-                    <td>
-                        <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
-                </button>
-            </td>
-                    <td>certificado.jpg</td>
-                </tr>
-                <tr>
-                    <td class="text-pri font-weight-bold">ANTECEDENTES</td>
-                    <td>
-                        <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
-                </button>
-            </td>
-                    <td>certificado.jpg</td>
-                </tr>
-                <tr>
-                    <td class="text-pri font-weight-bold">DNI</td>
-                    <td>
-                        <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
-                </button>
-            </td>
-                    <td>certificado.jpg</td>
-                </tr>
-                <tr>
-                    <td class="text-pri font-weight-bold">CERTIFICACIÓN DE RENTA 5TA CATEGORÍA</td>
-                    <td>
-                        <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
-                </button>
-            </td>
-                    <td>certificado.jpg</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table  table-bordered mt-24">
+                <thead>
+                    <tr>
+                        <th>DOCUMENTO</th>
+                        <th>SUBIR ARCHIVO</th>
+                        <th>ARCHIVOS SUBIDOS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-pri font-weight-bold">CERTIFICADO DE ESTUDIOS</td>
+                        <td>
+                            <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
+                    </button>
+                </td>
+                        <td>certificado.jpg</td>
+                    </tr>
+                    <tr>
+                        <td class="text-pri font-weight-bold">CONSTANCIAS DE TRABAJOS</td>
+                        <td>
+                            <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
+                    </button>
+                </td>
+                        <td>certificado.jpg</td>
+                    </tr>
+                    <tr>
+                        <td class="text-pri font-weight-bold">ANTECEDENTES</td>
+                        <td>
+                            <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
+                    </button>
+                </td>
+                        <td>certificado.jpg</td>
+                    </tr>
+                    <tr>
+                        <td class="text-pri font-weight-bold">DNI</td>
+                        <td>
+                            <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
+                    </button>
+                </td>
+                        <td>certificado.jpg</td>
+                    </tr>
+                    <tr>
+                        <td class="text-pri font-weight-bold">CERTIFICACIÓN DE RENTA 5TA CATEGORÍA</td>
+                        <td>
+                            <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
+                    </button>
+                </td>
+                        <td>certificado.jpg</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
     </div>
                 </div>
