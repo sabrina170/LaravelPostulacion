@@ -5,24 +5,31 @@
 <div class="row">
 
         <h2 class="text-pri font-weight-bold">Buscar por</h2>
+        <div class="demo-inline-spacing pb-8">
+            <button type="button" class="btn btn-success round waves-effect">Registrados</button>
+            <button type="button" class="btn btn-primary round waves-effect">En entrevista</button>
+            <button type="button" class="btn btn-info round waves-effect">Aceptados</button>
+            <button type="button" class="btn btn-danger round waves-effect">Rechazados</button>
+        </div>
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Table Basic</h4>
-                </div>
+
                 <div class="card-body">
-                    <p class="card-text">
-                        Using the most basic table Leanne Grahamup, here’s how <code>.table</code>-based tables look in Bootstrap. You
-                        can use any example of below table for your table and it can be use with any type of bootstrap tables.
-                    </p>
+                        <button type="button" class="btn btn-info round waves-effect btn-sm">EXCEL</button>
+                        <button type="button" class="btn btn-info round waves-effect btn-sm">PDF</button>
+                        <button type="button" class="btn btn-info round waves-effect btn-sm">IMPRIMIR</button>
+
                 </div>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Project</th>
-                                <th>Client</th>
-                                <th>Users</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Dni</th>
+                                <th>Genero</th>
+                                <th>Fecha de Registro</th>
+                                <th>Mis documentod</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -30,23 +37,13 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <img src="../../../app-assets/images/icons/angular.svg" class="me-75" height="20" width="20" alt="Angular">
-                                    <span class="fw-bold">Angular Project</span>
+                                    <span class="fw-bold">Peter </span>
                                 </td>
-                                <td>Peter Charls</td>
-                                <td>
-                                    <div class="avatar-group">
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Lilian Nenez">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                    </div>
-                                </td>
+                                <td>Charls</td>
+                                <td>76232414</td>
+                                <td>Femenino</td>
+                                <td>28/10/2022</td>
+                                <td>  <button type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</button></td>
                                 <td><span class="badge rounded-pill badge-light-primary me-1">Active</span></td>
                                 <td>
                                     <div class="dropdown">
@@ -54,10 +51,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 me-50"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-                                                <span>Edit</span>
-                                            </a>
+
                                             <a class="dropdown-item" href="#">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                 <span>Delete</span>
@@ -68,23 +62,14 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="../../../app-assets/images/icons/react.svg" class="me-75" height="20" width="20" alt="React">
-                                    <span class="fw-bold">React Project</span>
+                                    <span class="fw-bold">Peter </span>
                                 </td>
-                                <td>Ronald Frest</td>
-                                <td>
-                                    <div class="avatar-group">
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Lilian Nenez">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                    </div>
-                                </td>
+                                <td>Charls</td>
+                                <td>76232414</td>
+                                <td>Femenino</td>
+                                <td>28/10/2022</td>
+                                <td>  <button type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</button></td>
+
                                 <td><span class="badge rounded-pill badge-light-success me-1">Completed</span></td>
                                 <td>
                                     <div class="dropdown">
@@ -92,10 +77,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 me-50"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-                                                <span>Edit</span>
-                                            </a>
+
                                             <a class="dropdown-item" href="#">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                 <span>Delete</span>
@@ -106,23 +88,14 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="../../../app-assets/images/icons/vuejs.svg" class="me-75" height="20" width="20" alt="Vuejs">
-                                    <span class="fw-bold">Vuejs Project</span>
+                                    <span class="fw-bold">Peter </span>
                                 </td>
-                                <td>Jack Obes</td>
-                                <td>
-                                    <div class="avatar-group">
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Lilian Nenez">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                    </div>
-                                </td>
+                                <td>Charls</td>
+                                <td>76232414</td>
+                                <td>Femenino</td>
+                                <td>28/10/2022</td>
+                                <td>  <button type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</button></td>
+
                                 <td><span class="badge rounded-pill badge-light-info me-1">Scheduled</span></td>
                                 <td>
                                     <div class="dropdown">
@@ -130,10 +103,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 me-50"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-                                                <span>Edit</span>
-                                            </a>
+
                                             <a class="dropdown-item" href="#">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                 <span>Delete</span>
@@ -144,23 +114,14 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="../../../app-assets/images/icons/bootstrap.svg" class="me-75" height="20" width="20" alt="Bootstrap">
-                                    <span class="fw-bold">Bootstrap Project</span>
+                                    <span class="fw-bold">Peter </span>
                                 </td>
-                                <td>Jerry Milton</td>
-                                <td>
-                                    <div class="avatar-group">
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Lilian Nenez">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Alberto Glotzbach">
-                                            <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26">
-                                        </div>
-                                    </div>
-                                </td>
+                                <td>Charls</td>
+                                <td>76232414</td>
+                                <td>Femenino</td>
+                                <td>28/10/2022</td>
+                                <td>  <button type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</button></td>
+
                                 <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
                                 <td>
                                     <div class="dropdown">
@@ -168,10 +129,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 me-50"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-                                                <span>Edit</span>
-                                            </a>
+
                                             <a class="dropdown-item" href="#">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                 <span>Delete</span>
