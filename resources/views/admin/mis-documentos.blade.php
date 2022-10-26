@@ -84,7 +84,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">Profile.jpg</p>
+                                                    <p class="card-text file-name mb-0">Documento1.pdf</p>
                                                     <p class="card-text file-size mb-0">12.6mb</p>
                                                     <p class="card-text file-date">23 may 2019</p>
                                                 </div>
@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">account.pdf</p>
+                                                    <p class="card-text file-name mb-0">Documento2.pdf</p>
                                                     <p class="card-text file-size mb-0">82kb</p>
                                                     <p class="card-text file-date">25 may 2019</p>
                                                 </div>
@@ -128,7 +128,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">notes.pdf</p>
+                                                    <p class="card-text file-name mb-0">Documento3.pdf</p>
                                                     <p class="card-text file-size mb-0">54kb</p>
                                                     <p class="card-text file-date">01 may 2019</p>
                                                 </div>
@@ -150,7 +150,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">users.pdf</p>
+                                                    <p class="card-text file-name mb-0">Documento4.pdf</p>
                                                     <p class="card-text file-size mb-0">200kb</p>
                                                     <p class="card-text file-date">12 may 2019</p>
                                                 </div>
