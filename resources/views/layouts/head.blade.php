@@ -105,7 +105,7 @@
                     </a>
                 </li>
                 <li class=" nav-item">
-                    <a class="d-flex align-items-center" href="app-kanban.html">
+                    <a class="d-flex align-items-center" href="{{route('documentos.docs')}}">
                         <i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Mis documentos</span>
                     </a>
                 </li>
