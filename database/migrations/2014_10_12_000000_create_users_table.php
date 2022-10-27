@@ -21,6 +21,11 @@ return new class extends Migration
             $table->string('password');
             $table->integer('estado');
             $table->string('ku', 20);
+            $table->integer('tipo_dni');
+            $table->integer('dni');
+            $table->string('apellido_ma', 30);
+            $table->string('apellido_pa', 30);
+            $table->integer('celular');
             $table->rememberToken();
             $table->timestamps();
         });

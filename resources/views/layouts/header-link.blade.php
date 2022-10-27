@@ -53,5 +53,7 @@
 <!-- END: Head-->
 @yield('menu')
 
+@yield('login')
+
 @extends('layouts.footer')
 

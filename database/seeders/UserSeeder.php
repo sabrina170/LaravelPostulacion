@@ -22,7 +22,12 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123'),
             'estado' =>1,
-            'ku'=> date("Ymd-His")
+            'ku'=> date("Ymd-His"),
+            'apellido_ma'=>'Alvarez',
+            'apellido_pa'=>'Nuñez',
+            'tipo_dni'=>1,
+            'dni'=>76232414,
+            'celular'=>987912688
         ])->assignRole('admin');
 
         User::create([
@@ -30,7 +35,12 @@ class UserSeeder extends Seeder
             'email' => 'sabrina@gmail.com',
             'password' => Hash::make('123'),
             'estado' =>1,
-            'ku'=> date("Ymd-His")
+            'ku'=> date("Ymd-His"),
+            'apellido_ma'=>'Pomajulca',
+            'apellido_pa'=>'Razabal',
+            'tipo_dni'=>1,
+            'dni'=>76232414,
+            'celular'=>987912688
         ])->assignRole('postulante');
     }
 }

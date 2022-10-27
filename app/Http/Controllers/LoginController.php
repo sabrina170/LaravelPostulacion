@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -13,9 +14,11 @@ use Spatie\Permission\Models\Permission;
 
 class LoginController extends Controller
 {
-    public function register(Request $request)
+    public function register(UserRequest $request)
     {
         //falta valiaar datos que sean verdaderos
+        $user = $request->validated();
+        // $info = Info::create($datos);
         $user = new User();
 
         $user->name = $request->name;
@@ -23,11 +26,17 @@ class LoginController extends Controller
         $user->password = Hash::make($request->password);
         $user->estado = '1';
         $user->ku = date("Ymd-His");
+        $user->apellido_pa = $request->apellido_pa;
+        $user->apellido_ma = $request->apellido_ma;
+        $user->tipo_dni = $request->tipo_dni;
+        $user->dni = $request->dni;
+        $user->celular = $request->celular;
+
 
         $user->save();
         Auth::login($user);
 
-        return redirect(route('login'));
+        return redirect(route('login'),compact('crear'));
     }
 
     public function login(Request $request)
