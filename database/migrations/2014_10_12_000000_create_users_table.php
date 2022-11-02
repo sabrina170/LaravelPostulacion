@@ -20,7 +20,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('estado');
-            $table->string('ku', 20);
             $table->integer('tipo_dni');
             $table->integer('dni');
             $table->string('apellido_ma', 30);

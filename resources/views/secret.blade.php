@@ -175,11 +175,15 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <label for="input-wizard-1" class="form-label">Nombres</label>
-                                        <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombres" name="nombre" value="{{ old('nombre')}}">
+                                        <input id="input-wizard-1" type="text" class="form-control" name="nombres" value="{{ Auth::user()->name}}" readonly>
                                     </div>
                                     <div class="col-lg-4">
-                                        <label for="input-wizard-2" class="form-label">Apellidos</label>
-                                        <input id="input-wizard-2" type="text" class="form-control" placeholder="apellidos" name="apellido" value="{{ old('apellido')}}">
+                                        <label for="input-wizard-2" class="form-label">Apellido Paterno</label>
+                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_ma" value="{{ Auth::user()->apellido_pa}}" readonly>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="input-wizard-2" class="form-label">Apellido Materno</label>
+                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_pa" value="{{ Auth::user()->apellido_ma}}" readonly>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Tipo Documento</label>
@@ -189,13 +193,21 @@
                                         </select> </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-3" class="form-label">Numero</label>
-                                        <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="numero_documento" value="{{ old('numero_documento')}}">
+                                        <input id="input-wizard-4" type="text" class="form-control" value="{{ Auth::user()->dni}}" readonly>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="input-wizard-2" class="form-label">Email</label>
+                                        <input id="input-wizard-2" type="email" class="form-control" name="email" value="{{ Auth::user()->email}}" readonly>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="input-wizard-2" class="form-label">Telefono</label>
+                                        <input id="input-wizard-2" type="number" class="form-control"  name="telefono" value="{{ Auth::user()->celular }}" readonly>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-6" class="form-label">Fecha Nacimiento</label>
                                         <input id="input-wizard-5" type="date" class="form-control" name="fecha_nacimiento" value="{{ old('fecha_nacimiento')}}">
-
                                     </div>
+
                                     <div class="col-lg-4">
                                         <label for="input-wizard-4" class="form-label">Pais</label>
                                         <select id="selectUrgencia" class="form-select" name="pais" @selected(old('pais'))>
@@ -228,10 +240,7 @@
                                             <option value="Masculino">Masculino</option>
                                         </select>
                                      </div>
-                                    <div class="col-lg-4">
-                                        <label for="input-wizard-2" class="form-label">Email</label>
-                                        <input id="input-wizard-2" type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="{{ old('email')}}">
-                                    </div>
+
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Distrito</label>
                                         <select id="input-wizard-6" class="form-select" name="distrito" @selected(old('distrito'))>
@@ -243,14 +252,11 @@
                                         <label for="input-wizard-3" class="form-label">Dirección</label>
                                         <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="direccion" value="{{ old('direccion')}}">
                                     </div>
-                                    <div class="col-lg-4">
-                                        <label for="input-wizard-2" class="form-label">Telefono</label>
-                                        <input id="input-wizard-2" type="number" class="form-control"  name="telefono">
-                                    </div>
+
                                     <div class="col-lg-4">
                                     {{-- input que vendran por defecto --}}
-                                    <label for="input-wizard-2" class="form-label">ku</label>
-                                    <input id="input-wizard-2" type="text" class="form-control"  name="ku" value="{{ Auth::user()->ku }}" readonly>
+                                    <label for="input-wizard-2" class="form-label">id</label>
+                                    <input id="input-wizard-2" type="number" class="form-control"  name="user_id" value="{{ Auth::user()->id }}" readonly>
                                     </div>
 
                                     {{-- DATOS DE ESTUDIOS --}}
@@ -265,7 +271,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-1" class="form-label">Nombre de Institución Educativa</label>
-                                        <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombreie" name="nombreie" value="{{ old('nombreie')}}">
+                                        <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombreie" name="nombre_ie" value="{{ old('nombreie')}}">
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">¿Estudia actualmente?</label>
@@ -307,7 +313,7 @@
                                  </div>
                                  <div class="col-lg-4">
                                     <label for="input-wizard-2" class="form-label">Tipo experiencia</label>
-                                    <select id="input-wizard-6" class="form-select" name="tipo">
+                                    <select id="input-wizard-6" class="form-select" name="tipo_ex">
                                         <option value="Ventas call center">Ventas call center</option>
                                         <option value="No">No</option>
                                     </select>

@@ -25,24 +25,25 @@ class InfoRequest extends FormRequest
     {
         return [
             // Datos Info Personal
-            'nombre' => 'required',
-            'telefono' => 'required',
-            'apellido' => 'required',
-            'numero_documento' => 'required',
+            'nombres' => '',
+            'apellido_ma' => '',
+            'apellido_pa' => '',
+            'telefono' => '',
+            'numero_documento' => '',
             'fecha_nacimiento' => 'required',
             'sexo' => 'required',
             'pais' => 'required',
             'departamento' => 'required',
-            'email' => 'required',
+            'correo' => '',
             'provincia' => 'required',
             'distrito' => 'required',
             'direccion' => 'required',
-            'tipo_documento' => 'required',
-            'ku' => 'required',
+            'tipo_documento' => '',
+            'user_id' =>'',
 
             // Datos de Estudios
             'grado' => 'required',
-            'nombre' => 'required',
+            'nombre_ie' => 'required',
             'estudia' => 'required',
             'horario' => 'required',
             'disponibilidad' => 'required',
@@ -51,7 +52,7 @@ class InfoRequest extends FormRequest
             'empresa' => 'required',
             'puesto' => 'required',
             'tiempo' => 'required',
-            'tipo' => 'required',
+            'tipo_ex' => 'required',
             'konecta' => 'required'
         ];
     }

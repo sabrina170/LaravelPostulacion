@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123'),
             'estado' =>1,
-            'ku'=> date("Ymd-His"),
+
             'apellido_ma'=>'Alvarez',
             'apellido_pa'=>'Nuñez',
             'tipo_dni'=>1,
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
             'email' => 'sabrina@gmail.com',
             'password' => Hash::make('123'),
             'estado' =>1,
-            'ku'=> date("Ymd-His"),
+
             'apellido_ma'=>'Pomajulca',
             'apellido_pa'=>'Razabal',
             'tipo_dni'=>1,

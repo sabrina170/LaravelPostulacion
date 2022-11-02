@@ -46,55 +46,56 @@ class InfoController extends Controller
         //valida los datos de INfo
         $datos = $inforequest->validated();
         //crea un registro en la tabla info con el ku
+        // dd($datos);
         $info = Info::create($datos);
-        $ku = $inforequest->ku;
-        $grado = $inforequest->grado;
-        $nombreie = $inforequest->nombreie;
-        $estudia = $inforequest->estudia;
-        $horario = $inforequest->horario;
-        $disponibilidad = $inforequest->disponibilidad;
+        $user_id = $inforequest->user_id;
+        // $grado = $inforequest->grado;
+        // $nombreie = $inforequest->nombreie;
+        // $estudia = $inforequest->estudia;
+        // $horario = $inforequest->horario;
+        // $disponibilidad = $inforequest->disponibilidad;
 
 
-        $callcenter = $inforequest->callcenter;
-        $empresa = $inforequest->empresa;
-        $puesto = $inforequest->puesto;
-        $tiempo = $inforequest->tiempo;
-        $tipo = $inforequest->tipo;
-        $konecta = $inforequest->konecta;
+        // $callcenter = $inforequest->callcenter;
+        // $empresa = $inforequest->empresa;
+        // $puesto = $inforequest->puesto;
+        // $tiempo = $inforequest->tiempo;
+        // $tipo = $inforequest->tipo;
+        // $konecta = $inforequest->konecta;
 
 
         //CREAR REGISTRO EN TABLA ESTUDIOS
-        DB::table('estudios')->insert(
-            [
-                'grado' => $grado,
-                'nombreie'  => $nombreie,
-                'estudia'  => $estudia,
-                'horario'  =>  $horario,
-                'disponibilidad'  =>  $disponibilidad,
-                'ku'  => $ku
-            ]
-        );
+        // DB::table('estudios')->insert(
+        //     [
+        //         'grado' => $grado,
+        //         'nombreie'  => $nombreie,
+        //         'estudia'  => $estudia,
+        //         'horario'  =>  $horario,
+        //         'disponibilidad'  =>  $disponibilidad,
+        //         'ku'  => $ku
+        //     ]
+        // );
 
         //CREAR REGISTRO EN TABLA ESTUDIOS
-        DB::table('laborales')->insert(
-            [
-                'callcenter' => $callcenter,
-                'empresa' => $empresa,
-                'puesto' => $puesto,
-                'tiempo' => $tiempo,
-                'tipo' => $tipo,
-                'konecta' => $konecta,
-                'ku'  => $ku
-            ]
-        );
+        // DB::table('laborales')->insert(
+        //     [
+        //         'callcenter' => $callcenter,
+        //         'empresa' => $empresa,
+        //         'puesto' => $puesto,
+        //         'tiempo' => $tiempo,
+        //         'tipo' => $tipo,
+        //         'konecta' => $konecta,
+        //         'ku'  => $ku
+        //     ]
+        // );
 
         // $ku->update($datos);
         //ACTUALIZA LA TABLA USER EN EL ESTADO 2
 
-        DB::table('users')->where('ku', $ku)->limit(1)->update(['estado' => '2']);
+        DB::table('users')->where('id', $user_id)->limit(1)->update(['estado' => '2']);
         // return redirect()->route('info.index');
         return redirect()->route('privada');
-        dd($datos);
+
     }
 
     /**
