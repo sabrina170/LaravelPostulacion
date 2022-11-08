@@ -193,11 +193,11 @@
                                         </select> </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-3" class="form-label">Numero</label>
-                                        <input id="input-wizard-4" type="text" class="form-control" value="{{ Auth::user()->dni}}" readonly>
+                                        <input id="input-wizard-4" type="number" class="form-control" name="numero_documento" value="{{ Auth::user()->dni}}" readonly>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Email</label>
-                                        <input id="input-wizard-2" type="email" class="form-control" name="email" value="{{ Auth::user()->email}}" readonly>
+                                        <input id="input-wizard-2" type="email" class="form-control" name="correo" value="{{ Auth::user()->email}}" readonly>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Telefono</label>
@@ -271,7 +271,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-1" class="form-label">Nombre de Institución Educativa</label>
-                                        <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombreie" name="nombre_ie" value="{{ old('nombreie')}}">
+                                        <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombreie" name="nombre_ie" value="{{ old('nombre_ie')}}">
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">¿Estudia actualmente?</label>
@@ -313,8 +313,8 @@
                                  </div>
                                  <div class="col-lg-4">
                                     <label for="input-wizard-2" class="form-label">Tipo experiencia</label>
-                                    <select id="input-wizard-6" class="form-select" name="tipo_ex">
-                                        <option value="Ventas call center">Ventas call center</option>
+                                    <select id="input-wizard-6" class="form-select" name="tipo_expe">
+                                        <option value="Ventas call center" selected>Ventas call center</option>
                                         <option value="No">No</option>
                                     </select>
                                 </div>
