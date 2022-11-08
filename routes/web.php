@@ -85,7 +85,7 @@ Route::view('doc4', "documentos.doc4")->name('doc4');
 Route::view('doc5', "documentos.doc5")->name('doc5');
 Route::view('doc6', "documentos.doc6")->name('doc6');
 
-
-
-
 Route::get('/misdocuemtos', [PdfController::class, "mform"])->name('documentos.docs');
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('myPDF');
+// Route::get('vistapdf', [PdfController::class, 'generatePDF'])->name('myPDF');
