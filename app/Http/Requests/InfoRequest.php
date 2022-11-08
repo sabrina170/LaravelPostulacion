@@ -52,7 +52,7 @@ class InfoRequest extends FormRequest
             'empresa' => 'required',
             'puesto' => 'required',
             'tiempo' => 'required',
-            'tipo_ex' => 'required',
+            'tipo_expe' => 'required',
             'konecta' => 'required'
         ];
     }

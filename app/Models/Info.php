@@ -10,21 +10,34 @@ class Info extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre',
-        'telefono',
-        // 'dni',
-        'ku',
-        'apellido',
+        'nombres',
+        'apellido_ma',
+        'apellido_pa',
         'tipo_documento',
         'numero_documento',
+        'correo',
+        'telefono',
         'fecha_nacimiento',
-        'sexo',
         'pais',
         'departamento',
-        'email',
         'provincia',
+        'sexo',
         'distrito',
-        'direccion'
+        'direccion',
+        'user_id',
+        'apellido',
+        'grado',
+        'nombre_ie',
+        'estudia',
+        'horario',
+        'disponibilidad',
+        'callcenter',
+        'empresa',
+        'puesto',
+        'tiempo',
+        'tipo_expe',
+        'konecta',
+
     ];
 
     // public const ESTADOS = ['activo', 'inactivo', 'terminado'];
