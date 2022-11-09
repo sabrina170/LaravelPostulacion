@@ -4,7 +4,6 @@
 
  @section('content')
 
-
  <div class="card br-16">
     <div class="meetup-img-wrapper rounded-top text-center">
         <img class="card-img-top br-16" src="{{asset('app-assets/images/portada2.jpg')}}" alt="Card image cap" style="object-fit:cover;" height="270">
@@ -23,41 +22,93 @@
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-24 item-documento">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
             <p class="col-lg-4 mb-0">Ficha del trabajador</p>
-            <p class="col-lg-4 mb-0">Pendiente</p>
-            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc1')}}"><i data-feather='arrow-right'></i></a></p>
+            @foreach ($docs as $d)
+                @if ($d->tipo==1)
+                    @if ($d->estado==1)
+                    <p class="col-lg-4 mb-0"><span class="badge bg-info">Completado</span></p>
+                    @else
+                    <p class="col-lg-4 mb-0">Pendiente</p>
+                    @endif
+                @endif
+            @endforeach
+            <p class="col-lg-2 mb-0 text-center">
+                <a href="{{route('doc1',Auth::user()->id)}}"><i data-feather='arrow-right'></i></a></p>
+        </div>
+
+
+        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
+            <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
+            <p class="col-lg-4 mb-0">Documento 2</p>
+            @foreach ($docs as $d)
+                @if ($d->tipo==2)
+                    @if ($d->estado==1)
+                    <p class="col-lg-4 mb-0"><span class="badge bg-info">Completado</span></p>
+                    @else
+                    <p class="col-lg-4 mb-0">Pendiente</p>
+                    @endif
+                @endif
+             @endforeach
+             <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc2',[Auth::user()->id,2])}}"><i data-feather='arrow-right'></i></a></p>
+
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
-            <p class="col-lg-4 mb-0">Pendiente</p>
-            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc2')}}"><i data-feather='arrow-right'></i></a></p>
-        </div>
-
-        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
-            <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
-            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-4 mb-0">Documento 3</p>
+            @foreach ($docs as $d)
+            @if ($d->tipo==3)
+                @if ($d->estado==1)
+                <p class="col-lg-4 mb-0"><span class="badge bg-info">Completado</span></p>
+                @else
+                <p class="col-lg-4 mb-0">Pendiente</p>
+                @endif
+            @endif
+         @endforeach
             <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc3')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
-            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-4 mb-0">Documento 4</p>
+            @foreach ($docs as $d)
+                @if ($d->tipo==4)
+                    @if ($d->estado==1)
+                    <p class="col-lg-4 mb-0"><span class="badge bg-info">Completado</span></p>
+                    @else
+                    <p class="col-lg-4 mb-0">Pendiente</p>
+                    @endif
+                @endif
+             @endforeach
             <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc4')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
-            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-4 mb-0">Docuemento 5</p>
+            @foreach ($docs as $d)
+            @if ($d->tipo==5)
+                @if ($d->estado==1)
+                <p class="col-lg-4 mb-0"><span class="badge bg-info">Completado</span></p>
+                @else
+                <p class="col-lg-4 mb-0">Pendiente</p>
+                @endif
+            @endif
+         @endforeach
             <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc5')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Ficha del trabajador</p>
-            <p class="col-lg-4 mb-0">Pendiente</p>
+            <p class="col-lg-4 mb-0">Documento 6</p>
+            @foreach ($docs as $d)
+            @if ($d->tipo==6)
+                @if ($d->estado==1)
+                <p class="col-lg-4 mb-0"><span class="badge bg-info">Completado</span></p>
+                @else
+                <p class="col-lg-4 mb-0">Pendiente</p>
+                @endif
+            @else
+            @endif
+            @endforeach
             <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc6')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
     </div>

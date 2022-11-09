@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li class=" nav-item">
-                    <a class="d-flex align-items-center" href="{{route('documentos.index')}}">
+                    <a class="d-flex align-items-center" href="{{route('documentos.index',Auth::user()->id)}}">
                         <div class="d-flex flex-row">
                             <div class="font-36 pr-8 font-weight-bold">
                                 3

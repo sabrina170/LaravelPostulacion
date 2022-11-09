@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DocController;
 use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -51,8 +52,7 @@ Route::post('info/guardar', [InfoController::class, "store"])->name('info-store'
 //ENTREVISTA PERSONAL
 Route::view('entrevista', "entrevista.index")->name('entrevista.index');
 
-//LLENADO DE DOCUMENTOS
-Route::view('documento', "documentos.index")->name('documentos.index');
+
 
 //FINALIZADO
 Route::view('finalizado', "finalizado")->name('finalizado');
@@ -78,8 +78,10 @@ Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contact
 // REGISTROS DE MIS DOCUEMNTOS
 Route::view('misdocuemtos', "documentos.docs")->name('documentos.docs');
 
+Route::get('doc2/{id_user}/{tipo_doc}', [DocController::class, "listar"])->name('doc2');
+Route::view('/documento2', "documentos.doc2")->name('documentos.doc2');
+
 Route::view('doc1', "documentos.doc1")->name('doc1');
-Route::view('doc2', "documentos.doc2")->name('doc2');
 Route::view('doc3', "documentos.doc3")->name('doc3');
 Route::view('doc4', "documentos.doc4")->name('doc4');
 Route::view('doc5', "documentos.doc5")->name('doc5');
@@ -88,4 +90,21 @@ Route::view('doc6', "documentos.doc6")->name('doc6');
 
 
 
-Route::get('/misdocuemtos', [PdfController::class, "mform"])->name('documentos.docs');
+// Route::get('/misdocuemtos', [PdfController::class, "mform"])->name('documentos.docs');
+
+//PDFS
+
+Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
+Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
+
+//LLENADO DE DOCUMENTOS
+
+Route::view('documento', "documentos.index")->name('documentos.index');
+Route::get('ListaDocs/{id_user}', [DocController::class, 'listardocs'])->name('documentos.index');
+
+Route::get('pdf/getIndex', [PDFController::class, 'getIndex'])->name('pdf.getIndex');
+
+Route::post('pdf/getGenerar', [PDFController::class, 'getGenerar'])->name('pdf.getGenerar');
+Route::view('/pdf_doc2', "documentos.pdf_doc2")->name('documentos.pdf_doc2');
+// Route::get('pdf','PdfController@getIndex');
+// Route::get('pdf/generar','PdfController@getGenerar');
