@@ -37,7 +37,7 @@
             @endif
             
             <p class="col-lg-2 mb-0 text-center">
-                <a href="{{route('doc1',Auth::user()->id)}}"><i data-feather='arrow-right'></i></a></p>
+                <a href="{{route('doc1')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
 

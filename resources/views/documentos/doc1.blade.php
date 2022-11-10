@@ -4,7 +4,7 @@
 
 
  <div class="card br-16 p-36">
-    <a class="btn btn-primary w-24 mr-1 mb-2" href="{{route('myPDF')}}">Primary</a> 
+    {{-- <a class="btn btn-primary w-24 mr-1 mb-2" href="{{route('myPDF')}}">Primary</a>  --}}
     <div class="card-body">
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
             FICHA DEL TRABAJADOR
