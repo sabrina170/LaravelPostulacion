@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "85c71a0d079e60a769337726f24ab105",
+=======
+    "content-hash": "b526be64613c4e1eaa0ee0fd3f438f05",
+>>>>>>> origin/main
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -3623,6 +3627,7 @@
             "time": "2021-12-11T13:40:54+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "setasign/fpdi",
             "version": "1.6.2",
             "source": {
@@ -3676,6 +3681,8 @@
             "time": "2017-05-11T14:25:49+00:00"
         },
         {
+=======
+>>>>>>> origin/main
             "name": "spatie/laravel-permission",
             "version": "5.5.16",
             "source": {
