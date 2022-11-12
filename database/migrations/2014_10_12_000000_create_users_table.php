@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('estado');
             $table->integer('tipo_dni');
             $table->integer('dni');
-            $table->string('apellido_ma', 30);
+            // $table->string('apellido_ma', 30);
             $table->string('apellido_pa', 30);
             $table->integer('celular');
             $table->rememberToken();

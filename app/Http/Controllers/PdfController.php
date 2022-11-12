@@ -35,7 +35,7 @@ class PdfController extends Controller
     {
         return view('vista_general');
     }
-    public function getGenerar(Request $request)
+    public function getGenerar2(Request $request)
     {
         $id_user = $request->get('id_user');
         $infos = Info::where('user_id', '=', $id_user)->get();
@@ -73,6 +73,47 @@ class PdfController extends Controller
                 'ruta' => $nombreArchivo,
                 'id_user' => $id_user,
                 'tipo' => 2,
+                'estado' => 1,
+            ]);
+
+            return redirect()->route('documentos.index', $id_user);
+        }
+    }
+    public function getGenerar3(Request $request)
+    {
+        $id_user = $request->get('id_user');
+        $infos = Info::where('user_id', '=', $id_user)->get();
+
+        $accion = $request->get('accion');
+        if ($image = $request->file('firma')) {
+            $destinatarioPath = 'images-firma/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinatarioPath, $profileImage);
+            // $alu['image'] = "$profileImage";
+        }
+
+        $data = [
+            'firma' => $profileImage,
+            'infos' => $infos
+        ];
+
+        // dd($data);
+        if ($accion == 'ver') {
+            return  view('documentos.pdf_doc3', $data);
+        } elseif ($accion == 'descargar') {
+
+            // return $this->pdf($request);
+            $pdf = PDF::loadView('documentos.pdf_doc3', $data);
+            $nombreArchivo = date('YmdHis') . ".pdf";
+            $rutaGuardado = 'images-cer/';
+            file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
+
+            // return $pdf->download('demo.pdf');
+
+            $doc = Documento::create([
+                'ruta' => $nombreArchivo,
+                'id_user' => $id_user,
+                'tipo' => 3,
                 'estado' => 1,
             ]);
 

@@ -79,12 +79,28 @@ Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contact
 // Route::view('Documentos', "documentos.index")->name('documentos.index');
 Route::view('misdocuemtos', "documentos.docs")->name('documentos.docs');
 
-Route::get('doc2/{id_user}/{tipo_doc}', [DocController::class, "listar"])->name('doc2');
+// DOCUMENTO 2
+Route::get('doc2/{id_user}/{tipo_doc}', [DocController::class, "listardoc2"])->name('doc2');
 Route::view('/documento2', "documentos.doc2")->name('documentos.doc2');
+Route::post('pdf/getGenerar2', [PDFController::class, 'getGenerar2'])->name('pdf.getGenerar2');
+Route::view('/pdf_doc2', "documentos.pdf_doc2")->name('documentos.pdf_doc2');
+// --------------------------------------------------------
+// DOCUMENTO 3
+Route::get('doc3/{id_user}/{tipo_doc}', [DocController::class, "listardoc3"])->name('doc3');
+Route::view('/documento3', "documentos.doc3")->name('documentos.doc3');
+Route::post('pdf/getGenerar3', [PDFController::class, 'getGenerar3'])->name('pdf.getGenerar3');
+Route::view('/pdf_doc3', "documentos.pdf_doc3")->name('documentos.pdf_doc3');
+// --------------------------------------------------------
+// DOCUMENTO 3
+Route::get('doc4/{id_user}/{tipo_doc}', [DocController::class, "listardoc4"])->name('doc4');
+Route::view('/documento4', "documentos.doc4")->name('documentos.doc4');
+Route::post('pdf/getGenerar4', [PDFController::class, 'getGenerar3'])->name('pdf.getGenerar4');
+Route::view('/pdf_doc4', "documentos.pdf_doc4")->name('documentos.pdf_doc4');
 
+// ------------------------------------------------------
 Route::view('doc1', "documentos.doc1")->name('doc1');
-Route::view('doc3', "documentos.doc3")->name('doc3');
-Route::view('doc4', "documentos.doc4")->name('doc4');
+// Route::view('doc3', "documentos.doc3")->name('doc3');
+// Route::view('doc4', "documentos.doc4")->name('doc4');
 Route::view('doc5', "documentos.doc5")->name('doc5');
 Route::view('doc6', "documentos.doc6")->name('doc6');
 
@@ -98,5 +114,4 @@ Route::get('ListaDocs/{id_user}', [DocController::class, 'listardocs'])->name('d
 
 Route::get('pdf/getIndex', [PDFController::class, 'getIndex'])->name('pdf.getIndex');
 
-Route::post('pdf/getGenerar', [PDFController::class, 'getGenerar'])->name('pdf.getGenerar');
-Route::view('/pdf_doc2', "documentos.pdf_doc2")->name('documentos.pdf_doc2');
+

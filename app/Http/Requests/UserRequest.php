@@ -25,10 +25,10 @@ class UserRequest extends FormRequest
     {
         return [
             // Datos Info Personal
-            'nanme' => 'required',
+            'name' => 'required',
             'dni' => 'required',
             'apellido_pa' => 'required',
-            'apellido_ma' => 'required',
+            // 'apellido_ma' => 'required',
             'email' => 'required',
             'celular' => 'required',
             'password' => 'required'

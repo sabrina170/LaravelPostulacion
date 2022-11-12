@@ -25,9 +25,9 @@ class LoginController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->estado = '1';
-        $user->ku = date("Ymd-His");
+        // $user->ku = date("Ymd-His");
         $user->apellido_pa = $request->apellido_pa;
-        $user->apellido_ma = $request->apellido_ma;
+        // $user->apellido_ma = $request->apellido_ma;
         $user->tipo_dni = $request->tipo_dni;
         $user->dni = $request->dni;
         $user->celular = $request->celular;
@@ -36,7 +36,7 @@ class LoginController extends Controller
         $user->save();
         Auth::login($user);
 
-        return redirect(route('login'),compact('crear'));
+        return redirect(route('login'));
     }
 
     public function login(Request $request)

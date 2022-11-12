@@ -35,7 +35,7 @@
             @else
             <p class="col-lg-4 mb-0">Pendiente</p>
             @endif
-            
+
             <p class="col-lg-2 mb-0 text-center">
                 <a href="{{route('doc1')}}"><i data-feather='arrow-right'></i></a></p>
         </div>
@@ -77,7 +77,7 @@
             @else
             <p class="col-lg-4 mb-0">Pendiente</p>
             @endif
-            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc3')}}"><i data-feather='arrow-right'></i></a></p>
+            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc3',[Auth::user()->id,3])}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
@@ -96,7 +96,7 @@
             @else
             <p class="col-lg-4 mb-0">Pendiente</p>
             @endif
-            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc4')}}"><i data-feather='arrow-right'></i></a></p>
+            <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc4',[Auth::user()->id,4])}}"><i data-feather='arrow-right'></i></a></p>
         </div>
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">

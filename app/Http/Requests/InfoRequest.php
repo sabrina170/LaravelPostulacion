@@ -26,7 +26,7 @@ class InfoRequest extends FormRequest
         return [
             // Datos Info Personal
             'nombres' => '',
-            'apellido_ma' => '',
+            'apellido_ma' => 'required',
             'apellido_pa' => '',
             'telefono' => '',
             'numero_documento' => '',

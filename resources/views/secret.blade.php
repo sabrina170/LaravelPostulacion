@@ -179,11 +179,11 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Apellido Paterno</label>
-                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_ma" value="{{ Auth::user()->apellido_pa}}" readonly>
+                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_pa" value="{{ Auth::user()->apellido_pa}}" readonly>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Apellido Materno</label>
-                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_pa" value="{{ Auth::user()->apellido_ma}}" readonly>
+                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_ma">
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Tipo Documento</label>

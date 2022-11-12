@@ -10,7 +10,7 @@
 
         <div class="card-body">
 
-           
+
             <div class="row m-0">
                 @foreach ($infos as $item)
                         @if (isset($documento))
@@ -29,7 +29,7 @@
 
                         {{-- Ingresar Tipo de Documento y Número (Carnet de Extranjería / DNI) --}}
                     </h5>
-                    <form action="{{ route('pdf.getGenerar') }}" method="post"  enctype="multipart/form-data" >
+                    <form action="{{ route('pdf.getGenerar2') }}" method="post"  enctype="multipart/form-data" >
                             @csrf
                             <input type="hidden" value="descargar" name="accion">
                             <input type="hidden" value="{{Auth::user()->id}}" name="id_user">
@@ -79,15 +79,15 @@
                     @endif
                 @endforeach
             </div>
-         
+
            {{-- @if ()
-               
+
            @else
-               
+
            @endif
 
            @if ()
-               
+
            @endif --}}
 
 

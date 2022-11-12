@@ -126,7 +126,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
+                                                            <div class="col-12">
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="first-name-icon">Apellido Paterno</label>
                                                                     <div class="input-group input-group-merge">
@@ -135,7 +135,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
+                                                            {{-- <div class="col-6">
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="first-name-icon">Apellido Materno</label>
                                                                     <div class="input-group input-group-merge">
@@ -143,7 +143,7 @@
                                                                         <input type="text" id="first-name-icon" class="form-control" name="apellido_ma" placeholder="Apellido Materno">
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col-12">
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="first-name-icon">Nombres completos</label>
