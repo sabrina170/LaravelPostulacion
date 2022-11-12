@@ -120,6 +120,57 @@ class PdfController extends Controller
             return redirect()->route('documentos.index', $id_user);
         }
     }
+
+    public function getGenerar4(Request $request)
+    {
+        $id_user = $request->get('id_user');
+        $infos = Info::where('user_id', '=', $id_user)->get();
+
+        $accion = $request->get('accion');
+        if ($image = $request->file('firma')) {
+            $destinatarioPath = 'images-firma/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinatarioPath, $profileImage);
+            // $alu['image'] = "$profileImage";
+        }
+
+        $data = [
+            'lugar' => $request->get('lugar'),
+            'fecha' => $request->get('fecha'),
+            'nombre_afp' => $request->get('nombre_afp'),
+            'codigo_afp' => $request->get('codigo_afp'),
+            'list' => $request->get('check_list'),
+            'firma' => $profileImage,
+            'infos' => $infos
+        ];
+
+    //    dd($request->get('check_list'));
+
+        // dd($data);
+        if ($accion == 'ver') {
+            return  view('documentos.pdf_doc4', $data);
+        } elseif ($accion == 'descargar') {
+
+            // return $this->pdf($request);
+            $pdf = PDF::loadView('documentos.pdf_doc4', $data);
+
+            $nombreArchivo = date('YmdHis') . ".pdf";
+            $rutaGuardado = 'images-cer/';
+            file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
+
+            // return $pdf->download('demo.pdf');
+
+            $doc = Documento::create([
+                'ruta' => $nombreArchivo,
+                'id_user' => $id_user,
+                'tipo' => 4,
+                'estado' => 1,
+            ]);
+
+            return redirect()->route('documentos.index', $id_user);
+        }
+    }
+
     public function pdf($request)
     {
 

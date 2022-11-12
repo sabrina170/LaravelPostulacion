@@ -94,7 +94,7 @@ Route::view('/pdf_doc3', "documentos.pdf_doc3")->name('documentos.pdf_doc3');
 // DOCUMENTO 3
 Route::get('doc4/{id_user}/{tipo_doc}', [DocController::class, "listardoc4"])->name('doc4');
 Route::view('/documento4', "documentos.doc4")->name('documentos.doc4');
-Route::post('pdf/getGenerar4', [PDFController::class, 'getGenerar3'])->name('pdf.getGenerar4');
+Route::post('pdf/getGenerar4', [PDFController::class, 'getGenerar4'])->name('pdf.getGenerar4');
 Route::view('/pdf_doc4', "documentos.pdf_doc4")->name('documentos.pdf_doc4');
 
 // ------------------------------------------------------
