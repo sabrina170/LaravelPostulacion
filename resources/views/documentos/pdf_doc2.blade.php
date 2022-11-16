@@ -38,27 +38,27 @@
     <div class="card-body">
 
         <label class="form-label" for="first-name-icon">Lugar</label>
-        {{$lugar}}
+        {{-- {{$lugar}} --}}
         <br>
         <label class="form-label" for="first-name-icon">Fecha</label>
-{{$fecha}}
+{{-- {{$fecha}} --}}
 
     <div class="row m-0">
-        @foreach ($infos as $item)
+        {{-- @foreach ($infos as $item) --}}
 
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
             DOCUMENTO 2
         </h2>
         <h5 class="intro-y mr-auto">
-            <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
+            {{-- <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
             <strong>Dirección : </strong> {{  $item->direccion}} <br>
-            <strong>Telefono : </strong> {{  $item->telefono}}
+            <strong>Telefono : </strong> {{  $item->telefono}} --}}
 
        </h5>
 
-       @endforeach
+       {{-- @endforeach --}}
        <h1>Croquis</h1>
-       <img src="/images-croquis/{{$croquis}}" alt="">
+       {{-- <img src="/images-croquis/{{$croquis}}" alt=""> --}}
        {{-- <form action="{{ route('pdf.getGenerar') }}" method="POST">
         @csrf
         <input type="hidden" value="descargar" name="accion">

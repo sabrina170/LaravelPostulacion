@@ -48,11 +48,15 @@
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow mt-20 ml-8 br-16 cnt-shw expanded" data-scroll-to-active="true">
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
+
+
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
                 <li class=" navigation-header"><h1 class="text-pri"><strong>ETAPAS</strong></h1><i data-feather="more-horizontal"></i>
                 </li>
-                <li class=" nav-item">
+                <li class=" nav-item"data-estado="{{ $estado = Auth::user()->estado }}">
+
+                    @if ($estado==1)
                     <a class="d-flex align-items-center" href="{{route('privada')}}">
                         <div class="d-flex flex-row">
                             <div class="font-36 pr-8 font-weight-bold">
@@ -64,8 +68,20 @@
                             </div>
                         </div>
                     </a>
+                    @else
+                        <div class="d-flex flex-row ml-16 mr-16 pl-16 pr-16">
+                            <div class="font-36 pr-8 font-weight-bold text-disabled">
+                                1
+                            </div>
+                            <div class="my-auto">
+                                <h5 class="fw-bolder mb-0 texts-prim text-disabled">Datos personales</h5>
+                                <p class="card-text font-small-3 mb-0 texts-prim text-disabled">y Test de velocidad</p>
+                            </div>
+                        </div>
+                    @endif
                 </li>
                 <li class=" nav-item">
+                    @if ($estado==2)
                     <a class="d-flex align-items-center" href="{{route('entrevista.index')}}">
                         <div class="d-flex flex-row">
                             <div class="font-36 pr-8 font-weight-bold">
@@ -77,8 +93,20 @@
                             </div>
                         </div>
                     </a>
+                    @else
+                    <div class="d-flex flex-row ml-16 mr-16 pl-16 pr-16">
+                        <div class="font-36 pr-8 font-weight-bold text-disabled">
+                            2
+                        </div>
+                        <div class="my-auto">
+                            <h5 class="fw-bolder mb-0 text-disabled">Entrevista</h5>
+                            <p class="card-text font-small-3 mb-0 text-disabled">Personal</p>
+                        </div>
+                    </div>
+                    @endif
                 </li>
                 <li class=" nav-item">
+                    @if ($estado==3)
                     <a class="d-flex align-items-center" href="{{route('documentos.index',Auth::user()->id)}}">
                         <div class="d-flex flex-row">
                             <div class="font-36 pr-8 font-weight-bold">
@@ -90,8 +118,20 @@
                             </div>
                         </div>
                     </a>
+                    @else
+                        <div class="d-flex flex-row ml-16 mr-16 pl-16 pr-16">
+                            <div class="font-36 pr-8 font-weight-bold text-disabled">
+                                3
+                            </div>
+                            <div class="my-auto">
+                                <h5 class="fw-bolder mb-0 text-disabled">Llenado de </h5>
+                                <p class="card-text font-small-3 mb-0 text-disabled">documentos</p>
+                            </div>
+                        </div>
+                    @endif
                 </li>
                 <li class=" nav-item">
+                    @if ($estado==4)
                     <a class="d-flex align-items-center" href="{{route('finalizado')}}">
                         <div class="d-flex flex-row">
                             <div class="font-36 pr-8 font-weight-bold">
@@ -103,11 +143,28 @@
                             </div>
                         </div>
                     </a>
+                    @else
+                    <div class="d-flex flex-row ml-16 mr-16 pl-16 pr-16">
+                        <div class="font-36 pr-8 font-weight-bold text-disabled">
+                            4
+                        </div>
+                        <div class="my-auto">
+                            <h5 class="fw-bolder mb-0 text-disabled">Proceso</h5>
+                            <p class="card-text font-small-3 mb-0 text-disabled">Finalizado</p>
+                        </div>
+                    </div>
+                    @endif
                 </li>
                 <li class=" nav-item">
+                    @if ($estado==3)
                     <a class="d-flex align-items-center" href="{{route('documentos.docs')}}">
                         <i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Mis documentos</span>
                     </a>
+                    @else
+                    <div class="ml-16 mr-16 pl-16 pr-16">
+                        <i data-feather="grid" class="text-disabled"></i><span class="menu-title text-truncate text-disabled" data-i18n="Kanban">Mis documentos</span>
+                    </div>
+                    @endif
                 </li>
 
             </ul>

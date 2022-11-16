@@ -271,11 +271,16 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-1" class="form-label">Nombre de Institución Educativa</label>
-                                        <input id="input-wizard-1" type="text" class="form-control"  placeholder="nombreie" name="nombre_ie" value="{{ old('nombre_ie')}}">
+                                        <input id="input-wizard-1" type="text" class="form-control"  placeholder="" name="nombre_ie" value="{{ old('nombre_ie')}}">
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">¿Estudia actualmente?</label>
-                                        <input id="input-wizard-2" type="text" class="form-control" placeholder="estudia" name="estudia" value="{{ old('estudia')}}">
+                                        {{-- <input id="input-wizard-2" type="text" class="form-control" placeholder="estudia" name="estudia" value="{{ old('estudia')}}"> --}}
+                                        <select id="input-wizard-2" class="form-select" name="estudia">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+
                                     </div>
 
                                     <div class="col-lg-4">
@@ -315,7 +320,9 @@
                                     <label for="input-wizard-2" class="form-label">Tipo experiencia</label>
                                     <select id="input-wizard-6" class="form-select" name="tipo_expe">
                                         <option value="Ventas call center" selected>Ventas call center</option>
-                                        <option value="No">No</option>
+                                        <option value="Experiencia 2" selected>Experiencia 2</option>
+                                        <option value="Experiencia 3" selected>Experiencia 3</option>
+
                                     </select>
                                 </div>
                                  <div class="col-lg-4">

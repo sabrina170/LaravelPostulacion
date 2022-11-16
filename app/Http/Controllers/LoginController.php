@@ -55,10 +55,21 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
+            $estado = Auth::user()->estado;
+
             if (Auth::user()->hasRole('admin')) {
                 return redirect()->intended('dashboard');
             } else {
-                return redirect()->intended('privada');
+                if($estado == 1){
+                    return redirect()->intended('privada');
+                }else if($estado == 2){
+                    return redirect()->intended('entrevista');
+                }else if($estado == 3){
+                    return redirect()->intended('ListaDocs/2');
+                }else if($estado == 4){
+                    return redirect()->intended('finalizado');
+                }
+
             }
         } else {
             return redirect('login');

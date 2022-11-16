@@ -6,6 +6,10 @@
 .text-light{
 	color:#a9a9a9 !important;
 }
+
+.text-disabled{
+    color:  #d3cece !important;
+}
 .text-black{ color:black !important;}
 
 .br-4 { border-radius: 4px !important;}
@@ -17,7 +21,7 @@
 .br-28 { border-radius: 28px !important;}
 .br-32 { border-radius: 32px !important;}
 
-.font-weight-bold{ font-weight: bold;}
+.font-weight-bold{ font-weight: bold !important;}
 
 .list-horizontal{ padding-left: 0px;}
 
