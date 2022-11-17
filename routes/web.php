@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DocController;
 use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
@@ -64,9 +65,16 @@ Route::get('info/{info}/editar', [InfoController::class, "edit"])->name('info.ed
 Route::put('info/{info}/actualizar', [InfoController::class, "update"])->name('info.update');
 Route::delete('info/{info}/eliminar', [InfoController::class, "destroy"])->name('info.delete');
 
-Route::view('/dashboard', "admin.index")->name('dashboard');
-Route::view('/postulantes', "admin.postulantes")->name('postulantes');
-Route::view('/misdocumentos', "admin.mis-documentos")->name('mis-documentos');
+
+Route::get('/listado-usuarios', [AdminController::class, "listado"])->name('admin.index');
+// Route::view('/listar', "admin.index")->name('listar');
+// Route::view('/postulantes', "admin.postulantes")->name('postulantes');
+Route::get('/postulantes', [AdminController::class, "listarpostulantes"])->name('postulantes');
+
+
+// Route::view('/misdocumentos', "admin.mis-documentos")->name('mis-documentos');
+Route::get('misdocumentos/{id}', [AdminController::class, "DetalleDocumento"])->name('misdocumentos');
+
 Route::view('/editar-pos', "admin.editar-pos")->name('editarpos');
 
 
@@ -79,6 +87,13 @@ Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contact
 // Route::view('Documentos', "documentos.index")->name('documentos.index');
 Route::view('misdocuemtos', "documentos.docs")->name('documentos.docs');
 
+// DOMUMENTO 1
+
+Route::get('doc1/{id_user}/{tipo_doc}', [DocController::class, "listardoc1"])->name('doc1');
+Route::view('/documento1', "documentos.doc1")->name('documentos.doc1');
+Route::post('pdf/getGenerar1', [PDFController::class, 'getGenerar1'])->name('pdf.getGenerar1');
+Route::view('/pdf_doc1', "documentos.pdf_doc1")->name('documentos.pdf_doc1');
+// --------------------------------------------------------
 // DOCUMENTO 2
 Route::get('doc2/{id_user}/{tipo_doc}', [DocController::class, "listardoc2"])->name('doc2');
 Route::view('/documento2', "documentos.doc2")->name('documentos.doc2');
@@ -98,7 +113,7 @@ Route::post('pdf/getGenerar4', [PDFController::class, 'getGenerar4'])->name('pdf
 Route::view('/pdf_doc4', "documentos.pdf_doc4")->name('documentos.pdf_doc4');
 
 // ------------------------------------------------------
-Route::view('doc1', "documentos.doc1")->name('doc1');
+
 // Route::view('doc3', "documentos.doc3")->name('doc3');
 // Route::view('doc4', "documentos.doc4")->name('doc4');
 Route::view('doc5', "documentos.doc5")->name('doc5');

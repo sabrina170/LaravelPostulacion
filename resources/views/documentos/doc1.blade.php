@@ -16,19 +16,29 @@
 
     <div>
         <div class="row m-0">
+            @foreach ($infos as $item)
+            @if (isset($documento))
+                @foreach ($documento as $doc)
+                Se convirtio exitosamente
+                {{$doc->ruta}}
+                @endforeach
+            @else
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="basicSelect">Tipo de documento</label>
-                                                                <select class="form-select" id="basicSelect">
-                                                                    <option>Dni</option>
-                                                                    <option>CE</option>
+                                                                <select class="form-select" name="tipo_documento" disabled>
+                                                                    @if ($item->tipo_documento=="DNI")
+                                                                    <option value="DNI" selected >DNI</option>
+                                                                    @else
+                                                                    <option value="CE">CE</option>
+                                                                    @endif
                                                                 </select>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Número de documento</label>
-                                                                <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese su número de documento">
-                                                                </div>
+                <div class="input-group input-group-merge">
+                <input type="text" id="first-name-icon" class="form-control" name="numero_documento" bae>
+                </div>
             </div>
 
             <div class="col-lg-12">
@@ -263,7 +273,8 @@
 
             </div>
 
-
+            @endif
+            @endforeach
 
         </div>
     </div>

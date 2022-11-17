@@ -11,6 +11,7 @@
             <button type="button" class="btn btn-info round waves-effect">Aceptados</button>
             <button type="button" class="btn btn-danger round waves-effect">Rechazados</button>
         </div>
+
         <div class="col-12">
             <div class="card">
 
@@ -35,6 +36,11 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            @foreach ($infos as $item)
+                            {{$item->nombres}}
+                            {{$item->apellido_pa}}
+
                             <tr>
                                 <td>
                                     <span class="fw-bold">Peter </span>
@@ -43,7 +49,7 @@
                                 <td>76232414</td>
                                 <td>Femenino</td>
                                 <td>28/10/2022</td>
-                                <td>  <a href="{{route('mis-documentos')}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="{{route('misdocumentos',$item->user_id)}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
                                 <td><span class="badge rounded-pill badge-light-primary me-1">En entrevista</span></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -63,6 +69,7 @@
 
                                 </td>
                             </tr>
+                            @endforeach
                             <tr>
                                 <td>
                                     <span class="fw-bold">Peter </span>
@@ -71,7 +78,7 @@
                                 <td>76232414</td>
                                 <td>Femenino</td>
                                 <td>28/10/2022</td>
-                                <td>  <a href="{{route('mis-documentos')}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
 
                                 <td><span class="badge rounded-pill badge-light-success me-1">Registrado</span></td>
                                 <td>
@@ -99,7 +106,7 @@
                                 <td>76232414</td>
                                 <td>Femenino</td>
                                 <td>28/10/2022</td>
-                                <td>  <a href="{{route('mis-documentos')}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
 
                                 <td><span class="badge rounded-pill badge-light-info me-1">Aceptado</span></td>
                                 <td>
@@ -127,7 +134,7 @@
                                 <td>76232414</td>
                                 <td>Femenino</td>
                                 <td>28/10/2022</td>
-                                <td>  <a href="{{route('mis-documentos')}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
 
                                 <td><span class="badge rounded-pill badge-light-danger me-1">Rechazado</span></td>
                                 <td>
@@ -155,7 +162,7 @@
                                 <td>76232414</td>
                                 <td>Femenino</td>
                                 <td>28/10/2022</td>
-                                <td>  <a href="{{route('mis-documentos')}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
                                 <td><span class="badge rounded-pill badge-light-primary me-1">En entrevista</span></td>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -182,7 +189,7 @@
                                 <td>76232414</td>
                                 <td>Femenino</td>
                                 <td>28/10/2022</td>
-                                <td>  <a href="{{route('mis-documentos')}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
 
                                 <td><span class="badge rounded-pill badge-light-success me-1">Registrado</span></td>
                                 <td>
@@ -210,7 +217,7 @@
                                 <td>76232414</td>
                                 <td>Femenino</td>
                                 <td>28/10/2022</td>
-                                <td>  <a href="{{route('mis-documentos')}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
 
                                 <td><span class="badge rounded-pill badge-light-info me-1">Aceptado</span></td>
                                 <td>
@@ -238,7 +245,7 @@
                                 <td>76232414</td>
                                 <td>Femenino</td>
                                 <td>28/10/2022</td>
-                                <td>  <a href="{{route('mis-documentos')}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
 
                                 <td><span class="badge rounded-pill badge-light-danger me-1">Rechazado</span></td>
                                 <td>

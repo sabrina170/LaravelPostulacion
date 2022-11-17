@@ -58,7 +58,7 @@ class LoginController extends Controller
             $estado = Auth::user()->estado;
 
             if (Auth::user()->hasRole('admin')) {
-                return redirect()->intended('dashboard');
+                return redirect()->route('admin.index');
             } else {
                 if($estado == 1){
                     return redirect()->intended('privada');

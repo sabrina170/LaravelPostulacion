@@ -12,11 +12,12 @@
                         <p class="card-text m-auto mb-0">
                             Bienvenido(a) al panel principal , las postulaciones de hoy son:
                         </p>
-                        <p class="text-pri font-28 font-weight-bold mt-20 mb-20">26 <span class="font-20">Postulantes</span></p>
+                        <p class="text-pri font-28 font-weight-bold mt-20 mb-20">{{$count}}<span class="font-20">Postulantes</span></p>
                     </div>
                     <div class="col-lg-4 text-right d-flex align-items-end justify-content-center">
                         <img src="{{asset('app-assets/images/konecta/avatar.png')}}" width="80">
                     </div>
+
                 </div>
             </div>
         </div>
@@ -100,6 +101,10 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-medium-3 cursor-pointer"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
             </div>
             <div class="card-body">
+                @foreach ($usuarios as $item)
+                    {{$item->name}}
+                    {{$item->email}}
+                @endforeach
                 <div class="employee-task d-flex justify-content-between align-items-center">
                     <div class="d-flex flex-row">
                         <div class="avatar me-75">

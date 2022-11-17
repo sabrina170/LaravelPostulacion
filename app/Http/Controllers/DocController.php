@@ -11,6 +11,18 @@ use League\CommonMark\Node\Block\Document;
 
 class DocController extends Controller
 {
+    public function listardoc1(User $id_user, $tipo_doc)
+    {
+        $infos = Info::where('user_id', '=', $id_user->id)->get();
+        $documento = Documento::where('id_user', '=', $id_user->id)->where('tipo', '=', $tipo_doc)->get();
+
+        if (count($documento) > 0) {
+            return view('documentos.doc1', compact('infos', 'documento'));
+        } else {
+            return view('documentos.doc1', compact('infos'));
+        }
+    }
+
     public function listardoc2(User $id_user, $tipo_doc)
     {
         // $id_user = $id->id;
