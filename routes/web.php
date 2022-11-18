@@ -75,7 +75,8 @@ Route::get('/postulantes', [AdminController::class, "listarpostulantes"])->name(
 // Route::view('/misdocumentos', "admin.mis-documentos")->name('mis-documentos');
 Route::get('misdocumentos/{id}', [AdminController::class, "DetalleDocumento"])->name('misdocumentos');
 
-Route::view('/editar-pos', "admin.editar-pos")->name('editarpos');
+// Route::view('/editar-pos', "admin.editar-pos")->name('editarpos');
+Route::get('editar-pos/{id}', [AdminController::class, "EditarPostulante"])->name('editar-postulante');
 
 
 

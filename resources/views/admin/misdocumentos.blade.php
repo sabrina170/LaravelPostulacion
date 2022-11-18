@@ -68,95 +68,34 @@
 
                                     <!-- Files Container Starts -->
                                     <div class="view-container">
-                                        <h6 class="files-section-title mt-2 mb-75">Ficha de Trabajo</h6>
-                                        <div class="card file-manager-item file">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck7" />
-                                                <label class="form-check-label" for="customCheck7"></label>
-                                            </div>
-                                            <div class="card-img-top file-logo-wrapper">
-                                                <div class="dropdown float-end">
-                                                    <i data-feather="more-vertical" class="toggle-dropdown mt-n25"></i>
+                                        <h6 class="files-section-title mt-2 mb-75">Documentos llenados</h6>
+                                        @foreach ($info_documentos as $item)
+                                            <div class="card file-manager-item file">
+
+                                                <div class="card-img-top file-logo-wrapper">
+                                                    <a href="{{asset('images-cer/'.$item->ruta)}}" target="_blank">
+                                                    <div class="d-flex align-items-center justify-content-center w-100">
+                                                        <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
+                                                    </div>
+                                                </a>
                                                 </div>
-                                                <div class="d-flex align-items-center justify-content-center w-100">
-                                                    <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
+                                                <div class="card-body">
+                                                    <a href="{{asset('images-cer/'.$item->ruta)}}" target="_blank">
+                                                    <div class="content-wrapper">
+
+                                                        <p class="card-text file-name mb-0">@if ($item->tipo == 2)
+                                                            Ficha 2
+                                                        @endif
+                                                        </p>
+                                                        <p class="card-text file-date">{{$item->created_at}}</p>
+                                                    </div>
+                                                </a>
+                                                    <small class="file-accessed text-muted">Creado el {{$item->created_at}}</small>
                                                 </div>
+
                                             </div>
-                                            <div class="card-body">
-                                                <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">Documento1.pdf</p>
-                                                    <p class="card-text file-size mb-0">12.6mb</p>
-                                                    <p class="card-text file-date">23 may 2019</p>
-                                                </div>
-                                                <small class="file-accessed text-muted">Last accessed: 3 hours ago</small>
-                                            </div>
-                                        </div>
-                                        <div class="card file-manager-item file">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck8" />
-                                                <label class="form-check-label" for="customCheck8"></label>
-                                            </div>
-                                            <div class="card-img-top file-logo-wrapper">
-                                                <div class="dropdown float-end">
-                                                    <i data-feather="more-vertical" class="toggle-dropdown mt-n25"></i>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center w-100">
-                                                    <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">Documento2.pdf</p>
-                                                    <p class="card-text file-size mb-0">82kb</p>
-                                                    <p class="card-text file-date">25 may 2019</p>
-                                                </div>
-                                                <small class="file-accessed text-muted">Last accessed: 23 minutes ago</small>
-                                            </div>
-                                        </div>
-                                        <div class="card file-manager-item file">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck9" />
-                                                <label class="form-check-label" for="customCheck9"></label>
-                                            </div>
-                                            <div class="card-img-top file-logo-wrapper">
-                                                <div class="dropdown float-end">
-                                                    <i data-feather="more-vertical" class="toggle-dropdown mt-n25"></i>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center w-100">
-                                                    <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">Documento3.pdf</p>
-                                                    <p class="card-text file-size mb-0">54kb</p>
-                                                    <p class="card-text file-date">01 may 2019</p>
-                                                </div>
-                                                <small class="file-accessed text-muted">Last accessed: 43 minutes ago</small>
-                                            </div>
-                                        </div>
-                                        <div class="card file-manager-item file">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck10" />
-                                                <label class="form-check-label" for="customCheck10"></label>
-                                            </div>
-                                            <div class="card-img-top file-logo-wrapper">
-                                                <div class="dropdown float-end">
-                                                    <i data-feather="more-vertical" class="toggle-dropdown mt-n25"></i>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center w-100">
-                                                    <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">Documento4.pdf</p>
-                                                    <p class="card-text file-size mb-0">200kb</p>
-                                                    <p class="card-text file-date">12 may 2019</p>
-                                                </div>
-                                                <small class="file-accessed text-muted">Last accessed: 1 hour ago</small>
-                                            </div>
-                                        </div>
+                                        @endforeach
+
                                         <div class="d-none flex-grow-1 align-items-center no-result mb-3">
                                             <i data-feather="alert-circle" class="me-50"></i>
                                             No Results
