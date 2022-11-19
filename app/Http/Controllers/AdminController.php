@@ -76,7 +76,7 @@ class AdminController extends Controller
 
         $postulante->estado = $request->input('estado');
         $postulante->update();
-
-        return view('admin.actualizar');
+        return redirect()->route('postulantes');
+        // return view('admin.postulantes');
     }
 }
