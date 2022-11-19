@@ -61,9 +61,22 @@ class AdminController extends Controller
 
     public function EditarPostulante($id)
     {
-        $info_postulante = Info::where('id', '=', $id)->get();
+        $info_postulante = Info::join('users', 'users.id', '=', 'infos.user_id')
+                                ->where('user_id', '=', $id)->get();
+        //dd($info_postulante);
+        //$info_postulante = Info::where('user_id', '=', $id)->get();
         // return redirect()->route('admin.index');
         return view('admin.editar-pos',compact('info_postulante'));
         // dd($infos);
+    }
+
+    public function CambiarEstado(Request $request, $id)
+    {
+        $postulante = User::findOrFail($id);
+
+        $postulante->estado = $request->input('estado');
+        $postulante->update();
+
+        return view('admin.actualizar');
     }
 }

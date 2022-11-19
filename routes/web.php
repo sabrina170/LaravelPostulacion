@@ -70,6 +70,7 @@ Route::get('/listado-usuarios', [AdminController::class, "listado"])->name('admi
 // Route::view('/listar', "admin.index")->name('listar');
 // Route::view('/postulantes', "admin.postulantes")->name('postulantes');
 Route::get('/postulantes', [AdminController::class, "listarpostulantes"])->name('postulantes');
+Route::post('cambiar-estado/{info}', [AdminController::class, 'CambiarEstado'])->name('admin.actualizar');
 
 
 // Route::view('/misdocumentos', "admin.mis-documentos")->name('mis-documentos');

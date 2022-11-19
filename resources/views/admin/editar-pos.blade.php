@@ -6,35 +6,44 @@
 
         <h2 class="text-pri font-weight-bold">Editar postulante <strong>Sabrina</strong></h2>
         <div class="row">
+            @foreach ($info_postulante as $item)
             <!-- left profile info section -->
             <div class="col-lg-4 col-12 order-2 order-lg-1">
                 <!-- about -->
+
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="mb-75">INFORMACIÓN PERSONAL</h5>
+
+
+
+                        <h5 class="mb-75 font-weight-bold">INFORMACIÓN PERSONAL</h5>
                         <div class="mt-2">
-                            <h5 class="mb-75">Nombres y Apellidos                                :</h5>
-                            <p class="card-text">Demo Demo</p>
+                            <h5 class="mb-75 font-weight-bold">Nombres y Apellidos                                :</h5>
+                            <p class="card-text">{{ $item->nombres }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-75">Dni:</h5>
-                            <p class="card-text">76343435</p>
+                            <h5 class="mb-75 font-weight-bold">Dni:</h5>
+                            <p class="card-text">{{ $item->numero_documento }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-75">Email:</h5>
-                            <p class="card-text">bucketful@fiendhead.org</p>
+                            <h5 class="mb-75 font-weight-bold">Email:</h5>
+                            <p class="card-text">{{ $item->correo }}</p>
                         </div>
+
                         <div class="mt-2">
-                            <h5 class="mb-50">Website:</h5>
-                            <p class="card-text mb-0">www.pixinvent.com</p>
-                        </div>
-                        <div class="mt-2">
-                            <h5 class="mb-50">Estado:</h5>
-                            <select class="form-select" id="basicSelect">
-                                <option>Registrado</option>
-                                <option>Rechazado</option>
-                                <option>En espera</option>
-                            </select>
+                            <form method="POST" action="{{route('admin.actualizar',$item->id)}}">
+                                <h5 class="mb-50 font-weight-bold">Estado:</h5>
+                                <select class="form-select" id="basicSelect" name="estado">
+                                    <option @if ($item->estado == 1) selected @endif>Registrado</option>
+                                    <option @if ($item->estado == 2) selected @endif>Lleno sus datos</option>
+                                    <option @if ($item->estado == 3) selected @endif>Aceptado</option>
+                                    <option @if ($item->estado == 4) selected @endif>Completado</option>
+                                    <option @if ($item->estado == 5) selected @endif>Rechazado</option>
+                                </select>
+                                <input type="submit" class="btn btn-success" value="Actualizar estado">
+                            </form>
+
+
                         </div>
                     </div>
                 </div>
@@ -49,24 +58,24 @@
                     <div class="card-body">
                         <h5 class="mb-75">ESTUDIOS</h5>
                         <div class="mt-2">
-                            <h5 class="mb-75">Grado de formación:</h5>
-                            <p class="card-text">Titulado</p>
+                            <h5 class="mb-75 font-weight-bold">Grado de formación:</h5>
+                            <p class="card-text">{{ $item->grado }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-75">Nombre de institución educativa:</h5>
-                            <p class="card-text">intitución educativa</p>
+                            <h5 class="mb-75 font-weight-bold">Nombre de institución educativa:</h5>
+                            <p class="card-text">{{ $item->nombre_ie }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-75">Estudia actualmente?:</h5>
-                            <p class="card-text">si</p>
+                            <h5 class="mb-75 font-weight-bold">Estudia actualmente?:</h5>
+                            <p class="card-text">{{ $item->estudia }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-50">Horario de estudios:</h5>
-                            <p class="card-text mb-0">3p.m - 7p.m</p>
+                            <h5 class="mb-50 font-weight-bold">Horario de estudios:</h5>
+                            <p class="card-text mb-0">{{ $item->horario }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-75">Disponibilidad</h5>
-                            <p class="card-text">Inmediata</p>
+                            <h5 class="mb-75 font-weight-bold">Disponibilidad</h5>
+                            <p class="card-text">{{ $item->disponibilidad }}</p>
                         </div>
                     </div>
                 </div>
@@ -79,32 +88,33 @@
                     <div class="card-body">
                         <h5 class="mb-75">EXPERIENCIA LABORAL</h5>
                         <div class="mt-2">
-                            <h5 class="mb-75">¿Has laborado en call center?:</h5>
-                            <p class="card-text">Si</p>
+                            <h5 class="mb-75 font-weight-bold">¿Has laborado en call center?:</h5>
+                            <p class="card-text">{{ $item->callcenter }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-75">Nombre de empresa:</h5>
-                            <p class="card-text">Empresa</p>
+                            <h5 class="mb-75 font-weight-bold">Nombre de empresa:</h5>
+                            <p class="card-text">{{ $item->empresa }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-75">Puesto experiencia:</h5>
-                            <p class="card-text">Bitel</p>
+                            <h5 class="mb-75 font-weight-bold">Puesto experiencia:</h5>
+                            <p class="card-text">{{ $item->puesto }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-50">Tiempo (meses):</h5>
-                            <p class="card-text mb-0">12</p>
+                            <h5 class="mb-50 font-weight-bold">Tiempo (meses):</h5>
+                            <p class="card-text mb-0">{{ $item->tiempo }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-50">Tipo experiencia:</h5>
-                            <p class="card-text mb-0">Ventas call center</p>
+                            <h5 class="mb-50 font-weight-bold">Tipo experiencia:</h5>
+                            <p class="card-text mb-0">{{ $item->tipo_expe }}</p>
                         </div>
                         <div class="mt-2">
-                            <h5 class="mb-50">Trabajó en Konecta:</h5>
-                            <p class="card-text mb-0">Si</p>
+                            <h5 class="mb-50 font-weight-bold">Trabajó en Konecta:</h5>
+                            <p class="card-text mb-0">{{ $item->konecta }}</p>
                         </div>
                     </div>
                 </div>
              </div>
+        @endforeach
 </div>
 </div>
 
