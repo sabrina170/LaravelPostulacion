@@ -66,19 +66,26 @@ class PdfController extends Controller
             $nombreArchivo = date('YmdHis') . ".pdf";
             $rutaGuardado = 'images-cer/';
             file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
-
-            // return $pdf->download('demo.pdf');
+            // pasar datos a un json
+            $datos_estructura = array(
+                'lugar' => $request->get('lugar'),
+                'fecha' => $request->get('fecha'),
+                'croquis' => $profileImage,
+                // 'detalles' => json_decode($cupon['detalles'], true)
+            );
 
             $doc = Documento::create([
                 'ruta' => $nombreArchivo,
                 'id_user' => $id_user,
                 'tipo' => 2,
                 'estado' => 1,
+                'datos' => json_encode($datos_estructura)
             ]);
 
             return redirect()->route('documentos.index', $id_user);
         }
     }
+
     public function getGenerar3(Request $request)
     {
         $id_user = $request->get('id_user');
@@ -109,12 +116,17 @@ class PdfController extends Controller
             file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
 
             // return $pdf->download('demo.pdf');
+            $datos_estructura = array(
+                'firma' => $profileImage,
+                // 'detalles' => json_decode($cupon['detalles'], true)
+            );
 
             $doc = Documento::create([
                 'ruta' => $nombreArchivo,
                 'id_user' => $id_user,
                 'tipo' => 3,
                 'estado' => 1,
+                'datos' => json_encode($datos_estructura)
             ]);
 
             return redirect()->route('documentos.index', $id_user);
@@ -144,7 +156,7 @@ class PdfController extends Controller
             'infos' => $infos
         ];
 
-    //    dd($request->get('check_list'));
+        //    dd($request->get('check_list'));
 
         // dd($data);
         if ($accion == 'ver') {
@@ -158,13 +170,22 @@ class PdfController extends Controller
             $rutaGuardado = 'images-cer/';
             file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
 
-            // return $pdf->download('demo.pdf');
+            $datos_estructura = array(
+                'lugar' => $request->get('lugar'),
+                'fecha' => $request->get('fecha'),
+                'nombre_afp' => $request->get('nombre_afp'),
+                'codigo_afp' => $request->get('codigo_afp'),
+                'list' => $request->get('check_list'),
+                'firma' => $profileImage,
+                // 'detalles' => json_decode($cupon['detalles'], true)
+            );
 
             $doc = Documento::create([
                 'ruta' => $nombreArchivo,
                 'id_user' => $id_user,
                 'tipo' => 4,
                 'estado' => 1,
+                'datos' => json_encode($datos_estructura)
             ]);
 
             return redirect()->route('documentos.index', $id_user);

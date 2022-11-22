@@ -15,6 +15,10 @@
                 @foreach ($infos as $item)
                         @if (isset($documento))
                             @foreach ($documento as $doc)
+                            <div class="col-4">
+                                <a type="button" href="{{ route('documentos.index',$doc->id_user) }}"
+                                class="btn btn-outline-primary round waves-effect">Atras</a>
+                            </div>
                             Se convirtio exitosamente
                             {{$doc->ruta}}
                             @endforeach

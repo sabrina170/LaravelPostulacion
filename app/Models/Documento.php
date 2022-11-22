@@ -13,5 +13,6 @@ class Documento extends Model
         'id_user',
         'tipo',
         'estado',
+        'datos',
     ];
 }

@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
             $table->string('ruta');
-             $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_user');
             $table->integer('tipo');
             $table->integer('estado');
+            $table->text('datos');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

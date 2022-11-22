@@ -37,7 +37,8 @@
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Número de documento</label>
                 <div class="input-group input-group-merge">
-                <input type="text" id="first-name-icon" class="form-control" name="numero_documento" bae>
+                <input type="text" id="first-name-icon" class="form-control"
+                 name="numero_documento" value="{{$item->numero_documento}}" readonly>
                 </div>
             </div>
 
@@ -48,49 +49,69 @@
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Nombres</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese su nombre">
+                                                                    <input type="text" id="first-name-icon"
+                                                                     class="form-control" name="nombres"
+                                                                     value="{{$item->nombres}}" readonly>
                                                                 </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Dirección</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese su dirección">
+                                                                    <input type="text" 
+                                                                    id="first-name-icon" 
+                                                                    class="form-control"
+                                                                     name="direccion" 
+                                                                     value="{{$item->direccion}}" readonly>
                                                                 </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Número de teléfono</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese su teléfono">
+                                                                    <input type="text" 
+                                                                    id="first-name-icon"
+                                                                     class="form-control"
+                                                                      name="telefono" 
+                                                                      value="{{$item->telefono}}" readonly>
                                                                 </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Fecha de nacimiento</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="date" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese su teléfono">
+                                                                    <input type="date"
+                                                                     id="first-name-icon" 
+                                                                     class="form-control"
+                                                                      name="fecha_nac" 
+                                                                      value="{{$item->fecha_nacimiento}}" readonly>
                                                                 </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Edad</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="number" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese su teléfono">
+                                                                    <input type="number"
+                                                                     id="first-name-icon"
+                                                                      class="form-control"
+                                                                       name="edad" required>
                                                                 </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Género</label>
-                <select class="form-select" id="basicSelect">
-                    <option>Masculino</option>
-                    <option>Femenino</option>
+                <select class="form-select" id="basicSelect" name="genero" disabled>
+                    @if ($item->sexo=="Masculino")
+                    <option selected>Masculino</option>
+                    @else
+                    <option selected>Femenino</option>
+                    @endif
                 </select>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">N° de hijos</label>
-                <select class="form-select" id="basicSelect">
+                <select class="form-select" id="basicSelect" name="n_hijos">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -103,11 +124,91 @@
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Teléfono familiar contacto</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese un teléfono de contacto">
+                                                                    <input type="text"
+                                                                     id="first-name-icon"
+                                                                      class="form-control"
+                                                                       name="telefono_familiar"
+                                                                        placeholder="Ingrese
+                                                                         un teléfono de contacto">
                                                                 </div>
             </div>
 
             <div class="col-lg-12 mt-24">
+                <form action="#" class="invoice-repeater">
+                    
+                    <div data-repeater-list="invoice">
+                        
+                        <div data-repeater-item="" style="">
+                            <div class="row d-flex align-items-end">
+                                <div class="col-md-3 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="itemname">NOMBRES Y APELLIDOS COMPLETOS</label>
+                                        <input type="text" class="form-control" id="item_nombres" name="item_nombres" aria-describedby="item_nombres"
+                                         placeholder="NOMBRES Y APELLIDOS COMPLETOS">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="sdsad">PARENTESCO</label>
+                                        <input type="text" class="form-control" id="item_parentesco" name="item_parentesco" aria-describedby="item_parentesco" placeholder="PARENTESCO">
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="itemcost">EDAD</label>
+                                        <input type="number" class="form-control" id="item_edad" name="item_edad" aria-describedby="item_edad" placeholder="EDAD">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="itemquantity">SEXO</label>
+                                        <input type="text" class="form-control" id="item_sexo" name="item_sexo" aria-describedby="item_sexo" placeholder="SEXO">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="itemquantity">SEXO</label>
+                                        <input type="text" class="form-control" id="item_sexo" name="item_sexo" aria-describedby="item_sexo" placeholder="SEXO">
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="itemquantity">SEXO</label>
+                                        <input type="text" class="form-control" id="item_sexo" name="item_sexo" aria-describedby="item_sexo" placeholder="SEXO">
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="itemquantity">SEXO</label>
+                                        <input type="text" class="form-control" id="item_sexo" name="item_sexo" aria-describedby="item_sexo" placeholder="SEXO">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-12 mb-50">
+                                    <div class="mb-1">
+                                        <button class="btn btn-outline-danger text-nowrap px-1 waves-effect" data-repeater-delete="" type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x me-25"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                            {{-- <span>Delete</span> --}}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-icon btn-primary waves-effect waves-float waves-light" type="button" data-repeater-create="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus me-25"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                <span>Add New</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
                 <div class="table-responsive">
                     <table class="table  table-bordered">
                         <thead>

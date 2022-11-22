@@ -10,6 +10,10 @@
         @foreach ($infos as $item)
         @if (isset($documento))
             @foreach ($documento as $doc)
+            <div class="col-4">
+                <a type="button" href="{{ route('documentos.index',$doc->id_user) }}"
+                class="btn btn-outline-primary round waves-effect">Atras</a>
+            </div>
             Se convirtio exitosamente
             {{$doc->ruta}}
             @endforeach
@@ -30,14 +34,14 @@
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Lugar</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" name="lugar" class="form-control" name="fname-icon" placeholder="Lugar">
+                                                                    <input type="text" id="first-name-icon" name="lugar" class="form-control" placeholder="Lugar" required>
                                                                 </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Fecha</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="date" id="first-name-icon" name="fecha" class="form-control" name="fname-icon" placeholder="Lugar">
+                                                                    <input type="date" id="first-name-icon" name="fecha" class="form-control"  placeholder="Lugar" required>
                                                                 </div>
             </div>
 
@@ -49,14 +53,15 @@
                 <h3 class="font-weight-bold mt-24">Opciones</h3>
 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Si estoy afiliado a AFP" name="check_list[]" checked="">
+                    <input class="form-check-input" type="checkbox" id="afp" value="Si estoy afiliado a AFP" name="check_list[]" checked="" onchange="showContent()">
                     <label class="form-check-label" for="inlineCheckbox1">Si estoy afiliado a AFP</label>
                 </div>
             </div>
 
+            <div id="content">
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="basicSelect">Nombre AFP</label>
-                                                                <select class="form-select" id="basicSelect" name="nombre_afp">
+                                                                <select class="form-select" id="basicSelect" name="nombre_afp" >
                                                                     <option value="Rimac">Rimac</option>
                                                                     <option value="AFP Habitad">AFP Habitad</option>
                                                                 </select>
@@ -68,7 +73,7 @@
                     <input type="text" id="first-name-icon" class="form-control" name="codigo_afp" placeholder="Ingrese su número de documento">
                 </div>
             </div>
-
+             </div>
             <div class="col-lg-12 mt-8">
                 <div class="form-check mt-8">
                     <input class="form-check-input" name="check_list[]"  type="checkbox" id="inlineCheckbox1" value="No estoy afiliado a ninguna AFP y deseo afiliarme a Integra" checked="">
@@ -119,4 +124,18 @@
 
  @endsection
 
+ @section('js')
+ <script>
+        function showContent() {
+                element = document.getElementById("content");
+                check = document.getElementById("afp");
+                if (check.checked) {
+                    element.style.display='block';
+                }
+                else {
+                    element.style.display='none';
+                }
+        }
+</script>
+ @endsection
 

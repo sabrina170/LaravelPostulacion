@@ -46,6 +46,16 @@
   <!-- END: Page JS-->
   <script src="{{asset('app-assets/js/scripts/pages/app-file-manager.js')}}"></script>
 
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{asset('app-assets/vendors/js/forms/repeater/jquery.repeater.min.js')}}"></script>
+    <!-- END: Page Vendor JS-->
+
+
+    <!-- BEGIN: Page JS-->
+    <script src="{{asset('app-assets/js/scripts/forms/form-repeater.js')}}"></script>
+    <!-- END: Page JS-->
+
 <script>
     $(window).on('load', function() {
         if (feather) {
@@ -56,6 +66,7 @@
         }
     })
 </script>
+@yield('js')
 </body>
 <!-- END: Body-->
 

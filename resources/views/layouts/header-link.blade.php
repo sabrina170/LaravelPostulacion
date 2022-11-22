@@ -48,6 +48,9 @@
     <!-- mis estilos -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/boot-dev.css')}}">
+    
+    <!-- END: Vendor CSS-->
+
 
 </head>
 <!-- END: Head-->
