@@ -15,6 +15,8 @@
     </div>
 
     <div>
+        <form action="{{ route('pdf.getGenerar1') }}" method="post"  enctype="multipart/form-data" >
+            @csrf
         <div class="row m-0">
             @foreach ($infos as $item)
             @if (isset($documento))
@@ -23,6 +25,9 @@
                 {{$doc->ruta}}
                 @endforeach
             @else
+
+
+
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="basicSelect">Tipo de documento</label>
                                                                 <select class="form-select" name="tipo_documento" disabled>
@@ -58,10 +63,10 @@
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Dirección</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="text" 
-                                                                    id="first-name-icon" 
+                                                                    <input type="text"
+                                                                    id="first-name-icon"
                                                                     class="form-control"
-                                                                     name="direccion" 
+                                                                     name="direccion"
                                                                      value="{{$item->direccion}}" readonly>
                                                                 </div>
             </div>
@@ -69,10 +74,10 @@
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Número de teléfono</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="text" 
+                                                                    <input type="text"
                                                                     id="first-name-icon"
                                                                      class="form-control"
-                                                                      name="telefono" 
+                                                                      name="telefono"
                                                                       value="{{$item->telefono}}" readonly>
                                                                 </div>
             </div>
@@ -81,9 +86,9 @@
                 <label class="form-label" for="first-name-icon">Fecha de nacimiento</label>
                                                                 <div class="input-group input-group-merge">
                                                                     <input type="date"
-                                                                     id="first-name-icon" 
+                                                                     id="first-name-icon"
                                                                      class="form-control"
-                                                                      name="fecha_nac" 
+                                                                      name="fecha_nac"
                                                                       value="{{$item->fecha_nacimiento}}" readonly>
                                                                 </div>
             </div>
@@ -102,9 +107,9 @@
                 <label class="form-label" for="first-name-icon">Género</label>
                 <select class="form-select" id="basicSelect" name="genero" disabled>
                     @if ($item->sexo=="Masculino")
-                    <option selected>Masculino</option>
+                    <option value="Masculino" selected>Masculino</option>
                     @else
-                    <option selected>Femenino</option>
+                    <option value="Femenino" selected>Femenino</option>
                     @endif
                 </select>
             </div>
@@ -112,12 +117,12 @@
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">N° de hijos</label>
                 <select class="form-select" id="basicSelect" name="n_hijos">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                 </select>
             </div>
 
@@ -134,143 +139,64 @@
             </div>
 
             <div class="col-lg-12 mt-24">
-                <form action="#" class="invoice-repeater">
-                    
-                    <div data-repeater-list="invoice">
-                        
-                        <div data-repeater-item="" style="">
-                            <div class="row d-flex align-items-end">
-                                <div class="col-md-3 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="itemname">NOMBRES Y APELLIDOS COMPLETOS</label>
-                                        <input type="text" class="form-control" id="item_nombres" name="item_nombres" aria-describedby="item_nombres"
-                                         placeholder="NOMBRES Y APELLIDOS COMPLETOS">
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="sdsad">PARENTESCO</label>
-                                        <input type="text" class="form-control" id="item_parentesco" name="item_parentesco" aria-describedby="item_parentesco" placeholder="PARENTESCO">
-                                    </div>
-                                </div>
-                                <div class="col-md-1 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="itemcost">EDAD</label>
-                                        <input type="number" class="form-control" id="item_edad" name="item_edad" aria-describedby="item_edad" placeholder="EDAD">
-                                    </div>
-                                </div>
+            {{-- nueva tabla --}}
 
-                                <div class="col-md-1 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="itemquantity">SEXO</label>
-                                        <input type="text" class="form-control" id="item_sexo" name="item_sexo" aria-describedby="item_sexo" placeholder="SEXO">
-                                    </div>
-                                </div>
+            <div ng-app="NewRows">
+                <div ng-controller="Table">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>Nombres y Apellidos Completos</th>
+                              <th>Parentesco</th>
+                              <th>Edad</th>
+                              <th>Sexo</th>
+                              <th>Tipo doc</th>
+                              <th>Nro doc</th>
+                              <th>Estudia</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr ng-repeat="row in rows">
+                              <td align="center"><input type="checkbox" ng-model="row.delete"></td>
+                              <td><input class="form-control" ng-model="row.nombres" name="datos_nombres[]" placeholder="Nombres Completos..."></td>
+                              <td><input class="form-control" ng-model="row.parentesco" name="datos_parentesco[]" placeholder="Parentesco..."></td>
+                              <td><input type="number" class="form-control" ng-model="row.edad" name="datos_edad[]"></td>
+                              <td>
+                                <select class="form-control" ng-model="row.sexo" name="datos_sexo[]">
+                                    <option value="Femenino" selected>Femenino</option>
+                                    <option value="Masculino">Masculino</option>
+                                </select>
+                                {{-- <input class="form-control" ng-model="row.sexo" name="datos_sexo[]" placeholder="Nombres ..."> --}}
+                            </td>
+                              <td>
+                                <select class="form-control" ng-model="row.tipodni" name="datos_tipo_dni[]">
+                                    <option value="dni" selected>DNI</option>
+                                    <option value="ce">Carnet Extrangeria</option>
+                                </select>
+                                {{-- <input class="form-control" ng-model="row.tipodni" name="datos_tipo_dni[]" placeholder="Apellidos ..."> --}}
+                            </td>
+                              <td><input class="form-control" ng-model="row.numerodni" name="datos_numero_dni[]" placeholder="76232132 ..."></td>
+                              <td>
+                                <select class="form-control" ng-model="row.estudia" name="datos_estudia[]">
+                                    <option value="si" selected>SI</option>
+                                    <option value="no">NO</option>
+                                </select>
+                                {{-- <input class="form-control" ng-model="row.a_names" name="datos_estudia[]" placeholder="Apellidos ..."> --}}
 
-                                <div class="col-md-1 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="itemquantity">SEXO</label>
-                                        <input type="text" class="form-control" id="item_sexo" name="item_sexo" aria-describedby="item_sexo" placeholder="SEXO">
-                                    </div>
-                                </div>
-                                <div class="col-md-1 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="itemquantity">SEXO</label>
-                                        <input type="text" class="form-control" id="item_sexo" name="item_sexo" aria-describedby="item_sexo" placeholder="SEXO">
-                                    </div>
-                                </div>
-                                <div class="col-md-1 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="itemquantity">SEXO</label>
-                                        <input type="text" class="form-control" id="item_sexo" name="item_sexo" aria-describedby="item_sexo" placeholder="SEXO">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2 col-12 mb-50">
-                                    <div class="mb-1">
-                                        <button class="btn btn-outline-danger text-nowrap px-1 waves-effect" data-repeater-delete="" type="button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x me-25"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                                            {{-- <span>Delete</span> --}}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-                        
+                            </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <button type="button" class="btn btn-primary" ng-click="AddRow()">Agregar</button>
+                        <button type="button" class="btn btn-danger" ng-click="RemoveRow()" ng-class="">Eliminar Filas</button>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <button class="btn btn-icon btn-primary waves-effect waves-float waves-light" type="button" data-repeater-create="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus me-25"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                <span>Add New</span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="table-responsive">
-                    <table class="table  table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Nombres y Apellidos Completos</th>
-                                <th>Parentesco</th>
-                                <th>Edad</th>
-                                <th>Sexo</th>
-                                <th>Tipo doc</th>
-                                <th>Nro doc</th>
-                                <th>Estudia</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
+            </div>
+
+            {{-- fin de la nueva tabla --}}
+
 
                 <p>En caso tenga hijos mayores de 18 años, indicar si cursan estudios superiores o universitarios.</p>
 
@@ -367,13 +293,13 @@
 
                 <hr>
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary waves-effect waves-float waves-light">
+                    <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">
                         ENVIAR DOCUMENTOS
-                    </a>
+                    </button>
                 </div>
 
             </div>
-
+            </form>
             @endif
             @endforeach
 
@@ -383,6 +309,54 @@
 
                 </div>
 
+ @endsection
+ @section('js')
+ {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'> --}}
+{{-- </script> --}}
+<script>
+
+var app = angular.module("NewRows",[]);
+app.controller("Table",['$scope',function($scope){
+  //
+  $scope.rows = [
+     {
+     delete:false,
+     names:'',
+     last_names:'',
+       a_names:''
+     }
+   ];
+  /**
+  * Add table row
+  **/
+  $scope.AddRow = function(){
+    $scope.rows.push({
+      delete:false,
+      names:'',
+      last_names:'',
+      a_names:''
+    })
+  };
+  /**
+  * Remove table row
+  **/
+  $scope.RemoveRow = function(){
+    for(var i = $scope.rows.length - 1; i >= 0; i--){
+      if($scope.rows[i].delete){
+        $scope.rows.splice(i,1);
+      }
+    }
+  };
+  /**
+  * Send BD
+  **/
+  $scope.SaveRowsBD = function(){
+    angular.forEach($scope.rows,function(value,key){
+
+    });
+  };
+}]);
+    </script>
  @endsection
 
 

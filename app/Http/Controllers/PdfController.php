@@ -35,6 +35,69 @@ class PdfController extends Controller
     {
         return view('vista_general');
     }
+
+    public function getGenerar1(Request $request)
+    {
+        $id_user = $request->get('id_user');
+        $infos = Info::where('user_id', '=', $id_user)->get();
+
+        $accion = $request->get('accion');
+        if ($image = $request->file('croquis')) {
+            $destinatarioPath = 'images-croquis/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinatarioPath, $profileImage);
+            // $alu['image'] = "$profileImage";
+        }
+
+        $data = [
+            'edad' => $request->get('edad'),
+            'n_hijos' => $request->get('n_hijos'),
+            'telefono_familiar' => $request->get('telefono_familiar'),
+            'datos_nombres' => $request->get('datos_nombres'),
+            'datos_parentesco' => $request->get('datos_parentesco'),
+            'datos_edad' => $request->get('datos_edad'),
+            'datos_sexo' => $request->get('datos_sexo'),
+            'datos_tipo_dni' => $request->get('datos_tipo_dni'),
+            'datos_numero_dni' => $request->get('datos_numero_dni'),
+            'datos_estudia' => $request->get('datos_estudia'),
+            // 'croquis' => $profileImage,
+            'infos' => $infos
+        ];
+
+
+      dd($data);
+
+        // dd($data);
+        // if ($accion == 'ver') {
+        //     return  view('documentos.pdf_doc2', $data);
+        // } elseif ($accion == 'descargar') {
+
+        //     // return $this->pdf($request);
+        //     $pdf = PDF::loadView('documentos.pdf_doc2', $data);
+
+        //     $nombreArchivo = date('YmdHis') . ".pdf";
+        //     $rutaGuardado = 'images-cer/';
+        //     file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
+        //     // pasar datos a un json
+        //     $datos_estructura = array(
+        //         'lugar' => $request->get('lugar'),
+        //         'fecha' => $request->get('fecha'),
+        //         'croquis' => $profileImage,
+        //         // 'detalles' => json_decode($cupon['detalles'], true)
+        //     );
+
+        //     $doc = Documento::create([
+        //         'ruta' => $nombreArchivo,
+        //         'id_user' => $id_user,
+        //         'tipo' => 2,
+        //         'estado' => 1,
+        //         'datos' => json_encode($datos_estructura)
+        //     ]);
+
+        //     return redirect()->route('documentos.index', $id_user);
+        // }
+    }
+
     public function getGenerar2(Request $request)
     {
         $id_user = $request->get('id_user');

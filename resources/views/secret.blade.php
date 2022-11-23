@@ -183,7 +183,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Apellido Materno</label>
-                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_ma">
+                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_ma" @selected(old('apellido_ma'))>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Tipo Documento</label>
@@ -210,26 +210,39 @@
 
                                     <div class="col-lg-4">
                                         <label for="input-wizard-4" class="form-label">Pais</label>
-                                        <select id="selectUrgencia" class="form-select" name="pais" @selected(old('pais'))>
-                                            <option value="Perú">Perú</option>
-                                            <option value="España">España</option>
+                                        <select id="pais" class="form-select" name="pais" @selected(old('pais')) readonly>
+                                            <option value="Perú" selected>Perú</option>
+                                            {{-- <option value="España">España</option> --}}
                                         </select>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-5" class="form-label">Departamento</label>
-                                        <select id="input-wizard-6" class="form-select" name="departamento" @selected(old('departamento'))>
-                                            <option value="Lima">Lima</option>
+                                        <select  class="form-select" id="departamento" name="departamento" @selected(old('departamento'))>
+                                            {{-- <option value="Lima">Lima</option>
                                             <option value="Piura">Piura</option>
                                             <option value="Chiclayo">Chiclayo</option>
-                                            <option value="Loreto">Loreto</option>
+                                            <option value="Loreto">Loreto</option> --}}
+                                            {{-- <option value="Lima" selected>Lima</option> --}}
+                                            @foreach ($departamentos as $departamento)
+                                            <option value="{{$departamento->id}}">{{$departamento->name}}</option>
+                                            @endforeach
                                         </select>
                                      </div>
+
                                     <div class="col-lg-4">
                                         <label for="input-wizard-6" class="form-label">Provincia</label>
-                                        <select id="input-wizard-6" class="form-select" name="provincia" @selected(old('provincia'))>
-                                            <option value="Lima 1">Lima 1</option>
-                                            <option value="Lima 2">Lima 2</option>
-                                            <option value="Lima 3">Lima 3</option>
+                                        <select  class="form-select" id="provincia" name="provincia"  @selected(old('provincia'))>
+                                            {{-- <option value="Distrito 1">Distrito 1</option> --}}
+                                        </select>
+                                    </div>
+
+
+
+                                    <div class="col-lg-4">
+                                        <label for="input-wizard-2" class="form-label">Distrito</label>
+                                        <select  class="form-select" id="distrito" name="distrito" @selected(old('distrito'))>
+                                            {{-- <option value="Distrito 1">Distrito 1</option>
+                                            <option value="Distrito 2">Distrito 2</option> --}}
                                         </select>
                                     </div>
 
@@ -240,14 +253,6 @@
                                             <option value="Masculino">Masculino</option>
                                         </select>
                                      </div>
-
-                                    <div class="col-lg-4">
-                                        <label for="input-wizard-2" class="form-label">Distrito</label>
-                                        <select id="input-wizard-6" class="form-select" name="distrito" @selected(old('distrito'))>
-                                            <option value="Distrito 1">Distrito 1</option>
-                                            <option value="Distrito 2">Distrito 2</option>
-                                        </select>
-                                    </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-3" class="form-label">Dirección</label>
                                         <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="direccion" value="{{ old('direccion')}}">
@@ -256,7 +261,7 @@
                                     <div class="col-lg-4">
                                     {{-- input que vendran por defecto --}}
                                     <label for="input-wizard-2" class="form-label">id</label>
-                                    <input id="input-wizard-2" type="number" class="form-control"  name="user_id" value="{{ Auth::user()->id }}" readonly>
+                                    <input id="input-wizard-2" type="hidden" class="form-control"  name="user_id" value="{{ Auth::user()->id }}" readonly>
                                     </div>
 
                                     {{-- DATOS DE ESTUDIOS --}}
@@ -371,6 +376,49 @@
 
 
 
+ @endsection
+ @section('js')
+ <script>
+
+
+    // $('#departamento').on('change', function(){
+    // alert (  $('#departamento option:selected').val()  );
+    // });
+
+             $('#departamento').on('change', function(){
+                var id = $(this).val();
+                // alert(id);
+                    $.ajax({
+                    url:'{{ route('buscarprovincia') }}',
+                    type:'GET',
+                    data:{'id':id},
+                    dataType:'json',
+                    success:function (data) {
+                        // $('#product_list').html(data);
+                        $('#provincia').html(data.table_data);
+                        // alert(data.table_data);
+                    }
+                })
+            });
+
+            $('#provincia').on('change', function(){
+                var id = $(this).val();
+                // alert(id);
+                    $.ajax({
+                    url:'{{ route('buscardistrito') }}',
+                    type:'GET',
+                    data:{'id':id},
+                    dataType:'json',
+                    success:function (data) {
+                        // $('#product_list').html(data);
+                        $('#distrito').html(data.table_data);
+                        // alert(data.table_data);
+                    }
+                })
+            });
+
+
+    </script>
  @endsection
 
 

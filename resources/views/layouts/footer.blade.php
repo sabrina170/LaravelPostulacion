@@ -66,6 +66,9 @@
         }
     })
 </script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'>
+</script>
 @yield('js')
 </body>
 <!-- END: Body-->

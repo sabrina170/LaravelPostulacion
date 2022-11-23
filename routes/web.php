@@ -6,6 +6,7 @@ use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\PosController;
 use App\Mail\ContactanosMailable;
 
 /*
@@ -29,7 +30,13 @@ Route::get('/', function () {
 
 Route::view('/login', "login")->name('login');
 Route::view('/registro', "register")->name('registro');
-Route::view('/privada', "secret")->middleware('auth')->name('privada');
+
+// INFORMACIÓN PERSONAL
+Route::get('/privada', [PosController::class, 'listar'])->middleware('auth')->name('privada');
+Route::get('/BuscarP', [PosController::class, 'buscarprovincia'])->name('buscarprovincia');
+Route::get('/BuscarD', [PosController::class, 'buscardistrito'])->name('buscardistrito');
+
+
 // Route::view('/admin', "admin.index")->middleware('auth')->name('admin.index');
 
 //protegida para el ususario no accedea sesion
@@ -38,10 +45,6 @@ Route::post('/validar-registro', [LoginController::class, 'register'])->name('va
 Route::post('/inicia-sesion', [LoginController::class, 'login'])->name('inicia-sesion');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
-//rutas ejemplos
-
-Route::get('tareas/registrar', [InfoController::class, "create"])->name('tarea-create');
 
 //rutas pra los cruds de INFO USER
 
@@ -52,8 +55,6 @@ Route::post('info/guardar', [InfoController::class, "store"])->name('info-store'
 
 //ENTREVISTA PERSONAL
 Route::view('entrevista', "entrevista.index")->name('entrevista.index');
-
-
 
 //FINALIZADO
 Route::view('finalizado', "finalizado")->name('finalizado');
