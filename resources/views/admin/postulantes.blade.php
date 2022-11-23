@@ -56,7 +56,28 @@
                                 </td>
 
                                 <td>  <a href="{{route('misdocumentos',$item->user_id)}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
-                                <td><span class="badge rounded-pill badge-light-primary me-1">En entrevista</span></td>
+                                <td>
+
+                                        @switch($item->estado)
+                                            @case(1)
+                                            <span class="badge rounded-pill badge-light-secondary me-1">Registrado</span>
+                                                @break
+                                            @case(2)
+                                            <span class="badge rounded-pill badge-light-primary me-1">Completo su registro</span>
+                                                @break
+                                            @case(3)
+                                            <span class="badge rounded-pill badge-light-success me-1">Aceptado</span>
+                                                @break
+                                            @case(4)
+                                            <span class="badge rounded-pill badge-light-info me-1">Completado</span>
+                                                @break
+                                            @case(5)
+                                            <span class="badge rounded-pill badge-light-danger me-1">Rechazado</span>
+                                                @break
+                                            @default
+                                        @endswitch
+
+                                </td>
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <div class="dropdown">
