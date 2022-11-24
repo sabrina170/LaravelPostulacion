@@ -61,6 +61,28 @@ class DocController extends Controller
             return view('documentos.doc4', compact('infos'));
         }
     }
+    public function listardoc5(User $id_user, $tipo_doc)
+    {
+        $infos = Info::where('user_id', '=', $id_user->id)->get();
+        $documento = Documento::where('id_user', '=', $id_user->id)->where('tipo', '=', $tipo_doc)->get();
+
+        if (count($documento) > 0) {
+            return view('documentos.doc5', compact('infos', 'documento'));
+        } else {
+            return view('documentos.doc5', compact('infos'));
+        }
+    }
+    public function listardoc6(User $id_user, $tipo_doc)
+    {
+        $infos = Info::where('user_id', '=', $id_user->id)->get();
+        $documento = Documento::where('id_user', '=', $id_user->id)->where('tipo', '=', $tipo_doc)->get();
+
+        if (count($documento) > 0) {
+            return view('documentos.doc6', compact('infos', 'documento'));
+        } else {
+            return view('documentos.doc6', compact('infos'));
+        }
+    }
 
     public function listardocs(User $id_user)
     {

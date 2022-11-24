@@ -4,29 +4,37 @@
 
 
  <div class="card br-16 p-36">
+    
     {{-- <a class="btn btn-primary w-24 mr-1 mb-2" href="{{route('myPDF')}}">Primary</a>  --}}
-    <div class="card-body">
-        <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-            FICHA DEL TRABAJADOR
-        </h2>
-        <h5 class="intro-y mr-auto">
-            Ingresar Tipo de Documento y Número (Carnet de Extranjería / DNI)
-        </h5>
-    </div>
+    
 
     <div>
         <form action="{{ route('pdf.getGenerar1') }}" method="post"  enctype="multipart/form-data" >
             @csrf
+            <input type="hidden" value="descargar" name="accion">
+            <input type="hidden" value="{{Auth::user()->id}}" name="id_user">
+
         <div class="row m-0">
             @foreach ($infos as $item)
             @if (isset($documento))
                 @foreach ($documento as $doc)
+                <div class="col-4">
+                    <a type="button" href="{{ route('documentos.index',$doc->id_user) }}"
+                    class="btn btn-outline-primary round waves-effect">Atras</a>
+                </div>
                 Se convirtio exitosamente
                 {{$doc->ruta}}
                 @endforeach
             @else
 
-
+            <div class="card-body">
+                <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
+                    FICHA DEL TRABAJADOR
+                </h2>
+                <h5 class="intro-y mr-auto">
+                    Ingresar Tipo de Documento y Número (Carnet de Extranjería / DNI)
+                </h5>
+            </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="basicSelect">Tipo de documento</label>
@@ -138,6 +146,11 @@
                                                                 </div>
             </div>
 
+            <div class="col-lg-4 mt-8">
+                <label class="form-label">
+                    Adjuntar croquis</label>
+                <input type="file" id="croquis" name="croquis" class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
+            </div>
             <div class="col-lg-12 mt-24">
             {{-- nueva tabla --}}
 
@@ -160,26 +173,26 @@
                           <tbody>
                             <tr ng-repeat="row in rows">
                               <td align="center"><input type="checkbox" ng-model="row.delete"></td>
-                              <td><input class="form-control" ng-model="row.nombres" name="datos_nombres[]" placeholder="Nombres Completos..."></td>
-                              <td><input class="form-control" ng-model="row.parentesco" name="datos_parentesco[]" placeholder="Parentesco..."></td>
-                              <td><input type="number" class="form-control" ng-model="row.edad" name="datos_edad[]"></td>
+                              <td><input class="form-control" ng-model="row.nombres" name="datos_nombres[]" placeholder="Nombres Completos..." required></td>
+                              <td><input class="form-control" ng-model="row.parentesco" name="datos_parentesco[]" placeholder="Parentesco..." required></td>
+                              <td><input type="number" class="form-control" ng-model="row.edad" name="datos_edad[]" required></td>
                               <td>
-                                <select class="form-control" ng-model="row.sexo" name="datos_sexo[]">
+                                <select class="form-control" ng-model="row.sexo" name="datos_sexo[]" required>
                                     <option value="Femenino" selected>Femenino</option>
                                     <option value="Masculino">Masculino</option>
                                 </select>
                                 {{-- <input class="form-control" ng-model="row.sexo" name="datos_sexo[]" placeholder="Nombres ..."> --}}
                             </td>
                               <td>
-                                <select class="form-control" ng-model="row.tipodni" name="datos_tipo_dni[]">
+                                <select class="form-control" ng-model="row.tipodni" name="datos_tipo_dni[]" required>
                                     <option value="dni" selected>DNI</option>
                                     <option value="ce">Carnet Extrangeria</option>
                                 </select>
                                 {{-- <input class="form-control" ng-model="row.tipodni" name="datos_tipo_dni[]" placeholder="Apellidos ..."> --}}
                             </td>
-                              <td><input class="form-control" ng-model="row.numerodni" name="datos_numero_dni[]" placeholder="76232132 ..."></td>
+                              <td><input class="form-control" ng-model="row.numerodni" name="datos_numero_dni[]" placeholder="76232132 ..." required></td>
                               <td>
-                                <select class="form-control" ng-model="row.estudia" name="datos_estudia[]">
+                                <select class="form-control" ng-model="row.estudia" name="datos_estudia[]" required>
                                     <option value="si" selected>SI</option>
                                     <option value="no">NO</option>
                                 </select>
@@ -196,33 +209,33 @@
             </div>
 
             {{-- fin de la nueva tabla --}}
-
-
                 <p>En caso tenga hijos mayores de 18 años, indicar si cursan estudios superiores o universitarios.</p>
-
                 <h3 class="font-weight-bold mt-24">DATOS LABORALES - RENTA 5ta / ESSALUD VIDA</h3>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Ha trabajado anteriormente este año?</label>
-                <select class="form-select" id="basicSelect">
-                    <option>Si</option>
-                    <option>No</option>
+                <select class="form-select" id="basicSelect" name="trabajo">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
                 </select>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Nombre del empleador</label>
-                                                                <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Nombre del empleador">
-                                                                </div>
+                 <div class="input-group input-group-merge">
+                      
+                 <input type="text" id="first-name-icon" 
+                 class="form-control" name="nombre_empleador" placeholder="Nombre del empleador">
+                </div>
             </div>
 
             <div class="col-lg-4 mt-8">
-                <label class="form-label" for="first-name-icon">Documento de Renta de 4ta categoría</label>
-                <button id="select-files" class="btn btn-outline-primary mb-1 waves-effect dz-clickable">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg> Subir documento
-                </button>
+                <label class="form-label" for="first-name-icon">
+                    Documento de Renta de 4ta categoría</label>
+                    <input type="file" id="renta" name="renta" 
+                    class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
+
             </div>
 
             <div class="col-lg-12">
@@ -231,31 +244,33 @@
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Domiciliado</label>
-                <select class="form-select" id="basicSelect">
-                    <option>Si</option>
-                    <option>No</option>
+                <select class="form-select" id="basicSelect" name="domiciliado">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
                 </select>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Si es extranjero indicar días de permanencia en el país</label>
-                                                                <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Días de permanencia">
-                                                                </div>
+                 <div class="input-group input-group-merge">
+                <input type="text" id="first-name-icon"
+                 class="form-control" name="dias_per" placeholder="Días de permanencia">
+                </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Fecha de cese de su último empleo</label>
-                                                                <div class="input-group input-group-merge">
-                                                                    <input type="date" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Ingrese su teléfono">
-                                                                </div>
+                 <div class="input-group input-group-merge">
+                <input type="date" id="first-name-icon" class="form-control"
+                 name="fecha_cese" placeholder="Ingrese su teléfono">
+                </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Indicar si está afiliado a Essalud Vida</label>
-                <select class="form-select" id="basicSelect">
-                    <option>Si</option>
-                    <option>No</option>
+                <select class="form-select" id="basicSelect" name="afiliado">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
                 </select>
             </div>
 
@@ -277,21 +292,30 @@
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Lugar</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Lugar">
+                                                                    <input type="text" 
+                                                                    id="first-name-icon"
+                                                                     class="form-control" 
+                                                                     name="lugar" placeholder="Lugar">
                                                                 </div>
             </div>
 
             <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Fecha</label>
                                                                 <div class="input-group input-group-merge">
-                                                                    <input type="date" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Lugar">
+                                                                    <input type="date"
+                                                                     id="first-name-icon"
+                                                                      class="form-control" 
+                                                                      name="fecha"
+                                                                       placeholder="fecha">
                                                                 </div>
             </div>
 
             <div class="col-lg-12 mt-24">
                 <h3>Firma</h3>
-
+                <input type="file" id="firma" name="firma" 
+                class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
                 <hr>
+
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">
                         ENVIAR DOCUMENTOS

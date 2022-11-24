@@ -109,18 +109,30 @@ Route::view('/documento3', "documentos.doc3")->name('documentos.doc3');
 Route::post('pdf/getGenerar3', [PDFController::class, 'getGenerar3'])->name('pdf.getGenerar3');
 Route::view('/pdf_doc3', "documentos.pdf_doc3")->name('documentos.pdf_doc3');
 // --------------------------------------------------------
-// DOCUMENTO 3
+// DOCUMENTO 4
 Route::get('doc4/{id_user}/{tipo_doc}', [DocController::class, "listardoc4"])->name('doc4');
 Route::view('/documento4', "documentos.doc4")->name('documentos.doc4');
 Route::post('pdf/getGenerar4', [PDFController::class, 'getGenerar4'])->name('pdf.getGenerar4');
 Route::view('/pdf_doc4', "documentos.pdf_doc4")->name('documentos.pdf_doc4');
+// --------------------------------------------------------------
+// DOCUMENTO 5
+Route::get('doc5/{id_user}/{tipo_doc}', [DocController::class, "listardoc5"])->name('doc5');
+Route::view('/documento5', "documentos.doc5")->name('documentos.doc5');
+Route::post('pdf/getGenerar5', [PDFController::class, 'getGenerar5'])->name('pdf.getGenerar5');
+Route::view('/pdf_doc5', "documentos.pdf_doc5")->name('documentos.pdf_doc5');
+// --------------------------------------------------------------
+// DOCUMENTO 6
+Route::get('doc6/{id_user}/{tipo_doc}', [DocController::class, "listardoc6"])->name('doc6');
+Route::view('/documento6', "documentos.doc6")->name('documentos.doc6');
+Route::post('pdf/getGenerar6', [PDFController::class, 'getGenerar6'])->name('pdf.getGenerar6');
+Route::view('/pdf_doc6', "documentos.pdf_doc6")->name('documentos.pdf_doc6');
 
 // ------------------------------------------------------
 
 // Route::view('doc3', "documentos.doc3")->name('doc3');
 // Route::view('doc4', "documentos.doc4")->name('doc4');
-Route::view('doc5', "documentos.doc5")->name('doc5');
-Route::view('doc6', "documentos.doc6")->name('doc6');
+// Route::view('doc5', "documentos.doc5")->name('doc5');
+// Route::view('doc6', "documentos.doc6")->name('doc6');
 
 Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
 Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');
@@ -131,5 +143,3 @@ Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.gen
 Route::get('ListaDocs/{id_user}', [DocController::class, 'listardocs'])->name('documentos.index');
 
 Route::get('pdf/getIndex', [PDFController::class, 'getIndex'])->name('pdf.getIndex');
-
-
