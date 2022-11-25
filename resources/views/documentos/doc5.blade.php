@@ -27,7 +27,7 @@
                         DOCUMENTO 5
                     </h2>
                   
-                    <form action="{{ route('pdf.getGenerar2') }}" method="post"  enctype="multipart/form-data" >
+                    <form action="{{ route('pdf.getGenerar5') }}" method="post"  enctype="multipart/form-data" >
                             @csrf
                             <input type="hidden" value="descargar" name="accion">
                             <input type="hidden" value="{{Auth::user()->id}}" name="id_user">
@@ -35,14 +35,14 @@
                             <div class="col-lg-4 mt-8">
                                 <label class="form-label" for="first-name-icon">Lugar</label>
                                                                                 <div class="input-group input-group-merge">
-                                                                                    <input type="text" id="first-name-icon" class="form-control" name="lugar" placeholder="Lugar" required>
+                                                                                    <input type="text" id="lugar" class="form-control" name="lugar" placeholder="Lugar" required>
                                                                                 </div>
                             </div>
 
                             <div class="col-lg-4 mt-8">
                                 <label class="form-label" for="first-name-icon">Fecha</label>
                                                                                 <div class="input-group input-group-merge">
-                                                                                    <input type="date" id="first-name-icon" class="form-control" name="fecha"required >
+                                                                                    <input type="date" id="fecha" class="form-control" name="fecha"required >
                                                                                 </div>
                             </div>
 

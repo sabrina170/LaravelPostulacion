@@ -136,8 +136,31 @@
             <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc6',[Auth::user()->id,6])}}"><i data-feather='arrow-right'></i></a></p>
         </div>
     </div>
+    <div class="text-center">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="confirmo" value="checked">
+            <label class="form-check-label" for="inlineCheckbox1">Confirmo haber completado todos los documentos para la respectiva postulación</label>
+        </div>
+        <br>
+        <button id="enviardocs" type="button" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
+    </div>
 </div>
 
  @endsection
+@section('js')
+    
+<script>
+ $(document).ready(function(){
+        
+            // Buscar dni que ya existe
+            $('#enviardocs').on('keyup',function () {
+                // var query = $(this).val();
+                alert('aqui');
+                
+            });
 
+        });
+
+</script>
+@endsection
 

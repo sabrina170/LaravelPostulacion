@@ -298,8 +298,8 @@ class PdfController extends Controller
         $infos = Info::where('user_id', '=', $id_user)->get();
 
         $accion = $request->get('accion');
-        if ($image = $request->file('croquis')) {
-            $destinatarioPath = 'images-croquis/';
+        if ($image = $request->file('firma')) {
+            $destinatarioPath = 'images-firma/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinatarioPath, $profileImage);
             // $alu['image'] = "$profileImage";
@@ -308,17 +308,17 @@ class PdfController extends Controller
         $data = [
             'lugar' => $request->get('lugar'),
             'fecha' => $request->get('fecha'),
-            'croquis' => $profileImage,
+            'firma' => $profileImage,
             'infos' => $infos
         ];
 
         // dd($data);
         if ($accion == 'ver') {
-            return  view('documentos.pdf_doc2', $data);
+            return  view('documentos.pdf_doc5', $data);
         } elseif ($accion == 'descargar') {
 
             // return $this->pdf($request);
-            $pdf = PDF::loadView('documentos.pdf_doc2', $data);
+            $pdf = PDF::loadView('documentos.pdf_doc5', $data);
 
             $nombreArchivo = date('YmdHis') . ".pdf";
             $rutaGuardado = 'images-cer/';
@@ -327,14 +327,65 @@ class PdfController extends Controller
             $datos_estructura = array(
                 'lugar' => $request->get('lugar'),
                 'fecha' => $request->get('fecha'),
-                'croquis' => $profileImage,
+                'firma' => $profileImage,
                 // 'detalles' => json_decode($cupon['detalles'], true)
             );
 
             $doc = Documento::create([
                 'ruta' => $nombreArchivo,
                 'id_user' => $id_user,
-                'tipo' => 2,
+                'tipo' => 5,
+                'estado' => 1,
+                'datos' => json_encode($datos_estructura)
+            ]);
+
+            return redirect()->route('documentos.index', $id_user);
+        }
+    }
+
+    public function getGenerar6(Request $request)
+    {
+        $id_user = $request->get('id_user');
+        $infos = Info::where('user_id', '=', $id_user)->get();
+
+        $accion = $request->get('accion');
+        if ($image = $request->file('firma')) {
+            $destinatarioPath = 'images-firma/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinatarioPath, $profileImage);
+            // $alu['image'] = "$profileImage";
+        }
+
+        $data = [
+            'lugar' => $request->get('lugar'),
+            'fecha' => $request->get('fecha'),
+            'firma' => $profileImage,
+            'infos' => $infos
+        ];
+
+        // dd($data);
+        if ($accion == 'ver') {
+            return  view('documentos.pdf_doc6', $data);
+        } elseif ($accion == 'descargar') {
+
+            // return $this->pdf($request);
+            $pdf = PDF::loadView('documentos.pdf_doc6', $data);
+
+            $nombreArchivo = date('YmdHis') . ".pdf";
+            $rutaGuardado = 'images-cer/';
+            file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
+            // pasar datos a un json
+            $datos_estructura = array(
+                'lugar' => $request->get('lugar'),
+                'fecha' => $request->get('fecha'),
+                'firma' => $profileImage,
+                // 'detalles' => json_decode($cupon['detalles'], true)
+            );
+
+            $doc = Documento::create([
+                'ruta' => $nombreArchivo,
+                'id_user' => $id_user,
+                'tipo' => 6,
                 'estado' => 1,
                 'datos' => json_encode($datos_estructura)
             ]);
