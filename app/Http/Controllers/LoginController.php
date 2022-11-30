@@ -11,6 +11,7 @@ use Database\Seeders\RoleSeeder;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Http;
 
 class LoginController extends Controller
 {
@@ -35,6 +36,63 @@ class LoginController extends Controller
 
         $user->save();
         Auth::login($user);
+
+
+        // REGISTRAR EN COBALT
+
+        $url = 'https://general.ionosfera.pe/api/createLead';
+        $response = Http::withBasicAuth('6YQa@Jxx','mK$VmxC2J08V')
+        ->post($url,[
+
+            "agentId"=> "",
+            "apellidos"=> "Guiribalde",
+            "calle"=> "",
+            "chatId"=> "",
+            "cliente"=> "HIPATIA",
+            "cp"=> "",
+            "dispositivo"=> "",
+            "email"=> $request->email,
+            "fabricanteMovil"=> "",
+            "geoCalle"=> "",
+            "geoCiudad"=> "",
+            "geoISP"=> "",
+            "geoLatLng"=> "",
+            "geoNumero"=> "",
+            "geoPais"=> "",
+            "geoProvincia"=> "",
+            "geoRegion"=> "",
+            "idvar"=> "",
+            "ipCliente"=> "",
+            "lp"=> "",
+            "microsite"=> "konectamarketingdigital.pe",
+            "modeloMovil"=> "",
+            "navegador"=> "Chrome",
+            "nombre"=> $request->name,
+            "numDoc"=> $request->dni,
+            "observaciones"=> "",
+            "operadorRed"=> "",
+            "origen"=> "",
+            "parametros"=> "",
+            "pop"=> "",
+            "popCep"=> "",
+            "priority"=> "1",
+            "procedencia"=> "",
+            "producto"=> "test-hipatia",
+            "regalo"=> "",
+            "resCep"=> "",
+            "resCliente"=> "",
+            "resolucion"=> "",
+            "sistemaOperativo"=> "Windows",
+            "telefono"=> $request->celular,
+            "tipDoc"=> $request->tipo_dni,
+            "tipo"=> "c2c",
+            "tsource"=> "400",
+            "tsourceproveedor"=> "",
+            "userAgent"=> "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36",
+            "versionLanding"=> ""
+        ]);
+
+        dd($response-> object());
 
         return redirect(route('login'));
     }
