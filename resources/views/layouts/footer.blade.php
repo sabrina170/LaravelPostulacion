@@ -56,6 +56,11 @@
     <script src="{{asset('app-assets/js/scripts/forms/form-repeater.js')}}"></script>
     <!-- END: Page JS-->
 
+    <!-- BEGIN: Page JS-->
+    <script src="{{asset('app-assets/js/scripts/forms/form-file-uploader.js')}}"></script>
+    <script src="{{asset('app-assets/js/scripts/forms/form-file-uploader.min.js')}}"></script>
+      <script src="{{asset('app-assets/vendors/js/file-uploaders/dropzone.min.js')}}"></script>
+      <!-- END: Page Vendor JS-->
 <script>
     $(window).on('load', function() {
         if (feather) {

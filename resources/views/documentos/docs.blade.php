@@ -77,6 +77,28 @@
             </table>
         </div>
 
+      <!-- remove thumbnail file upload starts -->
+      <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Remove Thumbnail</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        This example allows user to remove any file out of all uploaded files. This will add a link to every file
+                        preview to remove or cancel (if already uploading) the file. The <code>dictCancelUpload</code>,
+                        <code>dictCancelUploadConfirmation</code> and <code>dictRemoveFile</code> options are used for the wording.
+                    </p>
+                    <form action="#" class="dropzone dropzone-area" id="dpz-remove-thumb">
+                        <div class="dz-message">Drop files here or click to upload.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- remove thumbnail file upload ends -->
+
     </div>
                 </div>
 
