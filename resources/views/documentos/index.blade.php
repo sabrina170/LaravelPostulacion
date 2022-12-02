@@ -142,7 +142,7 @@
             <label class="form-check-label" for="inlineCheckbox1">Confirmo haber completado todos los documentos para la respectiva postulación</label>
         </div>
         <br>
-        <button id="enviardocs" type="button" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
+        <a  name="buscar" id="buscar" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</a>
     </div>
 </div>
 
@@ -150,16 +150,14 @@
 @section('js')
     
 <script>
- $(document).ready(function(){
-        
-            // Buscar dni que ya existe
-            $('#enviardocs').on('keyup',function () {
+        // Buscar dni que ya existe
+            $('#buscar').on('onchange',function () {
                 // var query = $(this).val();
                 alert('aqui');
                 
             });
+            
 
-        });
 
 </script>
 @endsection
