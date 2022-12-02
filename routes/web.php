@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PosController;
 use App\Mail\ContactanosMailable;
+use App\Http\Controllers\PostGuzzleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,3 +144,10 @@ Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.gen
 Route::get('ListaDocs/{id_user}', [DocController::class, 'listardocs'])->name('documentos.index');
 
 Route::get('pdf/getIndex', [PDFController::class, 'getIndex'])->name('pdf.getIndex');
+
+
+// GUZZLE
+
+Route::get('posts',[PostGuzzleController::class,'index']);
+Route::get('posts/store', [PostGuzzleController::class, 'store' ]);
+Route::post('cobalt', [PostGuzzleController::class, 'EnviarDatosCobalt' ]);

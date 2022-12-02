@@ -48,8 +48,13 @@
     <!-- mis estilos -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/boot-dev.css')}}">
-    
+
     <!-- END: Vendor CSS-->
+    <!-- BEGIN: Page CSS-->
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/core/menu/menu-types/vertical-menu.css')}}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/plugins/forms/form-file-uploader.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/file-uploaders/dropzone.min.css')}}">
+    <!-- END: Page CSS-->
 
 
 </head>
