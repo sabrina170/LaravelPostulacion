@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DocController;
+use App\Http\Controllers\DocsPosController;
 use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -89,7 +90,11 @@ Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contact
 
 // REGISTROS DE MIS DOCUEMNTOS
 // Route::view('Documentos', "documentos.index")->name('documentos.index');
-Route::view('misdocuemtos', "documentos.docs")->name('documentos.docs');
+
+
+
+Route::get('misdocuemtos', [DocsPosController::class, "listar"])->name('documentos.docs');
+
 
 // DOMUMENTO 1
 
@@ -148,6 +153,6 @@ Route::get('pdf/getIndex', [PDFController::class, 'getIndex'])->name('pdf.getInd
 
 // GUZZLE
 
-Route::get('posts',[PostGuzzleController::class,'index']);
-Route::get('posts/store', [PostGuzzleController::class, 'store' ]);
-Route::post('cobalt', [PostGuzzleController::class, 'EnviarDatosCobalt' ]);
+Route::get('posts', [PostGuzzleController::class, 'index']);
+Route::get('posts/store', [PostGuzzleController::class, 'store']);
+Route::post('cobalt', [PostGuzzleController::class, 'EnviarDatosCobalt']);
