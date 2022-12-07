@@ -40,10 +40,9 @@ class DocsPosController extends Controller
 
             return view('documentos.docs', compact('certificado', 'docs', 'constancia', 'antecedente', 'dni', 'renta'));
         } else {
-            return view('documentos.docs', compact('certificado', 'docs', 'antecedente', 'dni', 'renta'));
         }
 
-
+        return view('documentos.docs', compact('certificado', 'docs', 'antecedente', 'dni', 'renta'));
 
 
         // $certificados = Departamento::orderByDesc('id')->get();
