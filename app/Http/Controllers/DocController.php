@@ -100,4 +100,13 @@ class DocController extends Controller
         echo 1;
         // return view('documentos.mensaje');
     }
+    public function cambiarestadopos2(Request $request)
+    {
+        $id_user = $request->id_user;
+        DB::table('users')->where('id', $id_user)->limit(1)->update([
+            'estado' => '6'
+        ]);
+        echo 1;
+        // return view('documentos.mensaje');
+    }
 }

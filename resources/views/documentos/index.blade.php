@@ -146,7 +146,7 @@
         </div>
         <br>
         <input type="hidden" id="user_id" value="{{Auth::user()->id}}">
-        <button name="buscar" onclick="boton1" id="boton1" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
+        <button  onclick="boton1" id="boton1" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
     </div>
 </div>
 

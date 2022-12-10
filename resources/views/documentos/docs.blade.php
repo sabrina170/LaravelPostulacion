@@ -246,11 +246,50 @@
             </table>
         </div>
 
+        <div class="text-center">
+            <div id="alerta">
 
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="confirmo" value="checked">
+                <label class="form-check-label" for="inlineCheckbox1">Confirmo haber completado todos los documentos para la respectiva postulación</label>
+            </div>
+            <br>
+            <input type="hidden" id="user_id" value="{{Auth::user()->id}}">
+            <button id="boton1" onclick="boton2"  class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
+        </div>
 
     </div>
                 </div>
 
  @endsection
+ @section('js')
+
+ <script>
 
 
+      document.getElementById('boton1').onclick = function(){
+
+         var query = $('#user_id').val();
+         if ($('#confirmo').prop('checked') ) {
+                 $.ajax({
+                     url:'{{ route('cambiarestadopos2') }}',
+                     type:'GET',
+                     data:{'id_user':query},
+                     dataType:'json',
+                     success:function (data) {
+                         location.href="{{ route('finalizado') }}";
+                     }
+                 })
+         }else{
+
+             $('#alerta').html('<div class="alert alert-warning" role="alert"><div class="alert-body"><strong>Selecciona el check de confirmacíon</strong></div></div>')
+         }
+
+
+ }
+
+
+
+ </script>
+ @endsection
