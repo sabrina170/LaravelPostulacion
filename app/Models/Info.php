@@ -37,6 +37,7 @@ class Info extends Model
         'tiempo',
         'tipo_expe',
         'konecta',
+        'datos_pc',
 
     ];
 

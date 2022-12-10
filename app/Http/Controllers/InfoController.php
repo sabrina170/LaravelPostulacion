@@ -14,120 +14,83 @@ use Illuminate\Support\Facades\DB;
 
 class InfoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $infos = Info::orderByDesc('id')->get();
         return view('info.index', compact('infos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(InfoRequest $inforequest)
     {
         //valida los datos de INfo
         $datos = $inforequest->validated();
         //crea un registro en la tabla info con el ku
         // dd($datos);
+        $datos['datos_pc']= "";
         $info = Info::create($datos);
         $user_id = $inforequest->user_id;
-        // $grado = $inforequest->grado;
-        // $nombreie = $inforequest->nombreie;
-        // $estudia = $inforequest->estudia;
-        // $horario = $inforequest->horario;
-        // $disponibilidad = $inforequest->disponibilidad;
 
-
-        // $callcenter = $inforequest->callcenter;
-        // $empresa = $inforequest->empresa;
-        // $puesto = $inforequest->puesto;
-        // $tiempo = $inforequest->tiempo;
-        // $tipo = $inforequest->tipo;
-        // $konecta = $inforequest->konecta;
-
-
-        //CREAR REGISTRO EN TABLA ESTUDIOS
-        // DB::table('estudios')->insert(
-        //     [
-        //         'grado' => $grado,
-        //         'nombreie'  => $nombreie,
-        //         'estudia'  => $estudia,
-        //         'horario'  =>  $horario,
-        //         'disponibilidad'  =>  $disponibilidad,
-        //         'ku'  => $ku
-        //     ]
-        // );
-
-        //CREAR REGISTRO EN TABLA ESTUDIOS
-        // DB::table('laborales')->insert(
-        //     [
-        //         'callcenter' => $callcenter,
-        //         'empresa' => $empresa,
-        //         'puesto' => $puesto,
-        //         'tiempo' => $tiempo,
-        //         'tipo' => $tipo,
-        //         'konecta' => $konecta,
-        //         'ku'  => $ku
-        //     ]
-        // );
-
-        // $ku->update($datos);
         //ACTUALIZA LA TABLA USER EN EL ESTADO 2
-
         DB::table('users')->where('id', $user_id)->limit(1)->update(['estado' => '2']);
         // return redirect()->route('info.index');
         return redirect()->route('privada');
-
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Info  $info
-     * @return \Illuminate\Http\Response
-     */
+    public function store_pc(Request $request)
+    {
+        // $info = Info::create($datos);
+        $user_id = $request->user_id;
+
+        // Guardar foto
+        if ($image = $request->file('image')) {
+            $destinatarioPath = 'images-auriculares/';
+            $AuricularImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinatarioPath, $AuricularImage);
+        }
+
+
+        $datos_estructura = array(
+            'ram' => $request->ram,
+            'procesador' => $request->procesador,
+            'windows' => $request->windows,
+            'tipo_auricular' => $request->tipo_auricular,
+            'foto_auricular' => $AuricularImage,
+            // 'detalles' => json_decode($cupon['detalles'], true)
+        );
+
+        //ACTUALIZA LA TABLA USER EN EL ESTADO 3
+        DB::table('users')->where('id', $user_id)->limit(1)->update([
+            'estado' => '3'
+
+        ]);
+
+        DB::table('infos')->where('user_id', $user_id)->limit(1)->update([
+            'datos_pc' => json_encode($datos_estructura)
+        ]);
+        // return redirect()->route('info.index');
+        return view('entrevista.index');
+    }
+
     public function show(Info $info)
     {
         return view('info.show', ['info' => $info]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Info  $info
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Info $info)
     {
         // dd($info);
         return view('info/edit', compact('info'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Info  $info
-     * @return \Illuminate\Http\Response
-     */
     public function update(InfoRequest $request, Info $info)
     {
         $datos = $request->validated();
@@ -136,12 +99,6 @@ class InfoController extends Controller
         return redirect()->route('info.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Info  $info
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Info $info)
     {
         $info->delete();

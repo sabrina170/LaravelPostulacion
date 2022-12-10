@@ -36,20 +36,47 @@ class DocsPosController extends Controller
             ->get();
 
         $docs  = DocposImage::orderByDesc('id')->get();
-        if (count($constancia) > 0) {
+        // if (count($constancia) > 0) {
 
-            return view('documentos.docs', compact('certificado', 'docs', 'constancia', 'antecedente', 'dni', 'renta'));
-        } else {
-        }
+        //     return view('documentos.docs', compact('certificado', 'docs', 'constancia', 'antecedente', 'dni', 'renta'));
+        // } else {
+        // }
 
-        return view('documentos.docs', compact('certificado', 'docs', 'antecedente', 'dni', 'renta'));
+        return view('documentos.docs', compact('certificado', 'docs', 'constancia', 'antecedente', 'dni', 'renta'));
 
 
         // $certificados = Departamento::orderByDesc('id')->get();
 
     }
 
-    public function insertar()
+    public function subirarchivos(Request $request)
     {
+        $id_user = Auth::user()->id;
+        $doc = Docpos::create([
+            'nombre' => $request->nombre,
+            'tipo' => $request->tipo,
+            'user_id' => $id_user,
+        ]);
+
+        // return $certi->id;
+        // GALERIA DE IMAGENES
+        if ($request->hasfile('images')) {
+            $uploadPath = 'images-legajo/';
+
+            $i = 1;
+            foreach ($request->file('images') as $imagefile) {
+                $exten = $imagefile->getClientOriginalExtension();
+                $filename = time() . $i++ . "." . $exten;
+                $imagefile->move($uploadPath, $filename);
+                $finalImagePathName = $uploadPath . $filename;
+                // $input['image'] = "$profileImage";
+
+                $doc->docposImages()->create([
+                    'docpos_id' => $doc->id,
+                    'image' => $finalImagePathName,
+                ]);
+            }
+        }
+        return redirect()->route('documentos.docs');
     }
 }

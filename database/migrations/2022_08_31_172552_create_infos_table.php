@@ -48,6 +48,10 @@ return new class extends Migration
             $table->string('tiempo', 70);
             $table->string('tipo_expe', 70);
             $table->string('konecta', 10);
+
+            // datos de la pc
+            $table->text('datos_pc');
+
             // fin laborales
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

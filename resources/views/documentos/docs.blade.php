@@ -31,23 +31,32 @@
                     <tr>
                         <td class="text-pri font-weight-bold">CERTIFICADO DE ESTUDIOS</td>
                         <td>
-                            @if (isset($certificado))
+                            @if (count($certificado) > 0)
                             <span class="badge bg-success">Listo</span>
                             @else
-                            <div class="row">
+
+                                <form action="{{route('subirarchivos')}}" method="post" enctype="multipart/form-data" >
+                                    @csrf
+                                    <div class="row">
                                 <div class="col-lg-6 col-md-12">
                                     <label for="formFile" class="form-label">Selecciona varios archivos</label>
-                                    <input class="form-control" type="file" id="formFile">
+                                    <input class="form-control"  type="file" name="images[]" multiple  required>
+                                    <input type="hidden" value="1" name="tipo">
+                                    <input type="hidden" value="Certificado" name="nombre">
+
                                 </div>
+
                                 <div class="col-lg-6 col-md-12 mt-12">
-                                    <button type="button" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
+                                    <button type="submit" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
                                 </div>
                             </div>
+                                </form>
+
                             @endif
-                            
+
                         </td>
                         <td>
-                            @if (isset($certificado))
+                            @if (count($certificado) > 0)
                                 @foreach ($certificado as $cer)
                                 {{-- {{$cer->id}} --}}
                                 <ul class="list-group list-group-numbered">
@@ -61,30 +70,35 @@
                                 </ul>
                                 @endforeach
                             @else
-                                Ningun docuemento
+                                Ningun documento
                             @endif
                         </td>
                     </tr>
                     <tr>
                         <td class="text-pri font-weight-bold">CONSTANCIAS DE TRABAJOS</td>
                         <td>
-                            @if (isset($constancia))
+                            @if (count($constancia) > 0)
                             <span class="badge bg-success">Listo</span>
                             @else
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <label for="formFile" class="form-label">Selecciona varios archivos</label>
-                                    <input class="form-control" type="file" id="formFile" name="image[]">
+                            <form action="{{route('subirarchivos')}}" method="post" enctype="multipart/form-data" >
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <label for="formFile" class="form-label">Selecciona varios archivos</label>
+                                        <input class="form-control"  type="file" name="images[]" multiple  required>
+                                        <input type="hidden" value="2" name="tipo">
+                                        <input type="hidden" value="Constancia" name="nombre">
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mt-12">
+                                        <button type="submit" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-12 mt-12">
-                                    <button type="button" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
-                                </div>
-                            </div>
+                            </form>
                             @endif
-                            
+
                         </td>
                         <td>
-                            @if (isset($constancia))
+                            @if (count($constancia) > 0)
                                 @foreach ($constancia as $cer)
                                 {{-- {{$cer->id}} --}}
                                 <ul class="list-group list-group-numbered">
@@ -98,30 +112,35 @@
                                 </ul>
                                 @endforeach
                             @else
-                                Ningun docuemento
+                                Ningun documento
                             @endif
                         </td>
                     </tr>
                     <tr>
                         <td class="text-pri font-weight-bold">ANTECEDENTES</td>
                         <td>
-                            @if (isset($antecedente))
+                            @if (count($antecedente) > 0)
                             <span class="badge bg-success">Listo</span>
                             @else
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <label for="formFile" class="form-label">Selecciona varios archivos</label>
-                                    <input class="form-control" type="file" id="formFile">
+                            <form action="{{route('subirarchivos')}}" method="post" enctype="multipart/form-data" >
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <label for="formFile" class="form-label">Selecciona varios archivos</label>
+                                        <input class="form-control"  type="file" name="images[]" multiple  required>
+                                        <input type="hidden" value="3" name="tipo">
+                                        <input type="hidden" value="Antecedentes" name="nombre">
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mt-12">
+                                        <button type="submit" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-12 mt-12">
-                                    <button type="button" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
-                                </div>
-                            </div>
+                            </form>
                             @endif
-                            
+
                         </td>
                         <td>
-                            @if (isset($antecedente))
+                            @if (count($antecedente) > 0)
                                 @foreach ($antecedente as $cer)
                                 {{-- {{$cer->id}} --}}
                                 <ul class="list-group list-group-numbered">
@@ -135,30 +154,35 @@
                                 </ul>
                                 @endforeach
                             @else
-                                Ningun docuemento
+                                Ningun documento
                             @endif
                         </td>
                     </tr>
                     <tr>
                         <td class="text-pri font-weight-bold">DNI</td>
                         <td>
-                            @if (isset($dni))
+                            @if (count($dni) > 0)
                             <span class="badge bg-success">Listo</span>
                             @else
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <label for="formFile" class="form-label">Selecciona varios archivos</label>
-                                    <input class="form-control" type="file" id="formFile">
+                            <form action="{{route('subirarchivos')}}" method="post" enctype="multipart/form-data" >
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <label for="formFile" class="form-label">Selecciona varios archivos</label>
+                                        <input class="form-control"  type="file" name="images[]" multiple  required>
+                                        <input type="hidden" value="4" name="tipo">
+                                        <input type="hidden" value="Dni" name="nombre">
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mt-12">
+                                        <button type="submit" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-12 mt-12">
-                                    <button type="button" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
-                                </div>
-                            </div>
+                            </form>
                             @endif
-                            
+
                         </td>
                         <td>
-                            @if (isset($dni))
+                            @if (count($dni) > 0)
                                 @foreach ($dni as $cer)
                                 {{-- {{$cer->id}} --}}
                                 <ul class="list-group list-group-numbered">
@@ -172,30 +196,35 @@
                                 </ul>
                                 @endforeach
                             @else
-                                Ningun docuemento
+                                Ningun documento
                             @endif
                         </td>
                     </tr>
                     <tr>
                         <td class="text-pri font-weight-bold">CERTIFICACIÓN DE RENTA 5TA CATEGORÍA</td>
                         <td>
-                            @if (isset($renta))
+                            @if (count($renta) > 0)
                             <span class="badge bg-success">Listo</span>
                             @else
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <label for="formFile" class="form-label">Selecciona varios archivos</label>
-                                    <input class="form-control" type="file" id="formFile">
+                            <form action="{{route('subirarchivos')}}" method="post" enctype="multipart/form-data" >
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <label for="formFile" class="form-label">Selecciona varios archivos</label>
+                                        <input class="form-control"  type="file" name="images[]" multiple  required>
+                                        <input type="hidden" value="5" name="tipo">
+                                        <input type="hidden" value="Renta" name="nombre">
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mt-12">
+                                        <button type="submit" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-12 mt-12">
-                                    <button type="button" class="btn btn-dark waves-effect waves-float waves-light">Subir documentos</button>
-                                </div>
-                            </div>
+                            </form>
                             @endif
-                            
+
                         </td>
                         <td>
-                            @if (isset($renta))
+                            @if (count($renta) > 0)
                                 @foreach ($renta as $cer)
                                 {{-- {{$cer->id}} --}}
                                 <ul class="list-group list-group-numbered">
@@ -209,7 +238,7 @@
                                 </ul>
                                 @endforeach
                             @else
-                                Ningun docuemento
+                                Ningun documento
                             @endif
                         </td>
                     </tr>
@@ -217,7 +246,7 @@
             </table>
         </div>
 
-     
+
 
     </div>
                 </div>

@@ -325,8 +325,8 @@
                                     <label for="input-wizard-2" class="form-label">Tipo experiencia</label>
                                     <select id="input-wizard-6" class="form-select" name="tipo_expe">
                                         <option value="Ventas call center" selected>Ventas call center</option>
-                                        <option value="Experiencia 2" selected>Experiencia 2</option>
-                                        <option value="Experiencia 3" selected>Experiencia 3</option>
+                                        <option value="Experiencia 2" >Experiencia 2</option>
+                                        <option value="Experiencia 3" >Experiencia 3</option>
 
                                     </select>
                                 </div>
@@ -362,13 +362,117 @@
                         @endif
                         @if ($estado==2)
                         <div class="tab-pane active" id="profileIcon" aria-labelledby="profileIcon-tab" role="tabpanel">
-                            <div style="min-height:360px;">
-                                <div style="width:100%;height:0;padding-bottom:50%;position:relative;">
-                                    <iframe style="border:none;position:absolute;top:0;left:0;width:100
-                                    %;height:100%;min-height:360px;border:none;overflow:hidden !important;"
-                                     src="//openspeedtest.com/Get-widget.php"></iframe>
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div style="min-height:500px;">
+                                        <div style="width:100%;height:100%;padding-bottom:50%;position:relative;">
+                                            <iframe style="border:none;position:absolute;top:0;left:0;width:100
+                                            %;height:100%;min-height:360px;border:none;overflow:hidden !important;"
+                                            src="//openspeedtest.com/Get-widget.php"></iframe>
+                                            </div>
                                     </div>
                                 </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Acerca de tu PC</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form class="form form-horizontal" action="{{route('info-pc')}}" method="post" enctype="multipart/form-data" >
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="mb-1 row">
+                                                            <div class="col-sm-3">
+                                                                <label class="col-form-label" for="first-name">RAM</label>
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <select class="form-select" id="basicSelect" name="ram">
+                                                                    <option value="8 de RAM">8 de RAM</option>
+                                                                    <option value="10 de RAM">10 de RAM</option>
+                                                                    <option value="12 de RAM">12 de RAM</option>
+                                                                </select>
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1 row">
+                                                            <div class="col-sm-3">
+                                                                <label class="col-form-label" for="email-id">Procesador</label>
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <select class="form-select" id="basicSelect" name="procesador">
+                                                                    <option value="Procesador 1">Procesador 1</option>
+                                                                    <option value="Procesador 2">Procesador 2</option>
+                                                                    <option value="Procesador 3">Procesador 3</option>
+                                                                </select>
+                                                               </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1 row">
+                                                            <div class="col-sm-3">
+                                                                <label class="col-form-label" for="contact-info">Version de Windows</label>
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <select class="form-select" id="basicSelect" name="windows">
+                                                                    <option value="Windows 10 Home">Windows 10 Home</option>
+                                                                    <option value="Windows 10 Pro">Windows 10 Pro</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1 row">
+                                                            <div class="col-sm-3">
+                                                                <label class="col-form-label" for="password">Tipo Auricular</label>
+                                                                (Selecciona)
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <div class="row custom-options-checkable g-1">
+                                                                    <div class="col-md-4">
+                                                                        <input class="custom-option-item-check" type="radio" name="tipo_auricular" id="customOptionsCheckableRadiosWithIcon1" value="1" checked="">
+                                                                        <label class="custom-option-item text-center p-1" for="customOptionsCheckableRadiosWithIcon1">
+                                                                            <img class="img-fluid my-2" src="{{'app-assets/images/auriculares/01.jpg'}}" alt="Card image cap">
+                                                                            <span class="custom-option-item-title h6 d-block">Auricular Normal</span>
+                                                                        </label>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <input class="custom-option-item-check" type="radio" name="tipo_auricular" id="customOptionsCheckableRadiosWithIcon2" value="2">
+                                                                        <label class="custom-option-item text-center text-center p-1" for="customOptionsCheckableRadiosWithIcon2">
+                                                                            <img class="img-fluid my-2" src="{{'app-assets/images/auriculares/02.jpg'}}" alt="Card image cap">
+                                                                            <span class="custom-option-item-title h6 d-block">Auricular Tipo Vincha</span>
+                                                                        </label>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1 row">
+                                                            <div class="col-sm-3">
+                                                                <label class="col-form-label" for="contact-info">Foto del auricular</label>
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <input class="form-control" type="file" id="formFile" name="image" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
+                                                    <div class="col-sm-9 offset-sm-3">
+                                                        <button type="submit" class="btn btn-primary me-1 waves-effect waves-float waves-light">Enviar</button>
+                                                        {{-- <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button> --}}
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
                         @endif
                     </div>

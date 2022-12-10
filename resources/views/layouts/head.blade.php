@@ -82,7 +82,7 @@
                     @endif
                 </li>
                 <li class=" nav-item">
-                    @if ($estado==2)
+                    @if ($estado==3)
                     <a class="d-flex align-items-center" href="{{route('entrevista.index')}}">
                         <div class="d-flex flex-row">
                             <div class="font-36 pr-8 font-weight-bold">
@@ -107,7 +107,7 @@
                     @endif
                 </li>
                 <li class=" nav-item">
-                    @if ($estado==3)
+                    @if ($estado==4)
                     <a class="d-flex align-items-center" href="{{route('documentos.index',Auth::user()->id)}}">
                         <div class="d-flex flex-row">
                             <div class="font-36 pr-8 font-weight-bold">
@@ -132,7 +132,7 @@
                     @endif
                 </li>
                 <li class=" nav-item">
-                    @if ($estado==4)
+                    @if ($estado==6)
                     <a class="d-flex align-items-center" href="{{route('finalizado')}}">
                         <div class="d-flex flex-row">
                             <div class="font-36 pr-8 font-weight-bold">
@@ -157,7 +157,7 @@
                     @endif
                 </li>
                 <li class=" nav-item">
-                    @if ($estado==3)
+                    @if ($estado==5)
                     <a class="d-flex align-items-center" href="{{route('documentos.docs')}}">
                         <i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Mis documentos</span>
                     </a>

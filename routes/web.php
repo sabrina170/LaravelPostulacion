@@ -50,10 +50,12 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //rutas pra los cruds de INFO USER
 
-//REGISTRAR
+//MODULO 1 (INFORMACIÓN DEL postulando y pc)
 Route::get('secret', [InfoController::class, "create"])->name('info-create');
 Route::get('info/{info}/ver', [InfoController::class, "show"])->name('info.show');
 Route::post('info/guardar', [InfoController::class, "store"])->name('info-store');
+Route::post('info/guardar_pc', [InfoController::class, "store_pc"])->name('info-pc');
+
 
 //ENTREVISTA PERSONAL
 Route::view('entrevista', "entrevista.index")->name('entrevista.index');
@@ -70,14 +72,13 @@ Route::delete('info/{info}/eliminar', [InfoController::class, "destroy"])->name(
 
 
 Route::get('/listado-usuarios', [AdminController::class, "listado"])->name('admin.index');
-// Route::view('/listar', "admin.index")->name('listar');
-// Route::view('/postulantes', "admin.postulantes")->name('postulantes');
 Route::get('/postulantes', [AdminController::class, "listarpostulantes"])->name('postulantes');
 Route::put('cambiar-estado/{info}', [AdminController::class, 'CambiarEstado'])->name('admin.actualizar');
 
 
-// Route::view('/misdocumentos', "admin.mis-documentos")->name('mis-documentos');
+// MODULO DE MIS DOCUMENTODS
 Route::get('misdocumentos/{id}', [AdminController::class, "DetalleDocumento"])->name('misdocumentos');
+
 
 // Route::view('/editar-pos', "admin.editar-pos")->name('editarpos');
 Route::get('editar-pos/{id}', [AdminController::class, "EditarPostulante"])->name('editar-postulante');
@@ -93,7 +94,7 @@ Route::get('/contactanos', [ContactanosMailable::class, "index"])->name('contact
 
 
 
-Route::get('misdocuemtos', [DocsPosController::class, "listar"])->name('documentos.docs');
+Route::get('misdocumentospos', [DocsPosController::class, "listar"])->name('documentos.docs');
 
 
 // DOMUMENTO 1
@@ -147,9 +148,12 @@ Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.gen
 
 // Route::view('documento/{id_user}', "documentos.index")->name('documentos.index');
 Route::get('ListaDocs/{id_user}', [DocController::class, 'listardocs'])->name('documentos.index');
-
+Route::get('estado', [DocController::class, 'cambiarestadopos'])->name('cambiarestadopos');
+Route::view('mensaje', "documentos.mensaje")->name('documentos.mensaje');
 Route::get('pdf/getIndex', [PDFController::class, 'getIndex'])->name('pdf.getIndex');
 
+// MODULOS MIS DOCUMENTOS POSTULNTES
+Route::post('subir-archivos', [DocsPosController::class, "subirarchivos"])->name('subirarchivos');
 
 // GUZZLE
 

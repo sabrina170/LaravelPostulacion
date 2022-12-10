@@ -114,6 +114,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
             $estado = Auth::user()->estado;
+            $id_user = Auth::user()->id;
 
             if (Auth::user()->hasRole('admin')) {
                 return redirect()->route('admin.index');
@@ -121,10 +122,14 @@ class LoginController extends Controller
                 if($estado == 1){
                     return redirect()->intended('privada');
                 }else if($estado == 2){
-                    return redirect()->intended('entrevista');
+                    return redirect()->intended('privada');
                 }else if($estado == 3){
-                    return redirect()->intended('ListaDocs/2');
+                    return redirect()->intended('entrevista');
                 }else if($estado == 4){
+                    return redirect()->route('documentos.index',$id_user);
+                }else if($estado == 5){
+                    return redirect()->intended('misdocumentospos');
+                }else if($estado == 6){
                     return redirect()->intended('finalizado');
                 }
 

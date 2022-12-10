@@ -90,4 +90,14 @@ class DocController extends Controller
         // $infos  = Info::orderByDesc('id')->where('user_id', $id)->get();
         return view('documentos.index', compact('docs'));
     }
+
+    public function cambiarestadopos(Request $request)
+    {
+        $id_user = $request->id_user;
+        DB::table('users')->where('id', $id_user)->limit(1)->update([
+            'estado' => '5'
+        ]);
+        echo 1;
+        // return view('documentos.mensaje');
+    }
 }

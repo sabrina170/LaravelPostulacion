@@ -53,7 +53,9 @@ class InfoRequest extends FormRequest
             'puesto' => 'required',
             'tiempo' => 'required',
             'tipo_expe' => 'required',
-            'konecta' => 'required'
+            'konecta' => 'required',
+
+            'datos_pc' =>''
         ];
     }
 }

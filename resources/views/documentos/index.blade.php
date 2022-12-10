@@ -137,26 +137,51 @@
         </div>
     </div>
     <div class="text-center">
+        <div id="alerta">
+
+        </div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="confirmo" value="checked">
             <label class="form-check-label" for="inlineCheckbox1">Confirmo haber completado todos los documentos para la respectiva postulación</label>
         </div>
         <br>
-        <a  name="buscar" id="buscar" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</a>
+        <input type="hidden" id="user_id" value="{{Auth::user()->id}}">
+        <button name="buscar" onclick="boton1" id="boton1" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
     </div>
 </div>
 
  @endsection
 @section('js')
-    
+
 <script>
-        // Buscar dni que ya existe
-            $('#buscar').on('onchange',function () {
-                // var query = $(this).val();
-                alert('aqui');
-                
-            });
-            
+
+
+     document.getElementById('boton1').onclick = function(){
+
+
+        var query = $('#user_id').val();
+
+        if ($('#confirmo').prop('checked') ) {
+// alert(query);
+                $.ajax({
+                    url:'{{ route('cambiarestadopos') }}',
+                    type:'GET',
+                    data:{'id_user':query},
+                    dataType:'json',
+                    success:function (data) {
+                        // $('#total_dni').html(data.total_dni);
+                        // $('#alerta').html(data);
+                        location.href="{{ route('documentos.docs') }}";
+                    }
+                })
+        }else{
+
+            $('#alerta').html('<div class="alert alert-warning" role="alert"><div class="alert-body"><strong>Selecciona el check de confirmacíon</strong></div></div>')
+        }
+
+
+}
+
 
 
 </script>
