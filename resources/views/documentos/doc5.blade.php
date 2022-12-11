@@ -24,9 +24,9 @@
                             @endforeach
                         @else
                     <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-                        DOCUMENTO 5
+                        COMPROMISO DE NO SUPLANTACIÓN DE IDENTIDAD
                     </h2>
-                  
+
                     <form action="{{ route('pdf.getGenerar5') }}" method="post"  enctype="multipart/form-data" >
                             @csrf
                             <input type="hidden" value="descargar" name="accion">
@@ -47,23 +47,30 @@
                             </div>
 
                             <div class="col-lg-12 mt-24">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet bibendum tortor. Donec viverra dapibus libero, lobortis consectetur mi sodales ut. Proin venenatis ullamcorper
-                                malesuada. Proin dignissim elit justo, ut faucibus velit mattis vitae. Duis eu interdum velit. Phasellus vitae posuere orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-                                ridiculus mus. Fusce at elit orci. Morbi sit amet lacinia nunc, vel eleifend enim.
+                               <p>
+                                Yo, {{ $item->nombres}}	{{ $item->apellido_pa}} {{ $item->apellido_ma}}  ,	identificado con	DNI N° {{ $item->numero_documento}} ,con domicilio {{ $item->dirección}} ubicado en
+, distrito {{ $item->distrito}}provincia de {{ $item->provincia}} y departamento de {{ $item->departamento}}; mediante el presente documento tomo conocimiento de lo siguiente:<br>
+<ol>
+    <li>Que, la suplantación de identidad consiste en hacerse pasar por otra persona por diversos motivos y para diversos fines, hecho que puede darse por medios distintos, entre ellos, como los tecnológicos.</li>
+    <li>Que, Konecta Perú1, rechaza tajantemente la comisión de cualquier conducta delictiva; por lo que, ante este tipo de conductas, toma las acciones legales pertinentes de conformidad con el Código Penal Peruano y la Ley de Delitos Informáticos.</li>
+    <li>Qué, Konecta Perú en aras de la prevención de la existencia de esta conducta delictiva, realizará la comprobación de la identidad de el/la colaborador/a durante la capacitación y en cualquier momento de la relación laboral (si la hubiere).</li>
+</ol>
+<br>
+En consecuencia, con pleno conocimiento del contenido del presente documento, autorizo la comprobación de mi identidad y declaro bajo responsabilidad que no ha existido ningún tipo de coacción para la firma al pie del presente documento en señal de conformidad.
+
+                               </p>
                             </div>
 
-                           
+
 
                             <div class="col-lg-12 mt-24">
-                                
 
-                                <p><b>Apellidos y Nombres completos:</b> {{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}} </p>
-                                <p><b>DNI:</b> {{ $item->numero_documento}}</p>
                                 <div class="col-lg-4 mt-24">
                                     <h3>Firma</h3>
                                     <input type="file" id="select-files" name="firma" class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
                                 </div>
-
+                                <p><b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b></p>
+                                <p><b>DNI:</b> {{ $item->numero_documento}}</p>
                                 <hr>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">

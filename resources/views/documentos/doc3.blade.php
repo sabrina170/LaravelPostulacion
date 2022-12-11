@@ -22,7 +22,7 @@
                         @endforeach
                     @else
                 <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-                    DOCUMENTO 3
+                    DECLARACIÓN JURADA
                 </h2>
                 <h5 class="intro-y mr-auto">
                     <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
@@ -39,9 +39,9 @@
 
 
                         <div class="col-lg-12 mt-24">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet bibendum tortor. Donec viverra dapibus libero, lobortis consectetur mi sodales ut. Proin venenatis ullamcorper
-                            malesuada. Proin dignissim elit justo, ut faucibus velit mattis vitae. Duis eu interdum velit. Phasellus vitae posuere orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Fusce at elit orci. Morbi sit amet lacinia nunc, vel eleifend enim.
+                            El que suscribe <b> {{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}}</b> con {{  $item->tipo_documento}} :  {{  $item->numero_documento}} declara lo siguiente:
+                            Haber recibido del área de RRHH la información pertinente respecto a los sistemas de pensiones, así mismo certifica la recepción del Boletín Informativo acerca de las características del Sistema Privado de Pensiones (SPP) y del Sistema Nacional de Pensiones (SNP).
+
                         </div>
 
 
@@ -49,13 +49,17 @@
                         <div class="col-lg-12 mt-24">
 
 
-                            <p><b>Apellidos y Nombres completos:</b> {{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}} </p>
-                            <p><b>DNI:</b> {{ $item->numero_documento}}</p>
-                             <hr>
+
+
 
                              <div class="col-lg-4 mt-24">
-                                <h3>Insertar Firma</h3>
+                                <h3>Firma</h3>
                                 <input type="file" id="select-files" name="firma" class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
+                                <hr>
+
+                                <p><b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}} </b> </p>
+                                <p><b>DNI:</b> {{ $item->numero_documento}}</p>
+
                             </div>
 
                             <div class="text-center">

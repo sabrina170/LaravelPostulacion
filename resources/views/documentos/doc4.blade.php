@@ -20,7 +20,8 @@
         @else
 
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-            DOCUMENTO 4
+            DECLARACIÓN JURADA PARA EL SISTEMA PREVISIONAL DE PENSIÓN
+
         </h2>
         <h5 class="intro-y mr-auto">
             Ingresar Tipo de Documento y Número (Carnet de Extranjería / DNI)
@@ -28,6 +29,7 @@
         <div class="row m-0">
             <form action="{{ route('pdf.getGenerar4') }}" method="post"  enctype="multipart/form-data" >
                 @csrf
+                <!--
                 <input type="hidden" value="descargar" name="accion">
                             <input type="hidden" value="{{Auth::user()->id}}" name="id_user">
 
@@ -43,14 +45,10 @@
                                                                 <div class="input-group input-group-merge">
                                                                     <input type="date" id="first-name-icon" name="fecha" class="form-control"  placeholder="Lugar" required>
                                                                 </div>
-            </div>
+            </div>-->
 
             <div class="col-lg-12 mt-24">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet bibendum tortor. Donec viverra dapibus libero, lobortis consectetur mi sodales ut. Proin venenatis ullamcorper
-                malesuada. Proin dignissim elit justo, ut faucibus velit mattis vitae. Duis eu interdum velit. Phasellus vitae posuere orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-                ridiculus mus. Fusce at elit orci. Morbi sit amet lacinia nunc, vel eleifend enim.
-
-                <h3 class="font-weight-bold mt-24">Opciones</h3>
+                <p>Con esta Declaración libero al Departamento de Recursos Humanos de toda responsabilidad </p>
 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="afp" value="Si estoy afiliado a AFP" name="check_list[]" checked="" onchange="showContent()">
@@ -91,6 +89,8 @@
                     <input class="form-check-input" name="check_list[]" type="checkbox" id="inlineCheckbox1" value="Estoy afiliado al SNP pero deseo cambiar a AFP" checked="">
                     <label class="form-check-label"  for="inlineCheckbox1">Estoy afiliado al SNP pero deseo cambiar a AFP</label>
                 </div>
+
+                <p class="mt-36">por cuanto los datos que expongo se ajustan a la verdad.</p>
             </div>
 
 

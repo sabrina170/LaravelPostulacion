@@ -24,49 +24,48 @@
                             @endforeach
                         @else
                     <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-                        DOCUMENTO 2
+                        DECLARACIÓN JURADA DE DATOS Y DOMICILIO LEGAL
                     </h2>
-                    <h5 class="intro-y mr-auto">
-                        <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
-                        <strong>Dirección : </strong> {{  $item->direccion}} <br>
-                        <strong>Telefono : </strong> {{  $item->telefono}}
+                    <p>Fecha: @php echo date("d-m-y");@endphp</p>
 
-                        {{-- Ingresar Tipo de Documento y Número (Carnet de Extranjería / DNI) --}}
-                    </h5>
+
+
+                    <p>El que suscribe <b>{{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}}</b> N° DNI  <b>{{ $item->numero_documento}}</b> con domicilio actual en (Av./Clle./Mz./Lt. – Int/Dpto) <b>{{  $item->direccion}}</b> Distrito: <b>{{  $item->distrito}}</b> Provincia: <b>{{  $item->provincia}}</b> <br> Teléfono: <b>{{  $item->telefono}}</b> </p>
+
+                    <p>Referencias adicionales: </p>
+
+                    <p>Declaro dicho domicilio como actual y legal ante cualquier notificación o control de la Empresa, comprometiéndome  a comunicar fehacientemente dentro de las cuarenta y ocho horas, su cambio o modificación.</p>
+
                     <form action="{{ route('pdf.getGenerar2') }}" method="post"  enctype="multipart/form-data" >
                             @csrf
                             <input type="hidden" value="descargar" name="accion">
                             <input type="hidden" value="{{Auth::user()->id}}" name="id_user">
 
                             <div class="col-lg-4 mt-8">
-                                <label class="form-label" for="first-name-icon">Lugar</label>
+                                <!--<label class="form-label" for="first-name-icon">Lugar</label>-->
                                                                                 <div class="input-group input-group-merge">
-                                                                                    <input type="text" id="first-name-icon" class="form-control" name="lugar" placeholder="Lugar" required>
+                                                                                    <input type="hidden" id="first-name-icon" class="form-control" name="lugar" placeholder="Lugar" required>
                                                                                 </div>
                             </div>
 
                             <div class="col-lg-4 mt-8">
-                                <label class="form-label" for="first-name-icon">Fecha</label>
+                                <!--<label class="form-label" for="first-name-icon">Fecha</label>-->
                                                                                 <div class="input-group input-group-merge">
-                                                                                    <input type="date" id="first-name-icon" class="form-control" name="fecha"required >
+                                                                                    <input type="hidden" id="first-name-icon" class="form-control" name="fecha"required >
                                                                                 </div>
                             </div>
 
-                            <div class="col-lg-12 mt-24">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet bibendum tortor. Donec viverra dapibus libero, lobortis consectetur mi sodales ut. Proin venenatis ullamcorper
-                                malesuada. Proin dignissim elit justo, ut faucibus velit mattis vitae. Duis eu interdum velit. Phasellus vitae posuere orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-                                ridiculus mus. Fusce at elit orci. Morbi sit amet lacinia nunc, vel eleifend enim.
-                            </div>
+
 
                             <div class="col-lg-4 mt-24">
-                                <h3>Adjuntar croquis</h3>
-                                <input type="file" id="select-files" name="croquis" class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
+                                <!--<h3>Adjuntar croquis</h3>-->
+                                <input type="hidden" id="select-files" name="croquis" class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
                             </div>
 
                             <div class="col-lg-12 mt-24">
                                 <h3>Firma</h3>
 
-                                <p><b>Apellidos y Nombres completos:</b> {{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}} </p>
+                                <p><b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b></p>
                                 <p><b>DNI:</b> {{ $item->numero_documento}}</p>
 
 

@@ -43,7 +43,7 @@
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Documento 2</p>
+            <p class="col-lg-4 mb-0">Declaración jurada de datos y domicilio legal</p>
             @if (isset($docs))
                 @foreach ($docs as $d)
                     @if ($d->tipo==2)
@@ -63,7 +63,7 @@
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Documento 3</p>
+            <p class="col-lg-4 mb-0">Declaración Jurada</p>
             @if (isset($docs))
                 @foreach ($docs as $d)
                     @if ($d->tipo==3)
@@ -82,7 +82,7 @@
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Documento 4</p>
+            <p class="col-lg-4 mb-0">Declaración juarada para el sistema previsional de pensión</p>
             @if (isset($docs))
                 @foreach ($docs as $d)
                     @if ($d->tipo==4)
@@ -101,7 +101,7 @@
 
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Docuemento 5</p>
+            <p class="col-lg-4 mb-0">Compromiso de NO suplantación de identidad</p>
             @if (isset($docs))
             @foreach ($docs as $d)
                 @if ($d->tipo==5)
@@ -119,7 +119,7 @@
         </div>
         <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-8">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
-            <p class="col-lg-4 mb-0">Documento 6</p>
+            <p class="col-lg-4 mb-0">Autorización de acceso a equipos propios</p>
             @if (isset($docs))
                 @foreach ($docs as $d)
                     @if ($d->tipo==6)
