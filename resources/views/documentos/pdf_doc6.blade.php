@@ -17,6 +17,7 @@
  .h1{
  font-size: 21px;
  font-weight: bold;
+ color: blue;
  }
  .h2{
  font-size: 18px;
@@ -46,9 +47,9 @@
     <div class="row m-0">
         @foreach ($infos as $item)
 
-        <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-            DOCUMENTO 5
-        </h2>
+        <h1 class="h1">
+            DOCUMENTO 6
+        </h1>
         <h5 class="intro-y mr-auto">
             {{-- <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
             <strong>Dirección : </strong> {{  $item->direccion}} <br>

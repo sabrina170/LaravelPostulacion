@@ -23,53 +23,55 @@ class AdminController extends Controller
 
         $usuarios = User::orderByDesc('id')->get();
         $usuarios_no_completaron = User::join('infos', 'infos.user_id', '=', 'users.id')
-                                    ->where('users.estado',1)->get();
+            ->where('users.estado', 1)->get();
 
         $count = User::orderByDesc('id')->count();
 
         $postulantes_registrados = User::orderByDesc('id')
-                                ->where('estado',1)
-                                ->count();
+            ->where('estado', 1)
+            ->count();
         $postulantes_llenaron_registro = User::orderByDesc('id')
-                                ->where('estado','<=',2)
-                                ->count();
+            ->where('estado', '<=', 2)
+            ->count();
         $postulantes_aceptados = User::orderByDesc('id')
-                                ->where('estado',3)
-                                ->count();
+            ->where('estado', 3)
+            ->count();
         $postulantes_rechazados = User::orderByDesc('id')
-                                ->where('estado',5)
-                                ->count();
+            ->where('estado', 5)
+            ->count();
 
 
         // return redirect()->route('admin.index');
         //$count = 5;
-        return view('admin.index',compact('count','usuarios', 'postulantes_registrados', 'postulantes_llenaron_registro','postulantes_aceptados','postulantes_rechazados', 'usuarios_no_completaron'));
+        return view('admin.index', compact('count', 'usuarios', 'postulantes_registrados', 'postulantes_llenaron_registro', 'postulantes_aceptados', 'postulantes_rechazados', 'usuarios_no_completaron'));
     }
 
     public function listarpostulantes()
     {
-        $infos = Info::join('users', 'users.id', '=', 'infos.user_id')->get();
+
+        $infos = User::orderByDesc('id')->get();
+        // $infos = Info::join('users', 'users.id', '=', 'infos.user_id')->get();
 
         // return redirect()->route('admin.index');
-        return view('admin.postulantes',compact('infos'));
+        return view('admin.postulantes', compact('infos'));
     }
 
     public function DetalleDocumento($id)
     {
         $info_documentos = Documento::where('id_user', '=', $id)->get();
         // return redirect()->route('admin.index');
-        return view('admin.misdocumentos',compact('info_documentos'));
+        return view('admin.misdocumentos', compact('info_documentos'));
         // dd($infos);
     }
 
     public function EditarPostulante($id)
     {
         $info_postulante = Info::join('users', 'users.id', '=', 'infos.user_id')
-                                ->where('user_id', '=', $id)->get();
+            ->where('user_id', '=', $id)->get();
         //dd($info_postulante);
         //$info_postulante = Info::where('user_id', '=', $id)->get();
         // return redirect()->route('admin.index');
-        return view('admin.editar-pos',compact('info_postulante'));
+        return view('admin.editar-pos', compact('info_postulante'));
         // dd($infos);
     }
 

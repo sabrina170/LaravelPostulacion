@@ -40,38 +40,44 @@
                             @foreach ($infos as $item)
                             <tr>
                                 <td>
-                                    <span class="fw-bold"> {{$item->nombres}} </span>
+                                    <span class="fw-bold"> {{$item->name}} </span>
                                 </td>
                                 <td>
                                     {{$item->apellido_pa}}
                                 </td>
                                 <td>
-                                    {{$item->numero_documento}}
+                                    {{$item->dni}}
                                 </td>
                                 <td>
-                                    {{$item->sexo}}
+                                    {{$item->email}}
                                 </td>
                                 <td>
                                     {{$item->created_at}}
                                 </td>
 
-                                <td>  <a href="{{route('misdocumentos',$item->user_id)}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="{{route('misdocumentos',$item->id)}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
                                 <td>
 
                                         @switch($item->estado)
                                             @case(1)
-                                            <span class="badge rounded-pill badge-light-secondary me-1">Registrado</span>
+                                            <span class="badge rounded-pill badge-light-success me-1">Registrado</span>
                                                 @break
                                             @case(2)
-                                            <span class="badge rounded-pill badge-light-primary me-1">Completo su registro</span>
+                                            <span class="badge rounded-pill badge-light-secondary me-1">Completo su registro</span>
                                                 @break
                                             @case(3)
-                                            <span class="badge rounded-pill badge-light-success me-1">Aceptado</span>
-                                                @break
+                                            <span class="badge rounded-pill badge-light-primary me-1">En entrevista</span>
+                                                 @break
                                             @case(4)
-                                            <span class="badge rounded-pill badge-light-info me-1">Completado</span>
+                                            <span class="badge rounded-pill badge-light-info me-1">Aceptado</span>
                                                 @break
                                             @case(5)
+                                            <span class="badge rounded-pill badge-light-secondary me-1">Completo <br> documentos</span>
+                                                @break
+                                            @case(6)
+                                            <span class="badge rounded-pill badge-light-secondary me-1">Completo <br> Legajo</span>
+                                                @break
+                                            @case(7)
                                             <span class="badge rounded-pill badge-light-danger me-1">Rechazado</span>
                                                 @break
                                             @default
@@ -92,7 +98,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <a href="{{route('editar-postulante',$item->user_id)}}"><i data-feather='arrow-right'></i></a> </div>
+                                        <a href="{{route('editar-postulante',$item->id)}}"><i data-feather='arrow-right'></i></a> </div>
 
                                 </td>
                             </tr>
