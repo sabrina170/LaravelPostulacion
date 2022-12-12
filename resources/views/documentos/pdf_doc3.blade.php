@@ -41,7 +41,7 @@
         @foreach ($infos as $item)
 
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-            DOCUMENTO 3
+            DECLARACIÓN JURADA
         </h2>
         <h5 class="intro-y mr-auto">
             <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
@@ -49,8 +49,12 @@
             <strong>Telefono : </strong> {{  $item->telefono}}
 
        </h5>
-       <p>{{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}} </p>
-       <p>{{ $item->numero_documento}}</p>
+
+       <div class="col-lg-12 mt-24">
+        El que suscribe <b> {{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}}</b> con {{  $item->tipo_documento}} :  {{  $item->numero_documento}} declara lo siguiente:
+        Haber recibido del área de RRHH la información pertinente respecto a los sistemas de pensiones, así mismo certifica la recepción del Boletín Informativo acerca de las características del Sistema Privado de Pensiones (SPP) y del Sistema Nacional de Pensiones (SNP).
+
+    </div>
 
        @endforeach
        <img src="/images-firma/{{$firma}}" alt="">

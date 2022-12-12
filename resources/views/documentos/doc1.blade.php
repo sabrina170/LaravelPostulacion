@@ -411,7 +411,7 @@
             <div class="col-lg-12 mt-36">
                 <h4 class="font-weight-bold">Exclusividad</h4>
                 <label>Prestó servicios simultáneos en empresas de la competencia (Call center), clientes y proveedores del grupo Konecta.</label>
-                <select class="form-select" id="basicSelect" name="afiliado">
+                <select class="form-select" id="basicSelect" name="exclusividad">
                     <option value="Si">Si</option>
                     <option value="No">No</option>
                 </select>

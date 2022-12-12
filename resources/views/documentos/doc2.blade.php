@@ -64,6 +64,9 @@
 
                             <div class="col-lg-12 mt-24">
                                 <h3>Firma</h3>
+                <input type="file" id="firma" name="firma"
+                class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
+                <hr>
 
                                 <p><b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b></p>
                                 <p><b>DNI:</b> {{ $item->numero_documento}}</p>

@@ -27,47 +27,34 @@
 
 </head>
 <body>
- <div >
-
     <div>
-
-    </div>
- <div class="card br-16 p-36">
-
-
-    <div class="card-body">
-
-        <label class="form-label" for="first-name-icon">Lugar</label>
-        {{-- {{$lugar}} --}}
-        <br>
-        <label class="form-label" for="first-name-icon">Fecha</label>
-{{-- {{$fecha}} --}}
-
-    <div class="row m-0">
-        {{-- @foreach ($infos as $item) --}}
-
+        @foreach ($infos as $item)
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-            DOCUMENTO 2
+            DECLARACIÓN JURADA DE DATOS Y DOMICILIO LEGAL
         </h2>
-        <h5 class="intro-y mr-auto">
-            {{-- <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
-            <strong>Dirección : </strong> {{  $item->direccion}} <br>
-            <strong>Telefono : </strong> {{  $item->telefono}} --}}
+        <p>Fecha:{{$fecha}}</p>
 
-       </h5>
 
-       {{-- @endforeach --}}
-       <h1>Croquis</h1>
-       {{-- <img src="/images-croquis/{{$croquis}}" alt=""> --}}
-       {{-- <form action="{{ route('pdf.getGenerar') }}" method="POST">
-        @csrf
-        <input type="hidden" value="descargar" name="accion">
-        <input type="hidden" value="digital" name="tipo">
+        <p>El que suscribe <b>{{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}}</b> N° DNI  <b>{{ $item->numero_documento}}</b> con domicilio actual en (Av./Clle./Mz./Lt. – Int/Dpto) <b>{{  $item->direccion}}</b> Distrito: <b>{{  $item->distrito}}</b> Provincia: <b>{{  $item->provincia}}</b> <br> Teléfono: <b>{{  $item->telefono}}</b> </p>
 
-        <button type="submit">Generate PDF</button>
-    </form> --}}
- </div>
+         <p>Referencias adicionales: </p>
 
- {{-- <a href="{{ route('pdf.generate') }}" class="btn btn-primary">Generate PDF</a> --}}
+        <p>Declaro dicho domicilio como actual y legal ante cualquier notificación o control de la Empresa, comprometiéndome  a comunicar fehacientemente dentro de las cuarenta y ocho horas, su cambio o modificación.</p>
+
+        <table>
+            <tr>
+                <td>
+                    <p><b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b></p><br>
+                    <p>Nombres y apellidos</p>
+                </td>
+
+                <td>
+                    <img src="/images-firma/{{$firma}}" class="img-thumbnail mt-24" alt="..."><br>
+                    <p>Firma</p>
+                </td>
+            </tr>
+        </table>
+        @endforeach
+    </div>
 </body>
 </html>

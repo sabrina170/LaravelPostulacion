@@ -83,7 +83,18 @@ class PdfController extends Controller
             'lugar' => $request->get('lugar'),
             'fecha' => $request->get('fecha'),
             'firma' => $firmaImage,
-            'infos' => $infos
+            'infos' => $infos,
+            'estado_civil' => $request->get('estado_civil'),
+            'lugar_nacimiento' => $request->get('lugar_nacimiento'),
+            'nacionalidad' => $request->get('nacionalidad'),
+            'telefono_fijo' => $request->get('telefono_fijo'),
+            'telefono' => $request->get('telefono'),
+            'referencia' => $request->get('referencia'),
+            'nivel_educativo' => $request->get('nivel_educativo'),
+            'exclusividad' => $request->get('exclusividad')
+
+
+
         ];
 
 
@@ -142,17 +153,25 @@ class PdfController extends Controller
         $infos = Info::where('user_id', '=', $id_user)->get();
 
         $accion = $request->get('accion');
+        /*
         if ($image = $request->file('croquis')) {
             $destinatarioPath = 'images-croquis/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinatarioPath, $profileImage);
+        }*/
+
+        if ($image = $request->file('firma')) {
+            $destinatarioPath = 'images-firma/';
+            $firmaImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinatarioPath, $firmaImage);
             // $alu['image'] = "$profileImage";
         }
 
         $data = [
             'lugar' => $request->get('lugar'),
             'fecha' => $request->get('fecha'),
-            'croquis' => $profileImage,
+            'firma' => $firmaImage,
+            //'croquis' => $profileImage,
             'infos' => $infos
         ];
 
@@ -171,7 +190,7 @@ class PdfController extends Controller
             $datos_estructura = array(
                 'lugar' => $request->get('lugar'),
                 'fecha' => $request->get('fecha'),
-                'croquis' => $profileImage,
+                //'croquis' => $profileImage,
                 // 'detalles' => json_decode($cupon['detalles'], true)
             );
 

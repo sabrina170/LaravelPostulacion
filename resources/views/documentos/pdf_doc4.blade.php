@@ -47,20 +47,15 @@
         @foreach ($infos as $item)
 
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-            DOCUMENTO 4
+            DECLARACIÓN JURADA PARA EL SISTEMA PREVISIONAL DE PENSIÓN
         </h2>
+
         <h5 class="intro-y mr-auto">
-            <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
-            <strong>Dirección : </strong> {{  $item->direccion}} <br>
-            <strong>Telefono : </strong> {{  $item->telefono}}
+            Ingresar Tipo de Documento y Número (Carnet de Extranjería / DNI)
+        </h5>
 
-       </h5>
+        <p>Con esta Declaración libero al Departamento de Recursos Humanos de toda responsabilidad </p>
 
-
-<h3 class="font-weight-bold mt-24">Opciones</h3>
-
-        @foreach ($list as $l)
-       <li> {{$l}}</li>
         @endforeach
         <label class="form-label" for="first-name-icon">Nombre AFP</label>
         {{$nombre_afp}}
@@ -70,8 +65,13 @@
        <p><b>Apellidos y Nombres completos:</b> {{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}} </p>
        <p><b>DNI:</b> {{ $item->numero_documento}}</p>
        @endforeach
+
        <h1>Firma</h1>
        <img src="/images-fima/{{$firma}}" alt="">
+       <p><b>Apellidos y Nombres completos:</b> {{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}} </p>
+       <p><b>DNI:</b> {{ $item->numero_documento}}</p>
+
+
  </div>
 </body>
 </html>
