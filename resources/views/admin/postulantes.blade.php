@@ -63,7 +63,7 @@
                                             <span class="badge rounded-pill badge-light-success me-1">Registrado</span>
                                                 @break
                                             @case(2)
-                                            <span class="badge rounded-pill badge-light-secondary me-1">Completo su registro</span>
+                                            <span class="badge rounded-pill badge-light-secondary me-1">Completando <br> su registro</span>
                                                 @break
                                             @case(3)
                                             <span class="badge rounded-pill badge-light-primary me-1">En entrevista</span>

@@ -26,8 +26,7 @@ class AdminController extends Controller
         */
 
         $usuarios = User::orderByDesc('id')->get();
-        $usuarios_no_completaron = User::join('infos', 'infos.user_id', '=', 'users.id')
-            ->where('users.estado', 1)->get();
+
 
         $count = User::orderByDesc('id')->count();
 
@@ -35,19 +34,28 @@ class AdminController extends Controller
             ->where('estado', 1)
             ->count();
         $postulantes_llenaron_registro = User::orderByDesc('id')
-            ->where('estado', '<=', 2)
-            ->count();
-        $postulantes_aceptados = User::orderByDesc('id')
             ->where('estado', 3)
             ->count();
-        $postulantes_rechazados = User::orderByDesc('id')
-            ->where('estado', 5)
+        $postulantes_aceptados = User::orderByDesc('id')
+            ->where('estado', 4)
             ->count();
-
+        $postulantes_rechazados = User::orderByDesc('id')
+            ->where('estado', 7)
+            ->count();
+        $usuarios_no_completaron = User::orderByDesc('id')
+            ->where('estado', 2)->get();
 
         // return redirect()->route('admin.index');
         //$count = 5;
-        return view('admin.index', compact('count', 'usuarios', 'postulantes_registrados', 'postulantes_llenaron_registro', 'postulantes_aceptados', 'postulantes_rechazados', 'usuarios_no_completaron'));
+        return view('admin.index', compact(
+            'count',
+            'usuarios',
+            'postulantes_registrados',
+            'postulantes_llenaron_registro',
+            'postulantes_aceptados',
+            'postulantes_rechazados',
+            'usuarios_no_completaron'
+        ));
     }
 
     public function listarpostulantes()

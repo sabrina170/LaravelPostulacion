@@ -5,9 +5,10 @@
 <div class="row">
 
         <h2 class="text-pri font-weight-bold">Editar postulante <strong>Sabrina</strong></h2>
-        <div class="row">
+        
             @foreach ($info_postulante as $item)
             <!-- left profile info section -->
+            <div class="row">
             <div class="col-lg-4 col-12 order-2 order-lg-1">
                 <!-- about -->
 
@@ -117,8 +118,32 @@
                     </div>
                 </div>
              </div>
+            </div>
+            <div class="row">
+             <div class="col-lg-12 col-12 order-1 order-lg-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="mb-75">Datos de la PC</h5>
+
+                        {{-- {{ }} --}}
+                        <ul class="list-group">
+                            @foreach (json_decode($item->datos_pc) as  $item2)
+                            @if ($item2==1)
+                            <li class="list-group-item">Auriculares Normal</li>
+                            @elseif ($item2==2)
+                            <li class="list-group-item">Auriculares tipo Vincha</li>
+                            @else
+                            <li class="list-group-item">{{$item2}}</li>
+                            @endif
+                            @endforeach
+                        </ul>
+                           
+                            
+                </div>
+            </div>
+        </div>
         @endforeach
-</div>
+
 </div>
 
 <!-- BEGIN: Page JS-->
