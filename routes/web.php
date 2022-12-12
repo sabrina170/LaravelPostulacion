@@ -59,6 +59,8 @@ Route::post('info/guardar_pc', [InfoController::class, "store_pc"])->name('info-
 
 //ENTREVISTA PERSONAL
 Route::view('entrevista', "entrevista.index")->name('entrevista.index');
+Route::view('mensajere', "entrevista.rechazado")->name('entrevista.rechazado');
+
 
 //FINALIZADO
 Route::view('finalizado', "finalizado")->name('finalizado');

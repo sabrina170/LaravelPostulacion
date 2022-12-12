@@ -36,16 +36,17 @@
                                 @csrf
                                 <h5 class="mb-50 font-weight-bold">Estado:</h5>
                                 <select class="form-select" id="basicSelect" name="estado">
-                                    <option value="1" @if ($item->estado == 1) selected @endif>Registrado</option>
-                                    <option value="2" @if ($item->estado == 2) selected @endif>Lleno sus datos</option>
-                                    <option value="3" @if ($item->estado == 3) selected @endif>Aceptado</option>
-                                    <option value="4" @if ($item->estado == 4) selected @endif>Completado</option>
-                                    <option value="5" @if ($item->estado == 5) selected @endif>Rechazado</option>
+                                    {{-- <option value="1" @if ($item->estado == 1) selected @endif>Registrado</option> --}}
+                                    {{-- <option value="2" @if ($item->estado == 2) selected @endif>Lleno sus datos</option> --}}
+                                    <option value="4" @if ($item->estado == 4) selected @endif>Aceptado</option>
+                                    {{-- <option value="4" @if ($item->estado == 4) selected @endif>Completado</option> --}}
+                                    <option value="7" @if ($item->estado == 7) selected @endif>Rechazado</option>
+                                    <option value="5" @if ($item->estado == 5) selected @endif>Enviar Documentos</option>
+                                    <option value="6" @if ($item->estado == 6) selected @endif>Legajo Documentos</option>
+
                                 </select>
                                 <input type="submit" class="btn btn-success" value="Actualizar estado">
                             </form>
-
-
                         </div>
                     </div>
                 </div>
