@@ -37,13 +37,6 @@
 
 
     <div class="card-body">
-
-        <label class="form-label" for="first-name-icon">Lugar</label>
-        {{$lugar}}
-        <br>
-        <label class="form-label" for="first-name-icon">Fecha</label>
-        {{$fecha}}
-
     <div class="row m-0">
         @foreach ($infos as $item)
 
@@ -55,11 +48,9 @@
             <strong>Dirección : </strong> {{  $item->direccion}} <br>
             <strong>Telefono : </strong> {{  $item->telefono}} --}}
 
-       </h5>
-       <p><b>{{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}} </b></p>
        @endforeach
-       <h1>Fima</h1>
-       <img src="/images-firma/{{$firma}}" alt="">
+
+
        {{-- <form action="{{ route('pdf.getGenerar') }}" method="POST">
         @csrf
         <input type="hidden" value="descargar" name="accion">

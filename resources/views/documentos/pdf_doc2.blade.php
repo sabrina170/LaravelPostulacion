@@ -32,7 +32,8 @@
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
             DECLARACIÓN JURADA DE DATOS Y DOMICILIO LEGAL
         </h2>
-        <p>Fecha:{{$fecha}}</p>
+        <p>Lugar: {{$lugar}}</p>
+        <p>Fecha: {{$fecha}}</p>
 
 
         <p>El que suscribe <b>{{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}}</b> N° DNI  <b>{{ $item->numero_documento}}</b> con domicilio actual en (Av./Clle./Mz./Lt. – Int/Dpto) <b>{{  $item->direccion}}</b> Distrito: <b>{{  $item->distrito}}</b> Provincia: <b>{{  $item->provincia}}</b> <br> Teléfono: <b>{{  $item->telefono}}</b> </p>
@@ -40,20 +41,12 @@
          <p>Referencias adicionales: </p>
 
         <p>Declaro dicho domicilio como actual y legal ante cualquier notificación o control de la Empresa, comprometiéndome  a comunicar fehacientemente dentro de las cuarenta y ocho horas, su cambio o modificación.</p>
-
-        <table>
-            <tr>
-                <td>
-                    <p><b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b></p><br>
-                    <p>Nombres y apellidos</p>
-                </td>
-
-                <td>
-                    <img src="/images-firma/{{$firma}}" class="img-thumbnail mt-24" alt="..."><br>
-                    <p>Firma</p>
-                </td>
-            </tr>
-        </table>
+        <br><br>
+        <img src="/images-firma/{{$firma}}" class="img-thumbnail mt-24" alt="..."><br>
+        <p>
+            <b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b><br>
+            <b>{{ $item->tipo_documento}} : {{ $item->numero_documento}}</b>
+        </p>
         @endforeach
     </div>
 </body>
