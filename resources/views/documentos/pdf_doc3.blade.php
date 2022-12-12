@@ -43,6 +43,10 @@
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
             DECLARACIÓN JURADA
         </h2>
+
+        <p>Lugar: {{$lugar}}</p>
+        <p>Fecha: {{$fecha}}</p>
+
         <h5 class="intro-y mr-auto">
             <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
             <strong>Dirección : </strong> {{  $item->direccion}} <br>
@@ -57,8 +61,12 @@
     </div>
 
        @endforeach
+       <br><br>
        <img src="/images-firma/{{$firma}}" alt="">
-
+       <p>
+        <b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b><br>
+        <b>{{ $item->tipo_documento}} : {{ $item->numero_documento}}</b>
+    </p>
  </div>
 </body>
 </html>

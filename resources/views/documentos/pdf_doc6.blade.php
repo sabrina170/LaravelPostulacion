@@ -36,29 +36,45 @@
 
 
     <div class="card-body">
-
-        <label class="form-label" for="first-name-icon">Lugar</label>
-        {{$lugar}}
-        <br>
-        <label class="form-label" for="first-name-icon">Fecha</label>
-        {{$fecha}}
-
     <div class="row m-0">
         @foreach ($infos as $item)
 
         <h2 class="intro-y text-lg font-medium mr-auto font-weight-bold">
-            DOCUMENTO 5
+            AUTORIZACIÓN DE ACCESO A EQUIPOS PROPIOS
         </h2>
-        <h5 class="intro-y mr-auto">
-            {{-- <strong> {{  $item->tipo_documento}}</strong> - {{  $item->numero_documento}}  <br>
-            <strong>Dirección : </strong> {{  $item->direccion}} <br>
-            <strong>Telefono : </strong> {{  $item->telefono}} --}}
+        <p>
+            Lugar: {{$lugar}} <br>
+            Fecha: {{$fecha}}
+        </p>
 
-       </h5>
-       <p><b>{{ $item->apellido_pa}} {{ $item->apellido_ma}}  {{ $item->nombres}} </b></p>
+        <div class="col-lg-12 mt-24">
+            Yo,	<b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b>  identificado con DNI N°  <b>{{ $item->numero_documento}}</b> con domicilio <b>{{ $item->direccion}}</b> .Distrito <b>{{ $item->distrito}}</b>,
+            Provincia de <b>{{ $item->provincia}}</b> y departamento de <b>{{ $item->departamento}}</b>; mediante el presente documento declaro lo siguiente:<br><br>
+
+            Que autorizo a Konecta Perú1 para que acceda a los equipos de mi propiedad, con la finalidad de realizar acciones tendientes al inicio de mis labores y durante la prestación de servicios; en base a las cuales se realizarán:<br><br>
+            <ol>
+                <li>Las configuraciones para la activación de usuarios, permisos y restricciones para la seguridad de la información.</li>
+                <li>Las configuraciones para el remoteo del equipo.</li>
+                <li>Las revisiones para verificar el cumplimiento normativo a través de auditorías.</li>
+            </ol>
+
+            Asimismo, declaro que el consentimiento brindado es libre, expreso e informado previamente; por lo que no ha existido ningún tipo de coacción para el ejercicio del mismo.<br><br>
+
+
+            Firmo al pie del presente documento en señal de conformidad.
+
+        </div>
+        <br><br>
+
+        <img src="/images-firma/{{$firma}}" alt="">
+        <p>
+            <b>{{ $item->nombres}} {{ $item->apellido_pa}} {{ $item->apellido_ma}}</b><br>
+            <b>{{ $item->tipo_documento}} : {{ $item->numero_documento}}</b>
+        </p>
+
        @endforeach
-       <h1>Fima</h1>
-       <img src="/images-firma/{{$firma}}" alt="">
+
+
        {{-- <form action="{{ route('pdf.getGenerar') }}" method="POST">
         @csrf
         <input type="hidden" value="descargar" name="accion">

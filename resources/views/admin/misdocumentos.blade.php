@@ -83,9 +83,25 @@
                                                     <a href="{{asset('images-cer/'.$item->ruta)}}" target="_blank">
                                                     <div class="content-wrapper">
 
-                                                        <p class="card-text file-name mb-0">@if ($item->tipo == 2)
-                                                            Ficha 2
-                                                        @endif
+                                                        <p class="card-text file-name mb-0">
+                                                            @if ($item->tipo == 1)
+                                                                Ficha de datos del trabajador
+                                                            @endif
+                                                            @if ($item->tipo == 2)
+                                                                Declaración jurada de datos y domicilio fiscal
+                                                            @endif
+                                                            @if ($item->tipo == 3)
+                                                                Declaración jurada
+                                                            @endif
+                                                            @if ($item->tipo == 4)
+                                                                Declaración jurada para el sistema previsional de pensión
+                                                            @endif
+                                                            @if ($item->tipo == 5)
+                                                                Compromiso de no suplantación de identidad
+                                                            @endif
+                                                            @if ($item->tipo == 6)
+                                                                Autorización de acceso a equipos propios
+                                                            @endif
                                                         </p>
                                                         <p class="card-text file-date">{{$item->created_at}}</p>
                                                     </div>
@@ -96,103 +112,6 @@
                                             </div>
                                         @endforeach
 
-                                        <div class="d-none flex-grow-1 align-items-center no-result mb-3">
-                                            <i data-feather="alert-circle" class="me-50"></i>
-                                            No Results
-                                        </div>
-                                    </div>
-                                    <!-- /Files Container Ends -->
-                                    <!-- Files Container Starts -->
-                                    <div class="view-container">
-                                        <h6 class="files-section-title mt-2 mb-75">Mis documentos</h6>
-                                        <div class="card file-manager-item file">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck7" />
-                                                <label class="form-check-label" for="customCheck7"></label>
-                                            </div>
-                                            <div class="card-img-top file-logo-wrapper">
-                                                <div class="dropdown float-end">
-                                                    <i data-feather="more-vertical" class="toggle-dropdown mt-n25"></i>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center w-100">
-                                                    <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">Profile.jpg</p>
-                                                    <p class="card-text file-size mb-0">12.6mb</p>
-                                                    <p class="card-text file-date">23 may 2019</p>
-                                                </div>
-                                                <small class="file-accessed text-muted">Last accessed: 3 hours ago</small>
-                                            </div>
-                                        </div>
-                                        <div class="card file-manager-item file">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck8" />
-                                                <label class="form-check-label" for="customCheck8"></label>
-                                            </div>
-                                            <div class="card-img-top file-logo-wrapper">
-                                                <div class="dropdown float-end">
-                                                    <i data-feather="more-vertical" class="toggle-dropdown mt-n25"></i>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center w-100">
-                                                    <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">account.pdf</p>
-                                                    <p class="card-text file-size mb-0">82kb</p>
-                                                    <p class="card-text file-date">25 may 2019</p>
-                                                </div>
-                                                <small class="file-accessed text-muted">Last accessed: 23 minutes ago</small>
-                                            </div>
-                                        </div>
-                                        <div class="card file-manager-item file">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck9" />
-                                                <label class="form-check-label" for="customCheck9"></label>
-                                            </div>
-                                            <div class="card-img-top file-logo-wrapper">
-                                                <div class="dropdown float-end">
-                                                    <i data-feather="more-vertical" class="toggle-dropdown mt-n25"></i>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center w-100">
-                                                    <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">notes.pdf</p>
-                                                    <p class="card-text file-size mb-0">54kb</p>
-                                                    <p class="card-text file-date">01 may 2019</p>
-                                                </div>
-                                                <small class="file-accessed text-muted">Last accessed: 43 minutes ago</small>
-                                            </div>
-                                        </div>
-                                        <div class="card file-manager-item file">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck10" />
-                                                <label class="form-check-label" for="customCheck10"></label>
-                                            </div>
-                                            <div class="card-img-top file-logo-wrapper">
-                                                <div class="dropdown float-end">
-                                                    <i data-feather="more-vertical" class="toggle-dropdown mt-n25"></i>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center w-100">
-                                                    <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="content-wrapper">
-                                                    <p class="card-text file-name mb-0">users.pdf</p>
-                                                    <p class="card-text file-size mb-0">200kb</p>
-                                                    <p class="card-text file-date">12 may 2019</p>
-                                                </div>
-                                                <small class="file-accessed text-muted">Last accessed: 1 hour ago</small>
-                                            </div>
-                                        </div>
                                         <div class="d-none flex-grow-1 align-items-center no-result mb-3">
                                             <i data-feather="alert-circle" class="me-50"></i>
                                             No Results
