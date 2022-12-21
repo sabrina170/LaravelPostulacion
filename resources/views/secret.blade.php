@@ -314,8 +314,13 @@
                                  </div>
                                  <div class="col-lg-4">
                                      <label for="input-wizard-2" class="form-label">Puesto experiencia</label>
-                                     <input id="input-wizard-2" type="text" class="form-control" placeholder="puesto" name="puesto" value="{{ old('puesto')}}">
-                                 </div>
+                                     <select id="input-wizard-6" class="form-select" name="puesto">
+                                        <option value="Puesto 1" selected>Puesto 1</option>
+                                        <option value="Puesto 2" >Puesto 2</option>
+                                        <option value="Puesto 3" >Puesto 3</option>
+
+                                    </select>
+                                  </div>
 
                                  <div class="col-lg-4">
                                      <label for="input-wizard-3" class="form-label">Tiempo (meses)</label>

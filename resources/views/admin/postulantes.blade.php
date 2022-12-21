@@ -64,6 +64,9 @@
                                             @case(2)
                                             <span class="badge rounded-pill badge-light-secondary me-1">Completando <br> su registro</span>
                                                 @break
+                                            @case(22)
+                                            <span class="badge rounded-pill badge-light-secondary me-1">En clasificación</span>
+                                                @break
                                             @case(3)
                                             <span class="badge rounded-pill badge-light-primary me-1">En entrevista</span>
                                                  @break
@@ -94,9 +97,12 @@
                     </table>
 
                     <button class="btn btn-dark mt-sm-24" id="action_aceptar_postulantes">
-                        Aceptar seleccionados</button>
+                       + Aceptar</button>
                         <button class="btn btn-dark mt-sm-24" id="action_rechazar_postulantes">
-                            Rechazar seleccionados</button>
+                          + Rechazar</button>
+                            
+                            <button class="btn btn-dark mt-sm-24" id="action_entrevista_postulantes">
+                              + En Entrevista</button>
                 </div>
             </div>
         </div>
@@ -257,9 +263,113 @@ SeleccionarTodos();
             console.log(data);
             return false;
             }
+            });
+        //   console.log(postulantes_seleccionados);
     });
-//   console.log(postulantes_seleccionados);
-});
+
+    $('#action_aceptar_postulantes').on('click', function() {
+        postulantes_seleccionados = [];
+        $('.sel_producto:checked').each(function() {
+            let ide_prod = $(this).val();
+            postulantes_seleccionados.push(ide_prod);
+        });
+
+        ser_postulantes_seleccionados = JSON.stringify(postulantes_seleccionados);
+
+        $.ajax({
+            url:'{{ route('cambiarvariosestadopo2') }}',
+            type:'GET',
+            async: "false",
+            data: {
+            user: ser_postulantes_seleccionados
+            },
+            dataType:'json',
+            success: function(data) {
+            console.log(data);
+            if (data == 1) {
+                    Swal.fire({
+                        title: 'Postulantes actualizados!',
+                        text: 'Se cambiaron de estados!',
+                        icon: 'success'
+                    }).then(function() {
+                location.reload();
+                });
+               
+            } else  if (data == 2) {
+                Swal.fire({
+                type: 'error',
+                title: 'Postulantes ya han sido actualizado',
+                icon: 'warning'
+                }).then(function() {
+                location.reload();
+                });
+            }else{
+                Swal.fire({
+                type: 'error',
+                title: 'No se actualizaron los postulantes',
+                text: data
+                }).then(function() {
+                //location.reload();
+                });
+            }
+            console.log(data);
+            return false;
+            }
+        });
+    //   console.log(postulantes_seleccionados);
+    });
+
+    $('#action_entrevista_postulantes').on('click', function() {
+        postulantes_seleccionados = [];
+        $('.sel_producto:checked').each(function() {
+            let ide_prod = $(this).val();
+            postulantes_seleccionados.push(ide_prod);
+        });
+
+        ser_postulantes_seleccionados = JSON.stringify(postulantes_seleccionados);
+
+        $.ajax({
+            url:'{{ route('cambiarvariosestadopo3') }}',
+            type:'GET',
+            async: "false",
+            data: {
+            user: ser_postulantes_seleccionados
+            },
+            dataType:'json',
+            success: function(data) {
+            console.log(data);
+            if (data == 1) {
+                    Swal.fire({
+                        title: 'Postulantes actualizados!',
+                        text: 'Se cambiaron de estados!',
+                        icon: 'success'
+                    }).then(function() {
+                location.reload();
+                });
+               
+            } else  if (data == 2) {
+                Swal.fire({
+                type: 'error',
+                title: 'Postulantes ya han sido actualizado',
+                icon: 'warning'
+                }).then(function() {
+                location.reload();
+                });
+            }else{
+                Swal.fire({
+                type: 'error',
+                title: 'No se actualizaron los postulantes',
+                text: data
+                }).then(function() {
+                //location.reload();
+                });
+            }
+            console.log(data);
+            return false;
+            }
+        });
+    //   console.log(postulantes_seleccionados);
+    });
 
 });
     </script>

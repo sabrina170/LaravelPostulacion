@@ -123,6 +123,8 @@ class LoginController extends Controller
                     return redirect()->intended('privada');
                 } else if ($estado == 2) {
                     return redirect()->intended('privada');
+                } else if ($estado == 22) {
+                    return redirect()->intended('entrevista');
                 } else if ($estado == 3) {
                     return redirect()->intended('entrevista');
                 } else if ($estado == 4) {

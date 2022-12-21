@@ -153,6 +153,8 @@ Route::get('ListaDocs/{id_user}', [DocController::class, 'listardocs'])->name('d
 Route::get('estado', [DocController::class, 'cambiarestadopos'])->name('cambiarestadopos');
 Route::get('estado2', [DocController::class, 'cambiarestadopos2'])->name('cambiarestadopos2');
 Route::get('cambiar_estados', [AdminController::class, 'cambiarvariosestadopos'])->name('cambiarvariosestadopos');
+Route::get('cambiar_estados_2', [AdminController::class, 'cambiarvariosestadopos2'])->name('cambiarvariosestadopo2');
+Route::get('cambiar_estados_3', [AdminController::class, 'cambiarvariosestadopos3'])->name('cambiarvariosestadopo3');
 
 
 Route::view('mensaje', "documentos.mensaje")->name('documentos.mensaje');
@@ -162,7 +164,6 @@ Route::get('pdf/getIndex', [PDFController::class, 'getIndex'])->name('pdf.getInd
 Route::post('subir-archivos', [DocsPosController::class, "subirarchivos"])->name('subirarchivos');
 
 // GUZZLE
-
 Route::get('posts', [PostGuzzleController::class, 'index']);
 Route::get('posts/store', [PostGuzzleController::class, 'store']);
 Route::post('cobalt', [PostGuzzleController::class, 'EnviarDatosCobalt']);

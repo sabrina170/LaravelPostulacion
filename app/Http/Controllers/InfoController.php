@@ -34,7 +34,7 @@ class InfoController extends Controller
         $datos = $inforequest->validated();
         //crea un registro en la tabla info con el ku
         // dd($datos);
-        $datos['datos_pc']= "";
+        $datos['datos_pc'] = "";
         $info = Info::create($datos);
         $user_id = $inforequest->user_id;
 
@@ -68,7 +68,7 @@ class InfoController extends Controller
 
         //ACTUALIZA LA TABLA USER EN EL ESTADO 3
         DB::table('users')->where('id', $user_id)->limit(1)->update([
-            'estado' => '3'
+            'estado' => '22'
 
         ]);
 

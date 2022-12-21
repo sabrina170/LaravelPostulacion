@@ -123,4 +123,58 @@ class AdminController extends Controller
             echo 2;
         }
     }
+
+    public function cambiarvariosestadopos2(Request $request)
+    {
+
+        $postulantes = json_decode($request->user, true);
+
+        //borrar matriculaciones del usuario
+        foreach ($postulantes as $pos) {
+            // $consulta =  DB::table('users')->where('id', $pos)->update([
+            //     'estado' => '7'
+            // ]);
+            $consulta =  DB::table('users')->where('id', $pos)->limit(1)->get();
+            foreach ($consulta as $key) {
+                if ($key->estado != 4) {
+                    $consulta2 =  DB::table('users')->where('id', $pos)->update([
+                        'estado' => '4'
+                    ]);
+                } else {
+                };
+            }
+        }
+        if ($consulta2) {
+            echo 1;
+        } else {
+            echo "error en la consulta";
+        }
+    }
+
+    public function cambiarvariosestadopos3(Request $request)
+    {
+
+        $postulantes = json_decode($request->user, true);
+
+        //borrar matriculaciones del usuario
+        foreach ($postulantes as $pos) {
+            // $consulta =  DB::table('users')->where('id', $pos)->update([
+            //     'estado' => '7'
+            // ]);
+            $consulta =  DB::table('users')->where('id', $pos)->limit(1)->get();
+            foreach ($consulta as $key) {
+                if ($key->estado != 3) {
+                    $consulta2 =  DB::table('users')->where('id', $pos)->update([
+                        'estado' => '3'
+                    ]);
+                } else {
+                };
+            }
+        }
+        if ($consulta2) {
+            echo 1;
+        } else {
+            echo "error en la consulta";
+        }
+    }
 }
