@@ -11,7 +11,6 @@
             <button type="button" class="btn btn-info round waves-effect">Aceptados</button>
             <button type="button" class="btn btn-danger round waves-effect">Rechazados</button>
         </div>
-        <button type="button" class="btn btn-outline-success" id="type-success">Success</button>
                                
         <div class="col-12">
             <div class="card">
