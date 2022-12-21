@@ -285,8 +285,6 @@
 
              $('#alerta').html('<div class="alert alert-warning" role="alert"><div class="alert-body"><strong>Selecciona el check de confirmacíon</strong></div></div>')
          }
-
-
  }
 
 

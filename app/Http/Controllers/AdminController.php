@@ -96,4 +96,31 @@ class AdminController extends Controller
         return redirect()->route('postulantes');
         // return view('admin.postulantes');
     }
+
+    public function cambiarvariosestadopos(Request $request)
+    {
+
+        $postulantes = json_decode($request->user, true);
+
+        //borrar matriculaciones del usuario
+        foreach ($postulantes as $pos) {
+            // $consulta =  DB::table('users')->where('id', $pos)->update([
+            //     'estado' => '7'
+            // ]);
+            $consulta =  DB::table('users')->where('id', $pos)->limit(1)->get();
+            foreach ($consulta as $key) {
+                if ($key->estado != 7) {
+                    $consulta2 =  DB::table('users')->where('id', $pos)->update([
+                        'estado' => '7'
+                    ]);
+                } else {
+                };
+            }
+        }
+        if ($consulta2) {
+            echo 1;
+        } else {
+            echo 2;
+        }
+    }
 }

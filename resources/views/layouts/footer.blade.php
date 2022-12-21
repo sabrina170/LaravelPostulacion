@@ -75,6 +75,27 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'>
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- BEGIN: datatables-->
+<script src="{{asset('app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
+ <script src="{{asset('app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js')}}"></script> 
+ {{-- <script src="{{asset('app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script> --}}
+<script src="{{asset('app-assets/vendors/js/tables/datatable/responsive.bootstrap5.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/jszip.min.js')}}"></script> 
+<script src="{{asset('app-assets/vendors/js/tables/datatable/pdfmake.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/vfs_fonts.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/buttons.html5.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/buttons.print.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/dataTables.rowGroup.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js')}}"></script>
+
+
+<script src="{{asset('app-assets/js/scripts/extensions/ext-component-sweet-alerts.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/extensions/polyfill.min.js')}}"></script>
+  
 @yield('js')
 </body>
 <!-- END: Body-->

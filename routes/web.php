@@ -152,6 +152,8 @@ Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.gen
 Route::get('ListaDocs/{id_user}', [DocController::class, 'listardocs'])->name('documentos.index');
 Route::get('estado', [DocController::class, 'cambiarestadopos'])->name('cambiarestadopos');
 Route::get('estado2', [DocController::class, 'cambiarestadopos2'])->name('cambiarestadopos2');
+Route::get('cambiar_estados', [AdminController::class, 'cambiarvariosestadopos'])->name('cambiarvariosestadopos');
+
 
 Route::view('mensaje', "documentos.mensaje")->name('documentos.mensaje');
 Route::get('pdf/getIndex', [PDFController::class, 'getIndex'])->name('pdf.getIndex');

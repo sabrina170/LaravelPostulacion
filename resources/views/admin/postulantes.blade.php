@@ -11,20 +11,17 @@
             <button type="button" class="btn btn-info round waves-effect">Aceptados</button>
             <button type="button" class="btn btn-danger round waves-effect">Rechazados</button>
         </div>
-
+        <button type="button" class="btn btn-outline-success" id="type-success">Success</button>
+                               
         <div class="col-12">
             <div class="card">
-
-                <div class="card-body">
-                        <button type="button" class="btn btn-info round waves-effect btn-sm">EXCEL</button>
-                        <button type="button" class="btn btn-info round waves-effect btn-sm">PDF</button>
-                        <button type="button" class="btn btn-info round waves-effect btn-sm">IMPRIMIR</button>
-
-                </div>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table" id="postulantes">
                         <thead>
                             <tr>
+                                <th>
+                                    <input type="checkbox" class="form control sel_all_producto">
+                                  </th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Dni</th>
@@ -39,6 +36,9 @@
 
                             @foreach ($infos as $item)
                             <tr>
+                                <td>
+                                    <input type="checkbox" value="{{$item->id}}" class="form control sel_producto">
+                                  </td>
                                 <td>
                                     <span class="fw-bold"> {{$item->name}} </span>
                                 </td>
@@ -86,25 +86,18 @@
                                 </td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0 waves-effect waves-float waves-light" data-bs-toggle="dropdown">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end">
-
-                                                <a class="dropdown-item" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                                                    <span>Eliminar</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <a href="{{route('editar-postulante',$item->id)}}"><i data-feather='arrow-right'></i></a> </div>
-
+                                        <a href="#"><i data-feather='arrow-right'></i>Eliminar</a> </div>
+                                        <a href="{{route('editar-postulante',$item->id)}}"><i data-feather='arrow-right'></i>Editar</a> </div>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+
+                    <button class="btn btn-dark mt-sm-24" id="action_aceptar_postulantes">
+                        Aceptar seleccionados</button>
+                        <button class="btn btn-dark mt-sm-24" id="action_rechazar_postulantes">
+                            Rechazar seleccionados</button>
                 </div>
             </div>
         </div>
@@ -117,6 +110,160 @@
 <script src="{{asset('app-assets/js/scripts/charts/chart-chartjs.js')}}"></script>
 <!-- END: Page JS-->
 
+@endsection
+@section('js')
+ <script>
+
+         var idioma=
+         {
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "NingÃºn dato disponible en esta tabla",
+            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Ãšltimo",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            },
+            "buttons": {
+                "copyTitle": 'Informacion copiada',
+                "copyKeys": 'Use your keyboard or menu to select the copy command',
+                "copySuccess": {
+                    "_": '%d filas copiadas al portapapeles',
+                    "1": '1 fila copiada al portapapeles'
+                },
+
+                "pageLength": {
+                "_": "Mostrar %d filas",
+                "-1": "Mostrar Todo"
+                }
+            }
+};
+
+$(document).ready( function () {
+   var table = $('#postulantes').DataTable({
+    dom: '<"card-header border-bottom p-1"<"head-label"><"dt-action-buttons text-end"B>><"d-flex justify-content-between align-items-center mx-0 row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>t<"d-flex justify-content-between mx-0 row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
+
+    // dom: 'Brfltip',
+    // "dom": 'Br<"float-left"i><"float-right"f>t<"float-left"l><"float-right"p><"clearfix">',
+    // "lengthMenu": [[5,10,20, -1],[5,10,50,"Mostrar Todo"]],
+    // "dom": 'Bfrt<"col-md-6 inline"i> <"col-md-6 inline"p>',
+    language: idioma,
+    buttons: [
+        // 'excel'
+            {
+              extend: 'excel',
+              text: feather.icons['file'].toSvg({ class: 'font-small-4 me-50' }) + 'Excel',
+              className: 'btn btn-sm btn-info round waves-effect',
+              exportOptions: { columns: [0,1,2,3, 4, 5, 6] }
+            },
+            {
+                extend: 'pdf',
+              text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 me-50' }) + 'Pdf',
+              className: 'btn btn-sm btn-info round waves-effect',
+              exportOptions: { columns: [0,1,2,3, 4, 5, 6] }
+            },
+            {
+                extend: 'print',
+              text: feather.icons['printer'].toSvg({ class: 'font-small-4 me-50' }) + 'Print',
+              className: 'btn btn-sm btn-info round waves-effect',
+              exportOptions: { columns: [0,1,2,3, 4, 5, 6] }
+            },
+    ],
+    exportOptions: {
+        modifier: {
+          // DataTables core
+          order: 'index', // 'current', 'applied',
+          //'index', 'original'
+          page: 'all', // 'all', 'current'
+          search: 'none' // 'none', 'applied', 'removed'
+        },
+            columns: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      }
+   });
+
+} );
+
+$(document).ready(function() {
+    var success = $('#type-success');
+SeleccionarTodos();
+
+        function SeleccionarTodos() {
+        $('.sel_all_producto').on('click', function(e) {
+            e.stopPropagation();
+            $('.sel_producto:visible').not(this).prop('checked', this.checked);
+        });
+        }
+
+        let postulantes_seleccionados = [];
+
+    $('#action_rechazar_postulantes').on('click', function() {
+        postulantes_seleccionados = [];
+        $('.sel_producto:checked').each(function() {
+            let ide_prod = $(this).val();
+            postulantes_seleccionados.push(ide_prod);
+        });
+
+        ser_postulantes_seleccionados = JSON.stringify(postulantes_seleccionados);
+
+        $.ajax({
+            url:'{{ route('cambiarvariosestadopos') }}',
+            type:'GET',
+            async: "false",
+            data: {
+            user: ser_postulantes_seleccionados
+            },
+            dataType:'json',
+            success: function(data) {
+            console.log(data);
+            if (data == 1) {
+                    Swal.fire({
+                        title: 'Postulantes actualizados!',
+                        text: 'Se cambiaron de estados!',
+                        icon: 'success'
+                    }).then(function() {
+                location.reload();
+                });
+               
+            } else  if (data == 2) {
+                Swal.fire({
+                type: 'error',
+                title: 'Postulantes ya han sido actualizado',
+                icon: 'warning'
+                }).then(function() {
+                location.reload();
+                });
+            }else{
+                Swal.fire({
+                type: 'error',
+                title: 'No se actualizaron los postulantes',
+                text: data
+                }).then(function() {
+                //location.reload();
+                });
+            }
+            console.log(data);
+            return false;
+            }
+    });
+//   console.log(postulantes_seleccionados);
+});
+
+});
+    </script>
 @endsection
 
 
