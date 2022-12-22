@@ -175,11 +175,11 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <label for="input-wizard-1" class="form-label">Nombres</label>
-                                        <input id="input-wizard-1" type="text" class="form-control" name="nombres" value="{{ Auth::user()->name}}" readonly>
+                                        <input id="input-wizard-1" type="text" class="form-control ob" data-type="text" data-msj="Ingrese sus nombres" name="nombres" value="{{ Auth::user()->name}}">
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Apellido Paterno</label>
-                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_pa" value="{{ Auth::user()->apellido_pa}}" readonly>
+                                        <input id="input-wizard-2" type="text" class="form-control ob" data-type="text" data-msj="Ingrese su apellido paterno" name="apellido_pa" value="{{ Auth::user()->apellido_pa}}">
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Apellido Materno</label>
