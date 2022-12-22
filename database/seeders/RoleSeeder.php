@@ -22,6 +22,6 @@ class RoleSeeder extends Seeder
 
         //estudiante, admin son vistas
         Permission::create(['name' => 'info.index'])->assignRole($postu);
-        Permission::create(['name' => 'admin.index'])->syncRoles([$admin]);
+        Permission::create(['name' => 'admin.index'])->assignRole($admin);
     }
 }

@@ -2,7 +2,11 @@
 
 namespace App\Http\Requests;
 
+use Dotenv\Validator;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
+
 
 class InfoRequest extends FormRequest
 {
@@ -23,6 +27,7 @@ class InfoRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             // Datos Info Personal
             'nombres' => '',
@@ -39,7 +44,7 @@ class InfoRequest extends FormRequest
             'distrito' => 'required',
             'direccion' => 'required',
             'tipo_documento' => '',
-            'user_id' =>'',
+            'user_id' => '',
 
             // Datos de Estudios
             'grado' => 'required',
@@ -55,7 +60,7 @@ class InfoRequest extends FormRequest
             'tipo_expe' => 'required',
             'konecta' => 'required',
 
-            'datos_pc' =>''
+            'datos_pc' => ''
         ];
     }
 }

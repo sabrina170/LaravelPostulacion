@@ -11,6 +11,10 @@ use App\Http\Controllers\PosController;
 use App\Mail\ContactanosMailable;
 use App\Http\Controllers\PostGuzzleController;
 
+use Database\Seeders\RoleSeeder;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

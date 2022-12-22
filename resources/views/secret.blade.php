@@ -183,7 +183,11 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Apellido Materno</label>
-                                        <input id="input-wizard-2" type="text" class="form-control" name="apellido_ma" @selected(old('apellido_ma'))>
+                                        <input id="apellido_ma" type="text" class="form-control" name="apellido_ma" value="{{ old('apellido_ma')}}" >
+                                       @error('apellido_ma')
+                                       <span class="badge badge-light-danger errors-apellido_ma">{{$message}}</span>
+                                       @enderror
+                                        
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Tipo Documento</label>
@@ -205,7 +209,10 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-6" class="form-label">Fecha Nacimiento</label>
-                                        <input id="input-wizard-5" type="date" class="form-control" name="fecha_nacimiento" value="{{ old('fecha_nacimiento')}}">
+                                        <input id="fecha_nacimiento" type="date" class="form-control" name="fecha_nacimiento" value="{{ old('fecha_nacimiento')}}">
+                                        @error('fecha_nacimiento')
+                                        <span class="badge badge-light-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
 
                                     <div class="col-lg-4">
@@ -234,6 +241,9 @@
                                         <select  class="form-select" id="provincia" name="provincia"  @selected(old('provincia'))>
                                             {{-- <option value="Distrito 1">Distrito 1</option> --}}
                                         </select>
+                                        @error('provincia')
+                                        <span class="badge badge-light-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
 
 
@@ -244,6 +254,9 @@
                                             {{-- <option value="Distrito 1">Distrito 1</option>
                                             <option value="Distrito 2">Distrito 2</option> --}}
                                         </select>
+                                        @error('distrito')
+                                        <span class="badge badge-light-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
 
                                     <div class="col-lg-4">
@@ -256,11 +269,12 @@
                                     <div class="col-lg-4">
                                         <label for="input-wizard-3" class="form-label">Dirección</label>
                                         <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="direccion" value="{{ old('direccion')}}">
+                                        @error('direccion')
+                                        <span class="badge badge-light-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
-
                                     <div class="col-lg-4">
                                     {{-- input que vendran por defecto --}}
-                                    <label for="input-wizard-2" class="form-label">id</label>
                                     <input id="input-wizard-2" type="hidden" class="form-control"  name="user_id" value="{{ Auth::user()->id }}" readonly>
                                     </div>
 
@@ -277,6 +291,9 @@
                                     <div class="col-lg-4">
                                         <label for="input-wizard-1" class="form-label">Nombre de Institución Educativa</label>
                                         <input id="input-wizard-1" type="text" class="form-control"  placeholder="" name="nombre_ie" value="{{ old('nombre_ie')}}">
+                                        @error('nombre_ie')
+                                        <span class="badge badge-light-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">¿Estudia actualmente?</label>
@@ -291,11 +308,16 @@
                                     <div class="col-lg-4">
                                         <label for="input-wizard-3" class="form-label">Horario de estudios</label>
                                         <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="horario" value="{{ old('horario')}}">
+                                        @error('horario')
+                                        <span class="badge badge-light-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-6" class="form-label">Disponibilidad</label>
                                         <input id="input-wizard-5" type="text" class="form-control" name="disponibilidad" value="{{ old('disponibilidad')}}">
-
+                                        @error('disponibilidad')
+                                        <span class="badge badge-light-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                  {{-- DATOS DE ESTUDIOS --}}
 
@@ -311,7 +333,10 @@
                                  <div class="col-lg-4">
                                      <label for="input-wizard-1" class="form-label">Nombre de empresa</label>
                                      <input id="input-wizard-1" type="text" class="form-control"  placeholder="empresa" name="empresa" value="{{ old('empresa')}}">
-                                 </div>
+                                     @error('empresa')
+                                     <span class="badge badge-light-danger">{{$message}}</span>
+                                     @enderror
+                                    </div>
                                  <div class="col-lg-4">
                                      <label for="input-wizard-2" class="form-label">Puesto experiencia</label>
                                      <select id="input-wizard-6" class="form-select" name="puesto">
@@ -325,7 +350,10 @@
                                  <div class="col-lg-4">
                                      <label for="input-wizard-3" class="form-label">Tiempo (meses)</label>
                                      <input id="input-wizard-4" type="text" class="form-control" placeholder="" name="tiempo" value="{{ old('tiempo')}}">
-                                 </div>
+                                     @error('tiempo')
+                                     <span class="badge badge-light-danger">{{$message}}</span>
+                                     @enderror
+                                    </div>
                                  <div class="col-lg-4">
                                     <label for="input-wizard-2" class="form-label">Tipo experiencia</label>
                                     <select id="input-wizard-6" class="form-select" name="tipo_expe">
@@ -351,7 +379,7 @@
                                 </div>
 
                             </form>
-                            @if ($errors->any())
+                            {{-- @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
                                         @foreach ($errors->all() as $error)
@@ -359,7 +387,8 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                            @endif
+                            @endif --}}
+                            {{-- {{$errors}} --}}
                                 </div>
                             </div>
 

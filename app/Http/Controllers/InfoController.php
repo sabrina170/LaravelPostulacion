@@ -69,7 +69,6 @@ class InfoController extends Controller
         //ACTUALIZA LA TABLA USER EN EL ESTADO 3
         DB::table('users')->where('id', $user_id)->limit(1)->update([
             'estado' => '22'
-
         ]);
 
         DB::table('infos')->where('user_id', $user_id)->limit(1)->update([
