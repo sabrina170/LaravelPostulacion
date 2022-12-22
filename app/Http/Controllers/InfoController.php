@@ -32,6 +32,9 @@ class InfoController extends Controller
     {
         //valida los datos de INfo
         $datos = $inforequest->validated();
+
+        //dd(json_encode($inforequest->all()));
+
         //crea un registro en la tabla info con el ku
         // dd($datos);
         $datos['datos_pc'] = "";
@@ -42,6 +45,64 @@ class InfoController extends Controller
         DB::table('users')->where('id', $user_id)->limit(1)->update(['estado' => '2']);
         // return redirect()->route('info.index');
         return redirect()->route('privada');
+
+
+
+        // REGISTRAR EN COBALT
+
+         $url = 'https:general.ionosfera.pe/api/createLead';
+         $response = Http::withBasicAuth('6YQa@Jxx','mK$VmxC2J08V')
+         ->post($url,[
+
+             "agentId"=> "",
+             "apellidos"=> "Guiribalde",
+             "calle"=> "",
+             "chatId"=> "",
+             "cliente"=> "HIPATIA",
+             "cp"=> "",
+             "dispositivo"=> "",
+             "email"=> $request->email,
+             "fabricanteMovil"=> "",
+             "geoCalle"=> "",
+             "geoCiudad"=> "",
+             "geoISP"=> "",
+             "geoLatLng"=> "",
+             "geoNumero"=> "",
+             "geoPais"=> "",
+             "geoProvincia"=> "",
+             "geoRegion"=> "",
+             "idvar"=> "",
+             "ipCliente"=> "",
+             "lp"=> "",
+             "microsite"=> "konectamarketingdigital.pe",
+             "modeloMovil"=> "",
+             "navegador"=> "Chrome",
+             "nombre"=> $request->name,
+             "numDoc"=> $request->dni,
+             "observaciones"=> "",
+             "operadorRed"=> "",
+             "origen"=> "",
+             "parametros"=>  json_encode($inforequest->all()),
+             "pop"=> "",
+             "popCep"=> "",
+             "priority"=> "1",
+             "procedencia"=> "",
+             "producto"=> "test-hipatia",
+             "regalo"=> "",
+             "resCep"=> "",
+             "resCliente"=> "",
+             "resolucion"=> "",
+             "sistemaOperativo"=> "Windows",
+             "telefono"=> $request->celular,
+             "tipDoc"=> $request->tipo_dni,
+             "tipo"=> "c2c",
+             "tsource"=> "400",
+             "tsourceproveedor"=> "",
+             "userAgent"=> "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36",
+             "versionLanding"=> ""
+         ]);
+
+        // dd($response-> object());]
     }
 
     public function store_pc(Request $request)

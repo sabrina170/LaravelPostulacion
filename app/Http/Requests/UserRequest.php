@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Unique;
 
 class UserRequest extends FormRequest
 {
@@ -29,9 +30,15 @@ class UserRequest extends FormRequest
             'dni' => 'required',
             'apellido_pa' => 'required',
             // 'apellido_ma' => 'required',
-            'email' => 'required',
+            'email' => ['required','unique:users'],
             'celular' => 'required',
             'password' => 'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'email.unique'=>'Ya existe un usuario con este correo.'
         ];
     }
 }

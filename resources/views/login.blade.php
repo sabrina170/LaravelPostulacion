@@ -726,7 +726,7 @@
                                                                     <label class="form-label" for="basicSelect">Nº de documento</label>
                                                                     <div class="input-group input-group-merge">
                                                                     <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
-                                                                    <input type="number" id="first-name-icon" class="form-control" name="dni" placeholder="85214528">
+                                                                    <input type="number" id="first-name-icon" class="form-control ob" data-type="number" data-msj="Ingrese su número de DNI"  name="dni" placeholder="85214528">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -735,7 +735,7 @@
                                                                     <label class="form-label" for="first-name-icon">Apellido Paterno</label>
                                                                     <div class="input-group input-group-merge">
                                                                         <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
-                                                                        <input type="text" id="first-name-icon" class="form-control" name="apellido_pa" placeholder="Apellido Paterno">
+                                                                        <input type="text" id="first-name-icon" class="form-control ob" data-type="text" data-msj="Ingrese su apellido paterno" name="apellido_pa" placeholder="Apellido Paterno">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -753,7 +753,7 @@
                                                                     <label class="form-label" for="first-name-icon">Nombres completos</label>
                                                                     <div class="input-group input-group-merge">
                                                                         <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
-                                                                        <input type="text" id="first-name-icon" class="form-control" name="name" placeholder="Ingrese sus nombres completos">
+                                                                        <input type="text" id="first-name-icon" class="form-control ob" data-type="text" data-msj="Ingrese sus nombres completos" name="name" placeholder="Ingrese sus nombres completos">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -762,7 +762,7 @@
                                                                     <label class="form-label" for="email-id-icon">Correo</label>
                                                                     <div class="input-group input-group-merge">
                                                                         <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
-                                                                        <input type="email" id="email-id-icon" class="form-control" name="email" placeholder="Correo">
+                                                                        <input type="email" id="email-id-icon" class="form-control ob" data-type="text" data-msj="Ingrese su correo electrónico" name="email" placeholder="Correo">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -771,7 +771,7 @@
                                                                     <label class="form-label" for="contact-info-icon">Número Teléfono</label>
                                                                     <div class="input-group input-group-merge">
                                                                         <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></span>
-                                                                        <input type="number" id="contact-info-icon" class="form-control" name="celular" placeholder="Número Teléfono">
+                                                                        <input type="number" id="contact-info-icon" class="form-control ob" data-type="number" data-msj="Ingrese su número de teléfono" name="celular" placeholder="Número Teléfono">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -780,10 +780,11 @@
                                                                     <label class="form-label" for="password-icon">Password</label>
                                                                     <div class="input-group input-group-merge">
                                                                         <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-                                                                        <input type="password" id="password-icon" value="{{ date("Ymd-His")}}" class="form-control" name="password" placeholder="Password">
+                                                                        <input type="password" id="password-icon" value="{{ date("Ymd-His")}}" class="form-control ob" data-type="text" data-msj="Ingrese una contraseña" name="password" placeholder="Password">
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                                {{--
                                                             <div class="col-12">
                                                                 <div class="mb-1">
                                                                     <div class="form-check">
@@ -791,13 +792,13 @@
                                                                         <label class="form-check-label" for="customCheck4">Recordarme</label>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="d-grid col-lg-12 col-md-12 mb-1">
-                                                                <button type="submit" class="buts-prim btn waves-effect waves-float waves-light">Registrarse</button>
+                                                                <button type="submit" class="buts-prim btn waves-effect waves-float waves-light" id="reg-postulante">Registrarse</button>
                                                             </div>
+
                                                             <div class="d-grid col-lg-12 col-md-12 mb-1">
-                                                                <a href="#" data-bs-dismiss="modal" type="button" class="buts-sec btn waves-effect waves-float waves-light" data-bs-toggle="modal" data-bs-target="#registro-postulante">Ingresar</a>
-                                                                <!--<a href="{{ route('login')}}" type="button" class="buts-sec btn waves-effect waves-float waves-light">Ingresar</a>-->
+                                                                <a href="#" data-bs-dismiss="modal" type="button" class="buts-sec btn waves-effect waves-float waves-light" >Cancelar</a>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -852,7 +853,28 @@
                 </div>
             </div>
         </div>
+
     @endsection
+@section('js')
+    <script>
+        $(document).ready(function(){
+
+            $('#reg-postulante').on('click', function(){
+                var validacion_campos = ValidadorAuto('.ob');
+
+                if(validacion_campos == "false"){
+                    return false;
+                }else if(validacion_campos == "true"){
+
+                }
+            });
+
+        });
+    </script>
+@endsection
+
+
+
 
 
 
