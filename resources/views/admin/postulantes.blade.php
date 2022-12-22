@@ -4,16 +4,19 @@
 <div class="container-fluid">
 <div class="row">
 
-        <h2 class="text-pri font-weight-bold">Buscar por</h2>
+        <h2 class="text-pri font-weight-bold">Acciones</h2>
         <div class="demo-inline-spacing pb-8">
-            <button type="button" class="btn btn-success round waves-effect">Registrados</button>
-            <button type="button" class="btn btn-primary round waves-effect">En entrevista</button>
-            <button type="button" class="btn btn-info round waves-effect">Aceptados</button>
-            <button type="button" class="btn btn-danger round waves-effect">Rechazados</button>
+            <button class="btn btn-info round  mt-0" id="action_aceptar_postulantes">
+                + Aceptar</button>
+            <button class="btn btn-danger round mt-0" id="action_rechazar_postulantes">
+                + Rechazar</button>
+
+            <button class="btn btn-primary round mt-0" id="action_entrevista_postulantes">
+                + En Entrevista</button>
         </div>
-                               
-        <div class="col-12">
-            <div class="card">
+
+        <div class="col-12 mt-16">
+            <div class="card p-24">
                 <div class="table-responsive">
                     <table class="table" id="postulantes">
                         <thead>
@@ -54,7 +57,7 @@
                                     {{$item->created_at}}
                                 </td>
 
-                                <td>  <a href="{{route('misdocumentos',$item->id)}}" type="button" class="btn btn-info round waves-effect btn-sm">Mis documentos</a></td>
+                                <td>  <a href="{{route('misdocumentos',$item->id)}}" type="button" class="btn btn-primary round waves-effect btn-sm">Mis documentos</a></td>
                                 <td>
 
                                         @switch($item->estado)
@@ -65,7 +68,7 @@
                                             <span class="badge rounded-pill badge-light-secondary me-1">Completando <br> su registro</span>
                                                 @break
                                             @case(22)
-                                            <span class="badge rounded-pill badge-light-secondary me-1">En clasificación</span>
+                                            <span class="badge rounded-pill badge-light-warning me-1">En clasificación</span>
                                                 @break
                                             @case(3)
                                             <span class="badge rounded-pill badge-light-primary me-1">En entrevista</span>
@@ -96,13 +99,6 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-dark mt-sm-24" id="action_aceptar_postulantes">
-                       + Aceptar</button>
-                        <button class="btn btn-dark mt-sm-24" id="action_rechazar_postulantes">
-                          + Rechazar</button>
-                            
-                            <button class="btn btn-dark mt-sm-24" id="action_entrevista_postulantes">
-                              + En Entrevista</button>
                 </div>
             </div>
         </div>
@@ -242,7 +238,7 @@ SeleccionarTodos();
                     }).then(function() {
                 location.reload();
                 });
-               
+
             } else  if (data == 2) {
                 Swal.fire({
                 type: 'error',
@@ -294,7 +290,7 @@ SeleccionarTodos();
                     }).then(function() {
                 location.reload();
                 });
-               
+
             } else  if (data == 2) {
                 Swal.fire({
                 type: 'error',
@@ -346,7 +342,7 @@ SeleccionarTodos();
                     }).then(function() {
                 location.reload();
                 });
-               
+
             } else  if (data == 2) {
                 Swal.fire({
                 type: 'error',
