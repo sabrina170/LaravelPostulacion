@@ -48,13 +48,6 @@
 
                         <div class="col-lg-12 mt-24">
 
-
-                            <h3>Firma</h3>
-                            <input type="file" id="firma" name="firma"
-                            class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>
-                            <hr>
-
-
                              <div class="col-lg-4 mt-24">
                                 <h3>Firma</h3>
                                 <input type="file" id="select-files" name="firma" class="btn btn-outline-primary mb-1 waves-effect dz-clickable" required>

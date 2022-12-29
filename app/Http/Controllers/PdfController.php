@@ -93,8 +93,6 @@ class PdfController extends Controller
             'nivel_educativo' => $request->get('nivel_educativo'),
             'exclusividad' => $request->get('exclusividad')
 
-
-
         ];
 
 
@@ -104,7 +102,7 @@ class PdfController extends Controller
         } elseif ($accion == 'descargar') {
 
             // return $this->pdf($request);
-            $pdf = PDF::loadView('documentos.pdf_doc1', $data);
+            $pdf = PDF::loadView('documentos.pdf_doc1', $data)->setOptions(['defaultFont' => 'sans-serif']);;
 
             $nombreArchivo = date('YmdHis') . ".pdf";
             $rutaGuardado = 'images-cer/';
@@ -181,8 +179,8 @@ class PdfController extends Controller
         } elseif ($accion == 'descargar') {
 
             // return $this->pdf($request);
-            $pdf = PDF::loadView('documentos.pdf_doc2', $data);
-
+            $pdf = PDF::loadView('documentos.pdf_doc2', $data)->setOptions(['defaultFont' => 'sans-serif']);
+            // $pdf = PDF::loadView('pdf/personalpdf', compact('user','result'))->setOptions(['defaultFont' => 'sans-serif']);
             $nombreArchivo = date('YmdHis') . ".pdf";
             $rutaGuardado = 'images-cer/';
             file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
@@ -230,7 +228,7 @@ class PdfController extends Controller
         } elseif ($accion == 'descargar') {
 
             // return $this->pdf($request);
-            $pdf = PDF::loadView('documentos.pdf_doc3', $data);
+            $pdf = PDF::loadView('documentos.pdf_doc3', $data)->setOptions(['defaultFont' => 'sans-serif']);;
             $nombreArchivo = date('YmdHis') . ".pdf";
             $rutaGuardado = 'images-cer/';
             file_put_contents($rutaGuardado . $nombreArchivo, $pdf->output());
@@ -284,7 +282,7 @@ class PdfController extends Controller
         } elseif ($accion == 'descargar') {
 
             // return $this->pdf($request);
-            $pdf = PDF::loadView('documentos.pdf_doc4', $data);
+            $pdf = PDF::loadView('documentos.pdf_doc4', $data)->setOptions(['defaultFont' => 'sans-serif']);;
 
             $nombreArchivo = date('YmdHis') . ".pdf";
             $rutaGuardado = 'images-cer/';
@@ -337,7 +335,7 @@ class PdfController extends Controller
         } elseif ($accion == 'descargar') {
 
             // return $this->pdf($request);
-            $pdf = PDF::loadView('documentos.pdf_doc5', $data);
+            $pdf = PDF::loadView('documentos.pdf_doc5', $data)->setOptions(['defaultFont' => 'sans-serif']);;
 
             $nombreArchivo = date('YmdHis') . ".pdf";
             $rutaGuardado = 'images-cer/';
@@ -388,7 +386,7 @@ class PdfController extends Controller
         } elseif ($accion == 'descargar') {
 
             // return $this->pdf($request);
-            $pdf = PDF::loadView('documentos.pdf_doc6', $data);
+            $pdf = PDF::loadView('documentos.pdf_doc6', $data)->setOptions(['defaultFont' => 'sans-serif']);;
 
             $nombreArchivo = date('YmdHis') . ".pdf";
             $rutaGuardado = 'images-cer/';

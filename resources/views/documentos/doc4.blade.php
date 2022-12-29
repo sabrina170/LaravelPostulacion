@@ -29,11 +29,11 @@
         <div class="row m-0">
             <form action="{{ route('pdf.getGenerar4') }}" method="post"  enctype="multipart/form-data" >
                 @csrf
-                <!--
-                <input type="hidden" value="descargar" name="accion">
-                            <input type="hidden" value="{{Auth::user()->id}}" name="id_user">
 
-            <div class="col-lg-4 mt-8">
+                <input type="hidden" value="descargar" name="accion">
+                <input type="hidden" value="{{Auth::user()->id}}" name="id_user">
+
+            {{-- <div class="col-lg-4 mt-8">
                 <label class="form-label" for="first-name-icon">Lugar</label>
                                                                 <div class="input-group input-group-merge">
                                                                     <input type="text" id="first-name-icon" name="lugar" class="form-control" placeholder="Lugar" required>
@@ -45,7 +45,7 @@
                                                                 <div class="input-group input-group-merge">
                                                                     <input type="date" id="first-name-icon" name="fecha" class="form-control"  placeholder="Lugar" required>
                                                                 </div>
-            </div>-->
+            </div>--> --}}
 
             <div class="col-lg-12 mt-24">
                 <p>Con esta Declaración libero al Departamento de Recursos Humanos de toda responsabilidad </p>

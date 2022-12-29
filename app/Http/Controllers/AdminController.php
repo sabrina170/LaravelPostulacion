@@ -25,10 +25,10 @@ class AdminController extends Controller
             5: Rechazado
         */
 
-        $usuarios = User::orderByDesc('id')->get();
+        $usuarios = User::where('tipo',2)->get();
 
 
-        $count = User::orderByDesc('id')->count();
+        $count = User::where('tipo',2)->count();
 
         $postulantes_registrados = User::orderByDesc('id')
             ->where('estado', 1)
@@ -61,7 +61,7 @@ class AdminController extends Controller
     public function listarpostulantes()
     {
 
-        $infos = User::orderByDesc('id')->get();
+        $infos = User::where('tipo',2)->get();
         // $infos = Info::join('users', 'users.id', '=', 'infos.user_id')->get();
 
         // return redirect()->route('admin.index');
