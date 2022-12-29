@@ -32,7 +32,10 @@ class LoginController extends Controller
         $user->tipo_dni = $request->tipo_dni;
         $user->dni = $request->dni;
         $user->celular = $request->celular;
-
+        // para los postulantes
+        // tipo 1 = admin
+        // tipo 2 = postulantea
+        $user->tipo = 2;
 
         $user->save();
         Auth::login($user);

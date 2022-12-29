@@ -187,7 +187,7 @@
                                        @error('apellido_ma')
                                        <span class="badge badge-light-danger errors-apellido_ma">{{$message}}</span>
                                        @enderror
-                                        
+
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="input-wizard-2" class="form-label">Tipo Documento</label>
@@ -491,6 +491,16 @@
                                                             </div>
                                                             <div class="col-sm-9">
                                                                 <input class="form-control" type="file" id="formFile" name="image" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="mb-1 row">
+                                                            <div class="col-sm-3">
+                                                                <label class="col-form-label" for="contact-info">Foto del Speed Test</label>
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <input class="form-control" type="file" id="formFile" name="image_speed" required>
                                                             </div>
                                                         </div>
                                                     </div>

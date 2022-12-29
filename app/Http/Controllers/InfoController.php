@@ -115,6 +115,16 @@ class InfoController extends Controller
             $destinatarioPath = 'images-auriculares/';
             $AuricularImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinatarioPath, $AuricularImage);
+        }else{
+
+        }
+
+        if ($image = $request->file('image_speed')) {
+            $destinatarioPath = 'images-speed/';
+            $SpeedImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinatarioPath, $SpeedImage);
+        }else{
+
         }
 
 
@@ -124,6 +134,7 @@ class InfoController extends Controller
             'windows' => $request->windows,
             'tipo_auricular' => $request->tipo_auricular,
             'foto_auricular' => $AuricularImage,
+            'foto_speed' => $SpeedImage
             // 'detalles' => json_decode($cupon['detalles'], true)
         );
 

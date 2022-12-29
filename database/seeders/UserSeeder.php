@@ -26,7 +26,8 @@ class UserSeeder extends Seeder
             'apellido_pa'=>'Nuñez',
             'tipo_dni'=>1,
             'dni'=>76232414,
-            'celular'=>987912688
+            'celular'=>987912688,
+            'tipo'=>1
         ])->assignRole('admin');
 
         User::create([
@@ -38,7 +39,8 @@ class UserSeeder extends Seeder
             'apellido_pa'=>'Pomajulca',
             'tipo_dni'=>1,
             'dni'=>76232414,
-            'celular'=>987912688
+            'celular'=>987912688,
+            'tipo'=>2
         ])->assignRole('postulante');
     }
 }

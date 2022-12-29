@@ -25,6 +25,7 @@ return new class extends Migration
             // $table->string('apellido_ma', 30);
             $table->string('apellido_pa', 30);
             $table->integer('celular');
+            $table->integer('tipo');
             $table->rememberToken();
             $table->timestamps();
         });
