@@ -250,13 +250,13 @@
             <div id="alerta">
 
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline mt-20">
                 <input class="form-check-input" type="checkbox" id="confirmo" value="checked">
                 <label class="form-check-label" for="inlineCheckbox1">Confirmo haber completado todos los documentos para la respectiva postulación</label>
             </div>
             <br>
             <input type="hidden" id="user_id" value="{{Auth::user()->id}}">
-            <button id="boton1" onclick="boton2"  class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
+            <button id="boton1" onclick="boton2"  class="col-lg-4 mt-12 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
         </div>
 
     </div>

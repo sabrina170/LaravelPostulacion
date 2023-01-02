@@ -99,7 +99,7 @@ class PdfController extends Controller
         // dd($data);
         if ($accion == 'ver') {
             return  view('documentos.pdf_doc1', $data);
-        } elseif ($accion == 'descargar') {
+        } else if ($accion == 'descargar') {
 
             // return $this->pdf($request);
             $pdf = PDF::loadView('documentos.pdf_doc1', $data)->setOptions(['defaultFont' => 'sans-serif']);;
@@ -133,7 +133,7 @@ class PdfController extends Controller
                 // 'detalles' => json_decode($cupon['detalles'], true)
             );
 
-            $doc = Documento::create([
+            Documento::create([
                 'ruta' => $nombreArchivo,
                 'id_user' => $id_user,
                 'tipo' => 1,

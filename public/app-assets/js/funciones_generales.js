@@ -43,6 +43,15 @@ function onlyNumbers(valor) {
     return true;
 }
 
+function validateEmail(email) {
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    if( !emailReg.test( email ) ) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 
 /* --- VALIDAR CAMPOS POR CLASE --- */
 function ValidadorAuto(clase) {
@@ -56,6 +65,10 @@ function ValidadorAuto(clase) {
         var type = $(this).data("type");
         var valor = $(this).val();
 
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+        $('.dev-msj').remove();
+
         $(this).css({
             "outline": "0px",
             "background": ""
@@ -67,12 +80,7 @@ function ValidadorAuto(clase) {
             case "text":
                 if (validIsNullOrEmpty(valor)) {
 
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Parece que hubo un error',
-                        text: msj_val
-                    });
-
+                    $(this).after("<p class='text-danger dev-msj mt-4'>"+msj_val+"</p>")
                     $(this).css({
                         "outline": "2px solid indianred",
                         "background": ""
@@ -83,14 +91,26 @@ function ValidadorAuto(clase) {
                 }
 
                 break;
+
+                case "mail":
+                var email_validado = validateEmail(valor);
+                if(email_validado == false){
+                    $(this).after("<p class='text-danger dev-msj mt-4'>"+msj_val+"</p>")
+                    $(this).css({
+                        "outline": "2px solid indianred",
+                        "background": ""
+                    });
+
+                    retorno = "false";
+                    return false;
+                }
+
+                break;
+
             case "number":
                 if (validIsNullOrEmpty(valor) || !onlyNumbers(valor)) {
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Parece que hubo un error',
-                        text: msj_val
-                    });
 
+                    $(this).after("<p class='text-danger dev-msj mt-4'>"+msj_val+"</p>")
                     $(this).css({
                         "outline": "2px solid indianred",
                         "background": ""
@@ -100,14 +120,78 @@ function ValidadorAuto(clase) {
                     return false;
                 }
                 break;
-            case "select":
-                if (validIsNullOrEmptOrMinusOne(valor) || validIsNullOrEmptyOrZero(valor)) {
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Parece que hubo un error',
-                        text: msj_val
+
+                case "telefono":
+                if (validIsNullOrEmpty(valor) || !onlyNumbers(valor) || valor.length < 9) {
+
+                    $(this).after("<p class='text-danger dev-msj mt-4'>Ingrese su teléfono con 9 dígitos</p>")
+                    $(this).css({
+                        "outline": "2px solid indianred",
+                        "background": ""
                     });
 
+                    retorno = "false";
+                    return false;
+                }
+                break;
+
+                case "password":
+
+                    if ( valor.match(/[A-z]/) ) {
+                    } else {
+
+                        $(this).after("<p class='text-danger dev-msj mt-4'>Ingrese al menos una letra</p>")
+                        $(this).css({
+                            "outline": "2px solid indianred",
+                            "background": ""
+                        });
+                        retorno = "false";
+                        return false;
+                    }
+
+                    //validate capital letter
+                    if ( valor.match(/[A-Z]/) ) {
+
+                    } else {
+                        $(this).after("<p class='text-danger dev-msj mt-4'>Ingrese al menos una letra Mayúscula</p>")
+                        $(this).css({
+                            "outline": "2px solid indianred",
+                            "background": ""
+                        });
+                        retorno = "false";
+                        return false;
+                    }
+
+                    //validate number
+                    if ( valor.match(/\d/) ) {
+
+                    } else {
+                        $(this).after("<p class='text-danger dev-msj mt-4'>Ingrese al menos un número</p>")
+                        $(this).css({
+                            "outline": "2px solid indianred",
+                            "background": ""
+                        });
+                        retorno = "false";
+                        return false;
+                    }
+
+                    if ( valor.length < 8 ) {
+                        $(this).after("<p class='text-danger dev-msj mt-4'>Ingrese al menos 8 caracteres</p>")
+                        $(this).css({
+                            "outline": "2px solid indianred",
+                            "background": ""
+                        });
+                        retorno = "false";
+                        return false;
+                    }
+
+
+                break;
+
+            case "select":
+                if (validIsNullOrEmptOrMinusOne(valor) || validIsNullOrEmptyOrZero(valor)) {
+
+                    $(this).after("<p class='text-danger dev-msj mt-4'>"+msj_val+"</p>")
                     $(this).css({
                         "outline": "2px solid indianred",
                         "background": ""
@@ -123,12 +207,8 @@ function ValidadorAuto(clase) {
                 var dateFechaHoy = new Date(fechaHoy());
 
                 if (validIsNullOrEmpty(valor) == true || dateFecha.getTime() > dateFechaHoy.getTime()) {
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Parece que hubo un error',
-                        text: msj_val
-                    });
 
+                    $(this).after("<p class='text-danger dev-msj mt-4'>"+msj_val+"</p>")
                     $(this).css({
                         "outline": "2px solid indianred",
                         "background": ""

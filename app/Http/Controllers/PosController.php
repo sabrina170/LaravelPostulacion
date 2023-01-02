@@ -17,7 +17,7 @@ class PosController extends Controller
     public function buscarprovincia(Request $request)
     {
         if ($request->ajax()) {
-            $output = '';
+            $output = '<option value="0">Seleccione una provincia</option>';
             $id = $request->get('id');
             if ($id != '') {
                 $data = DB::table('provincias')
@@ -41,13 +41,15 @@ class PosController extends Controller
     public function buscardistrito(Request $request)
     {
         if ($request->ajax()) {
-            $output = '';
+            $output = '<option value="0">Seleccione un distrito</option>';
             $id = $request->get('id');
             if ($id != '') {
                 $data = DB::table('distritos')
                     ->where('province_id', $id)
                     ->get();
             }
+
+            //dd($data);
             $total_row = $data->count();
             if ($total_row > 0) {
                 foreach ($data as $dt) {

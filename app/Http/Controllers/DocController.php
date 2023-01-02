@@ -87,8 +87,9 @@ class DocController extends Controller
     public function listardocs(User $id_user)
     {
         $docs = Documento::where('id_user', '=', $id_user->id)->get();
+        $docs_num = Documento::where('id_user', '=', $id_user->id)->count();
         // $infos  = Info::orderByDesc('id')->where('user_id', $id)->get();
-        return view('documentos.index', compact('docs'));
+        return view('documentos.index', compact('docs', 'docs_num'));
     }
 
     public function cambiarestadopos(Request $request)

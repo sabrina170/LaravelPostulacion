@@ -19,7 +19,7 @@
             Por favor, llene todos los documentos a continuación, luego darle click a enviar para proceder con la postulación:
         </h5>
 
-        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-24 item-documento">
+        <div class="border br-16 row pt-12 pb-12 pl-0 pr-0 m-0 mt-24">
             <p class="col-lg-2 mb-0 text-center"><i data-feather='file'></i></p>
             <p class="col-lg-4 mb-0">Ficha del trabajador</p>
             @if (isset($docs))
@@ -136,21 +136,29 @@
             <p class="col-lg-2 mb-0 text-center"><a href="{{route('doc6',[Auth::user()->id,6])}}"><i data-feather='arrow-right'></i></a></p>
         </div>
     </div>
-    <div class="text-center">
-        <div id="alerta">
 
+    @if (isset($docs))
+        @if ($docs_num == 6)
+        <div class="text-center">
+            <div id="alerta">
+
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="confirmo" value="checked">
+                <label class="form-check-label" for="inlineCheckbox1">Confirmo haber completado todos los documentos para la respectiva postulación</label>
+            </div>
+            <br>
+            <input type="hidden" id="user_id" value="{{Auth::user()->id}}">
+            <button  onclick="boton1" id="boton1" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="confirmo" value="checked">
-            <label class="form-check-label" for="inlineCheckbox1">Confirmo haber completado todos los documentos para la respectiva postulación</label>
-        </div>
-        <br>
-        <input type="hidden" id="user_id" value="{{Auth::user()->id}}">
-        <button  onclick="boton1" id="boton1" class="col-lg-4 mt-4 btn btn-primary waves-effect waves-float waves-light">Enviar documentos</button>
-    </div>
+
+        @else
+        <p class="text-center text-danger">*Llene todos los documentos para poder enviarlos</p>
+        @endif
+    @endif
 </div>
+@endsection
 
- @endsection
 @section('js')
 
 <script>
@@ -186,4 +194,3 @@
 
 </script>
 @endsection
-

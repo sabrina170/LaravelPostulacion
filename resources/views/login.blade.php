@@ -653,24 +653,18 @@
                                                         <div class="col-12">
                                                             <div class="mb-1">
                                                                 <label class="form-label" for="first-name-icon">Correo electrónico*</label>
-                                                                <div class="input-group input-group-merge">
-                                                                    <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
-                                                                    <input type="email" id="first-name-icon" class="form-control" name="email" placeholder="Ingrese su correo electrónico">
-                                                                </div>
+                                                                <input type="email" id="first-name-icon" class="form-control log-ob" data-type="text" data-msj="Ingrese su correo" name="email" placeholder="Ingrese su correo electrónico">
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="mb-1">
                                                                 <label class="form-label" for="first-name-icon">Contraseña</label>
-                                                                <div class="input-group input-group-merge">
-                                                                    <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-                                                                    <input type="password" id="first-name-icon" class="form-control" name="password" placeholder="Ingrese su contraseña">
-                                                                </div>
+                                                                <input type="password" id="first-name-icon" class="form-control log-ob" data-type="text" data-msj="Ingrese una constraseña" name="password" placeholder="Ingrese su contraseña">
                                                             </div>
                                                         </div>
 
                                                         <div class="d-grid col-lg-12 col-md-12 mb-1">
-                                                            <button type="submit" class="buts-prim btn waves-effect waves-float waves-light">Ingresar</button>
+                                                            <button id="log-postulante" type="submit" class="buts-prim btn waves-effect waves-float waves-light">Ingresar</button>
                                                         </div>
                                                         <div class="d-grid col-lg-12 col-md-12 mb-1">
                                                             <!--<a href="{{ route('registro')}}" type="button" class="buts-sec btn waves-effect waves-float waves-light">Registrarse</a>-->
@@ -716,7 +710,7 @@
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="basicSelect">Tipo de doc.</label>
                                                                     <select class="form-select" id="basicSelect" name="tipo_dni">
-                                                                        <option value="1">Dni</option>
+                                                                        <option value="1">DNI</option>
                                                                         <option value="2">CE</option>
                                                                     </select>
                                                                 </div>
@@ -724,19 +718,13 @@
                                                             <div class="col-6">
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="basicSelect">Nº de documento</label>
-                                                                    <div class="input-group input-group-merge">
-                                                                    <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
-                                                                    <input type="number" id="first-name-icon" class="form-control ob" data-type="number" data-msj="Ingrese su número de DNI"  name="dni" placeholder="85214528">
-                                                                    </div>
+                                                                    <input type="number" id="first-name-icon" class="form-control ob" data-type="number" data-msj="Ingrese su número de DNI"  name="dni" placeholder="DNI">
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="first-name-icon">Apellido Paterno</label>
-                                                                    <div class="input-group input-group-merge">
-                                                                        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
-                                                                        <input type="text" id="first-name-icon" class="form-control ob" data-type="text" data-msj="Ingrese su apellido paterno" name="apellido_pa" placeholder="Apellido Paterno">
-                                                                    </div>
+                                                                    <input type="text" id="first-name-icon" class="form-control ob" data-type="text" data-msj="Ingrese su apellido paterno" name="apellido_pa" placeholder="Apellido Paterno">
                                                                 </div>
                                                             </div>
                                                             {{-- <div class="col-6">
@@ -751,37 +739,25 @@
                                                             <div class="col-12">
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="first-name-icon">Nombres completos</label>
-                                                                    <div class="input-group input-group-merge">
-                                                                        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
-                                                                        <input type="text" id="first-name-icon" class="form-control ob" data-type="text" data-msj="Ingrese sus nombres completos" name="name" placeholder="Ingrese sus nombres completos">
-                                                                    </div>
+                                                                    <input type="text" id="first-name-icon" class="form-control ob" data-type="text" data-msj="Ingrese sus nombres completos" name="name" placeholder="Ingrese sus nombres completos">
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="email-id-icon">Correo</label>
-                                                                    <div class="input-group input-group-merge">
-                                                                        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
-                                                                        <input type="email" id="email-id-icon" class="form-control ob" data-type="text" data-msj="Ingrese su correo electrónico" name="email" placeholder="Correo">
-                                                                    </div>
+                                                                    <input type="email" id="email-id-icon" class="form-control ob" data-type="mail" data-msj="Debe ingresar un correo valido ejemplo@.com" name="email" placeholder="Correo">
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
                                                                 <div class="mb-1">
                                                                     <label class="form-label" for="contact-info-icon">Número Teléfono</label>
-                                                                    <div class="input-group input-group-merge">
-                                                                        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></span>
-                                                                        <input type="number" id="contact-info-icon" class="form-control ob" data-type="number" data-msj="Ingrese su número de teléfono" name="celular" placeholder="Número Teléfono">
-                                                                    </div>
+                                                                    <input type="number" id="email-id-icon" class="form-control ob" data-type="telefono" data-msj="Ingrese su teléfono" name="celular"  placeholder="Teléfono" maxlength = "9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                                 </div>
                                                             </div>
                                                              <div class="col-12">
                                                                 <div class="mb-1">
-                                                                    <label class="form-label" for="password-icon">Password</label>
-                                                                    <div class="input-group input-group-merge">
-                                                                        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-                                                                        <input type="password" id="password-icon"  class="form-control ob" data-type="text" data-msj="Ingrese una contraseña" name="password" placeholder="Password">
-                                                                    </div>
+                                                                    <label class="form-label" for="password-icon">Contraseña</label>
+                                                                    <input type="password" id="password-icon"  class="form-control ob" data-type="password" data-msj="Ingrese una contraseña" name="password" placeholder="Contraseña">
                                                                 </div>
                                                             </div>
                                                                 {{--
@@ -864,9 +840,15 @@
 
                 if(validacion_campos == "false"){
                     return false;
-                }else if(validacion_campos == "true"){
+                }else if(validacion_campos == "true"){}
+            });
 
-                }
+            $('#log-postulante').on('click', function(){
+                var validacion_campos = ValidadorAuto('.log-ob');
+
+                if(validacion_campos == "false"){
+                    return false;
+                }else if(validacion_campos == "true"){}
             });
 
         });
