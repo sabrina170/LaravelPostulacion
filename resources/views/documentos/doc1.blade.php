@@ -11,7 +11,7 @@
     <div>
         <form action="{{ route('pdf.getGenerar1') }}" method="post"  enctype="multipart/form-data" >
             @csrf
-            <input type="hidden" value="descargar" name="accion">
+            <input type="hidden" value="ver" name="accion">
             <input type="hidden" value="{{Auth::user()->id}}" name="id_user">
 
         <div class="row m-0">

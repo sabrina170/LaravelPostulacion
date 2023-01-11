@@ -296,6 +296,13 @@
                                         @enderror
                                     </div>
                                     <div class="col-lg-4">
+                                        <label for="input-wizard-2" class="form-label">Tipo de Postulante</label>
+                                        <select id="input-wizard-6" class="form-select" name="tipo_pos">
+                                            <option value="1">Virtual</option>
+                                            <option value="2">Presencial</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
                                     {{-- input que vendran por defecto --}}
                                     <input id="input-wizard-2" type="hidden" class="form-control"  name="user_id" value="{{ Auth::user()->id }}" readonly>
                                     </div>

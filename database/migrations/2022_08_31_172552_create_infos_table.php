@@ -32,6 +32,8 @@ return new class extends Migration
             $table->string('provincia', 45);
             $table->string('distrito', 45);
             $table->string('direccion', 45);
+            $table->integer('tipo_pos');
+
 
             // estudios
             $table->string('grado', 60);
