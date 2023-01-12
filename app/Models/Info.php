@@ -24,6 +24,7 @@ class Info extends Model
         'sexo',
         'distrito',
         'direccion',
+        'tipo_pos',
         'user_id',
         'apellido',
         'grado',

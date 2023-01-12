@@ -10,7 +10,7 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PosController;
 use App\Mail\ContactanosMailable;
 use App\Http\Controllers\PostGuzzleController;
-
+use App\Http\Controllers\ZipController;
 use Database\Seeders\RoleSeeder;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Role;
@@ -171,3 +171,6 @@ Route::post('subir-archivos', [DocsPosController::class, "subirarchivos"])->name
 Route::get('posts', [PostGuzzleController::class, 'index']);
 Route::get('posts/store', [PostGuzzleController::class, 'store']);
 Route::post('cobalt', [PostGuzzleController::class, 'EnviarDatosCobalt']);
+
+// realizar ZIP 
+Route::get('/zip', [ZipController::class, 'zipFile']);

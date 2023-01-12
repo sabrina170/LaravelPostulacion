@@ -45,7 +45,7 @@ class InfoRequest extends FormRequest
             'direccion' => 'required',
             'tipo_documento' => '',
             'user_id' => '',
-            'tipo_pos' => '',
+            'tipo_pos' => 'required',
 
             // Datos de Estudios
             'grado' => 'required',
