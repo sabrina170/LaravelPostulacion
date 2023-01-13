@@ -173,4 +173,8 @@ Route::get('posts/store', [PostGuzzleController::class, 'store']);
 Route::post('cobalt', [PostGuzzleController::class, 'EnviarDatosCobalt']);
 
 // realizar ZIP 
-Route::get('/zip', [ZipController::class, 'zipFile']);
+Route::get('/zip3', [ZipController::class, 'zipFile2']);
+
+// CAMBIAR A EDITAR DOC SI HAY ALGUN ERROR
+
+Route::get('/cambiardoc/{id}/{id_user}', [DocsPosController::class, 'cambiardoc'])->name('cambiardoc');

@@ -71,8 +71,16 @@
                                         <h6 class="files-section-title mt-2 mb-75">Documentos llenados</h6>
                                         @foreach ($info_documentos as $item)
                                             <div class="card file-manager-item file">
-
+                                                
                                                 <div class="card-img-top file-logo-wrapper">
+                                                    <button href="{{route('cambiardoc',[$item->id,$item->id_user])}}" type="button" 
+                                                        class="btn btn-primary round waves-effect btn-sm"
+                                                        
+                                                        >
+                                                        <i data-feather="eye" class="align-middle me-50"></i>
+                                                        <span class="align-middle">Editar</span>
+                                                    </button>
+
                                                     <a href="{{asset('images-cer/'.$item->ruta)}}" target="_blank">
                                                     <div class="d-flex align-items-center justify-content-center w-100">
                                                         <img src="{{asset('app-assets/images/icons/pdf.png')}}" alt="file-icon" height="35" />
@@ -124,40 +132,7 @@
 
 
 
-                            <!-- File Dropdown Starts-->
-                            <div class="dropdown-menu dropdown-menu-end file-dropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i data-feather="eye" class="align-middle me-50"></i>
-                                    <span class="align-middle">Preview</span>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i data-feather="user-plus" class="align-middle me-50"></i>
-                                    <span class="align-middle">Share</span>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i data-feather="copy" class="align-middle me-50"></i>
-                                    <span class="align-middle">Make a copy</span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i data-feather="edit" class="align-middle me-50"></i>
-                                    <span class="align-middle">Rename</span>
-                                </a>
-                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#app-file-manager-info-sidebar">
-                                    <i data-feather="info" class="align-middle me-50"></i>
-                                    <span class="align-middle">Info</span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i data-feather="trash" class="align-middle me-50"></i>
-                                    <span class="align-middle">Delete</span>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i data-feather="alert-circle" class="align-middle me-50"></i>
-                                    <span class="align-middle">Report</span>
-                                </a>
-                            </div>
-                            <!-- /File Dropdown Ends -->
+                            
 
                             <!-- Create New Folder Modal Starts-->
                             <div class="modal fade" id="new-folder-modal">

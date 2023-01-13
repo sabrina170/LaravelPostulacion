@@ -6,6 +6,7 @@ use App\Models\Docpos;
 use App\Models\DocposImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class DocsPosController extends Controller
 {
@@ -78,5 +79,13 @@ class DocsPosController extends Controller
             }
         }
         return redirect()->route('documentos.docs');
+    }
+
+    public function cambiardoc($id, $id_user)
+    {
+        $consulta2 =  DB::table('documentos')->where('id', $id)->update([
+            'estado' => '2'
+        ]);
+        return view('admin.misdocumentos', compact('info_documentos'));
     }
 }
