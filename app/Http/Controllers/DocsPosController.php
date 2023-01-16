@@ -86,6 +86,6 @@ class DocsPosController extends Controller
         $consulta2 =  DB::table('documentos')->where('id', $id)->update([
             'estado' => '2'
         ]);
-        return view('admin.misdocumentos', compact('info_documentos'));
+        return redirect()->route('misdocumentos', $id_user);
     }
 }

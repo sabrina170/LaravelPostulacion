@@ -73,13 +73,20 @@
                                             <div class="card file-manager-item file">
                                                 
                                                 <div class="card-img-top file-logo-wrapper">
-                                                    <button href="{{route('cambiardoc',[$item->id,$item->id_user])}}" type="button" 
-                                                        class="btn btn-primary round waves-effect btn-sm"
-                                                        
-                                                        >
+                                                    
+                                                    @if ($item->estado ==2)
+                                                    <a type="button" 
+                                                        class="btn btn-secundary round waves-effect btn-sm">
+                                                        <i data-feather="eye" class="align-middle me-50"></i>
+                                                        <span class="align-middle">Editando...</span>
+                                                    </a> 
+                                                    @else
+                                                    <a href="{{route('cambiardoc',[$item->id,$item->id_user])}}" type="button" 
+                                                        class="btn btn-primary round waves-effect btn-sm">
                                                         <i data-feather="eye" class="align-middle me-50"></i>
                                                         <span class="align-middle">Editar</span>
-                                                    </button>
+                                                    </a> 
+                                                    @endif
 
                                                     <a href="{{asset('images-cer/'.$item->ruta)}}" target="_blank">
                                                     <div class="d-flex align-items-center justify-content-center w-100">
